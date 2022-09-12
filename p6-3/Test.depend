@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1662760397 source:c:\users\nico\documents\prog2\test\test\boolean.cpp
+	"boolean.h"
+	<stdio.h>
+
+1662760394 c:\users\nico\documents\prog2\test\test\boolean.h
+
+1662760400 source:c:\users\nico\documents\prog2\test\test\fecha.cpp
+	"Fecha.h"
+	<stdio.h>
+
+1662760406 c:\users\nico\documents\prog2\test\test\fecha.h
+	"boolean.h"
+
+1662762167 source:c:\users\nico\documents\prog2\test\test\main.cpp
+	<stdio.h>
+	"Stock.h"
+
+1662761095 c:\users\nico\documents\prog2\test\test\stock.h
+	"Producto.h"
+
+1662760478 c:\users\nico\documents\prog2\test\test\producto.h
+	"boolean.h"
+	"string.h"
+	"Fecha.h"
+
+1662761086 c:\users\nico\documents\prog2\test\test\string.h
+	"boolean.h"
+	<stdio.h>
+
+1662759765 source:c:\users\nico\documents\prog2\test\test\producto.cpp
+	<stdio.h>
+	"Producto.h"
+
+1662761160 source:c:\users\nico\documents\prog2\test\test\stock.cpp
+	"Stock.h"
+
+1662760404 source:c:\users\nico\documents\prog2\test\test\string.cpp
+	"string.h"
+	<stdio.h>
+
