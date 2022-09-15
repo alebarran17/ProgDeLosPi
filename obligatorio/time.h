@@ -12,4 +12,6 @@ int getHours(Time time);
 
 int getMinutes(Time time);
 
+void getDifference(Time from, Time to, int &hours, int &minutes);
+
 #endif // TIME_H_INCLUDED

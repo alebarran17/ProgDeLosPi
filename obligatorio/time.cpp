@@ -15,3 +15,8 @@ int getHours(Time time) {
 int getMinutes(Time time) {
     return time.Minutes;
 }
+
+void getDifference(Time from, Time to, int &hours, int &minutes) {
+    hours = to.Hours - from.Hours;
+    minutes = to.Minutes - from.Minutes;
+}
