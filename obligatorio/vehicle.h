@@ -22,6 +22,8 @@ typedef struct {
 
 void LoadVehicle(Vehicle &v);
 
+void ShowVehicle(Vehicle v);
+
 void GetDepartment(Vehicle v, string &d);
 
 void GetPlate(Vehicle v, string &plate);

@@ -21,3 +21,24 @@ void LoadVehicle(Vehicle &v) {
         LoadTruck(v.More.TruckDetails);
     }
 }
+
+void ShowVehicle(Vehicle v) {
+    printf("Empadronado en: ");
+    print(v.Department);
+
+    printf("Matrícula: ");
+    print(v.Plate);
+
+    printf("Cedula del conductor: %d\r\n", v.DNI);
+
+    printf("Hora de entrada: ");
+    ShowTime(v.EntryTime);
+
+    printf("Tipo de vehiculo: %s\r\n", v.Type == CAR ? "auto" : "camioneta");
+
+    if (v.Type == CAR) {
+        ShowCar(v.More.CarDetails);
+    } else {
+        ShowTruck(v.More.TruckDetails);
+    }
+}
