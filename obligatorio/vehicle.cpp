@@ -42,3 +42,31 @@ void ShowVehicle(Vehicle v) {
         ShowTruck(v.More.TruckDetails);
     }
 }
+
+void GetDepartment(Vehicle v, string &d) {
+    strcon(d, v.Department);
+}
+
+void GetPlate(Vehicle v, string &d) {
+    strcon(d, v.Plate);
+}
+
+long int GetDNI(Vehicle v) {
+    return v.DNI;
+}
+
+Time GetEntryTime(Vehicle v) {
+    return v.EntryTime;
+}
+
+VehicleType GetVehicleType(Vehicle v) {
+    return v.Type;
+}
+
+Car GetCarDetails(Vehicle v) {
+    return v.More.CarDetails;
+}
+
+Truck GetTruckDetails(Vehicle v) {
+    return v.More.TruckDetails;
+}

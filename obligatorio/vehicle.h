@@ -32,4 +32,10 @@ long int GetDNI(Vehicle v);
 
 Time GetEntryTime(Vehicle v);
 
+VehicleType GetVehicleType(Vehicle v);
+
+Car GetCarDetails(Vehicle v);
+
+Truck GetTruckDetails(Vehicle v);
+
 #endif // VEHICLE_H_INCLUDED
