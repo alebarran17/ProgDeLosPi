@@ -1,7 +1,7 @@
-#include "vehicle.h"
+#include "Parking.h"
 #include "menu.h"
 
-void ProcessSecondaryMenu() {
+void ProcessSecondaryMenu(Parking park) {
     int opt;
     do {
         opt = ShowSecondaryMenu();
@@ -16,11 +16,11 @@ void ProcessSecondaryMenu() {
 
             // Number of vehicles from a specific department
             case 3:
-                ProcessSecondaryMenu();
                 break;
 
             // List vehicles
             case 4:
+                ShowVehicles(park);
                 break;
 
             // Print vehicle
@@ -29,7 +29,6 @@ void ProcessSecondaryMenu() {
 
             // List vehicles between two times
             case 6:
-                ProcessSecondaryMenu();
                 break;
 
             // List of trucks with more kg than...
@@ -41,6 +40,9 @@ void ProcessSecondaryMenu() {
 
 int main()
 {
+    Parking park;
+    LoadParking(park);
+
     int opt;
     do {
         opt = ShowMainMenu();
@@ -49,16 +51,21 @@ int main()
             case 1:
                 Vehicle v;
                 LoadVehicle(v);
-                // TODO: add to parking
+                InsertVehicle(park, v);
                 break;
 
             // Charge and remove vehicle
             case 2:
+                string plate;
+                printf("Ingrese la matricula del vehiculo a eliminar: ");
+                scan(plate);
+
+                RemoveVehicle(park, plate);
                 break;
 
             // Secondary menu
             case 3:
-                ProcessSecondaryMenu();
+                ProcessSecondaryMenu(park);
                 break;
         }
     } while (opt != 4);
