@@ -34,7 +34,8 @@ void ShowVehicle(Vehicle v) {
     printf("Hora de entrada: ");
     ShowTime(v.EntryTime);
 
-    printf("Tipo de vehiculo: %s\r\n", v.Type == CAR ? "auto" : "camioneta");
+    printf("Tipo de vehiculo: ");
+    ShowVehicleType(v.Type);
 
     if (v.Type == CAR) {
         ShowCar(v.More.CarDetails);
