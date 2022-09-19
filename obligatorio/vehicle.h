@@ -3,12 +3,21 @@
 
 #include "string.h"
 #include "time.h"
+#include "vehicleType.h"
+#include "Car.h"
+#include "Truck.h"
 
 typedef struct {
     string Department;
     string Plate;
     long int DNI;
     Time EntryTime;
+
+    VehicleType Type;
+    union {
+        Car CarDetails;
+        Truck TruckDetails;
+    } More;
 } Vehicle;
 
 void LoadVehicle(Vehicle &v);

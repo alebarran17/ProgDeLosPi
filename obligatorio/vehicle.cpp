@@ -13,4 +13,11 @@ void LoadVehicle(Vehicle &v) {
 
     printf("Cargue la hora de entrada...\r\n");
     LoadTime(v.EntryTime);
+
+    LoadVehicleType(v.Type);
+    if (v.Type == CAR) {
+        LoadCar(v.More.CarDetails);
+    } else {
+        LoadTruck(v.More.TruckDetails);
+    }
 }
