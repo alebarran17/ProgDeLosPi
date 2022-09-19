@@ -14,3 +14,7 @@ void LoadVehicleType(VehicleType &vt) {
         vt = TRUCK;
     }
 }
+
+void ShowVehicleType(VehicleType vt) {
+    printf(vt == CAR ? "Auto" : "Camioneta");
+}
