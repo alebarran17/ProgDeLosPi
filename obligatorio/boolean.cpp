@@ -1,7 +1,7 @@
 #include "boolean.h"
 #include <stdio.h>
 
-void carga(boolean &b){
+void LoadBoolean(boolean &b){
                 int num;
                 printf("Ingrese un valor: 0-False 1-True:\n");
                 scanf("%d", &num);
@@ -10,7 +10,7 @@ void carga(boolean &b){
                 else
                                 b=FALSE;
 }
-void mostrar(boolean b){
+void ShowBoolean(boolean b){
                 if(b==TRUE)
                                 printf("EL valor es TRUE");
                 else

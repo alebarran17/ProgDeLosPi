@@ -6,12 +6,12 @@ typedef struct {
     int Minutes;
 } Time;
 
-void loadTime(Time &time);
+void LoadTime(Time &time);
 
-int getHours(Time time);
+int GetHours(Time time);
 
-int getMinutes(Time time);
+int GetMinutes(Time time);
 
-Time getDifference(Time from, Time to);
+Time GetDifference(Time from, Time to);
 
 #endif // TIME_H_INCLUDED

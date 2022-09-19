@@ -3,8 +3,8 @@
 
 typedef enum {FALSE, TRUE} boolean;
 //Carga un boolean
-void carga(boolean &b);
+void LoadBoolean(boolean &b);
 //muestra el boolean cargado
-void mostrar(boolean b);
+void ShowBoolean(boolean b);
 
 #endif // BOOLEAN_H_INCLUDED

@@ -12,5 +12,5 @@ void LoadVehicle(Vehicle &v) {
     scanf("%ld", &v.DNI);
 
     printf("Cargue la hora de entrada...\r\n");
-    loadTime(v.EntryTime);
+    LoadTime(v.EntryTime);
 }

@@ -13,12 +13,12 @@ typedef struct {
 
 void LoadVehicle(Vehicle &v);
 
-void getDepartment(Vehicle v, string &d);
+void GetDepartment(Vehicle v, string &d);
 
-void getPlate(Vehicle v, string &plate);
+void GetPlate(Vehicle v, string &plate);
 
-long int getDNI(Vehicle v);
+long int GetDNI(Vehicle v);
 
-Time getEntryTime(Vehicle v);
+Time GetEntryTime(Vehicle v);
 
 #endif // VEHICLE_H_INCLUDED

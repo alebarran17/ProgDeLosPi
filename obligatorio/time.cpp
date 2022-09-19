@@ -2,23 +2,25 @@
 
 #include "time.h"
 
-void loadTime(Time &time) {
+void LoadTime(Time &time) {
     printf("Hora: ");
-    scanf("%d\r\n", &time.Hours);
+    scanf("%d", &time.Hours);
+
+    printf("%d", time.Hours);
 
     printf("Minutos: ");
-    scanf("%d\r\n", &time.Minutes);
+    scanf("%d", &time.Minutes);
 }
 
-int getHours(Time time) {
+int GetHours(Time time) {
     return time.Hours;
 }
 
-int getMinutes(Time time) {
+int GetMinutes(Time time) {
     return time.Minutes;
 }
 
-Time getDifference(Time from, Time to) {
+Time GetDifference(Time from, Time to) {
     Time t;
     t.Hours = to.Hours - from.Hours;
     t.Minutes = to.Minutes - from.Minutes;
