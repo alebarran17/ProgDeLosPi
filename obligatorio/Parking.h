@@ -31,7 +31,8 @@ void Show(Parking arr);
 //Precondicion: El vehiculo seleccionado debe estar cargado
 void RemoveVehicle(Parking arre, string p);
 
-
+//procedimiento devuelve la cantidad de autos y de camionetas
+void Quantity(Parking arr, int &quantCar, int &quantTrucks);
 
 
 

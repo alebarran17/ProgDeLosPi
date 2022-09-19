@@ -48,8 +48,36 @@ void ShowVehicles(Parking arr) {
     }
 
 void RemoveVehicle(Parking arre, string p){
-
+    boolean exist=FALSE;
+    i=0;
+    string strAux;
+    while(i<arr.Max && !exist){
+    GetPlate(arr.ArrVehicle(i), strAux);
+    if(streq(strAux, p))
+        existe=TRUE
+    else
+        i++;
+    }
 }
+
+while(i<arr.Max && !exist){
+    GetPlate(arr.ArrVehicle(i), strAux);
+    if(streq(strAux, p))
+        existe=TRUE
+    else
+        i++;
+    }
+}
+
+void Quantity(Parking arr, int &quantCar, int &quantTrucks){
+    quantCar=0;
+    quantTrucks=0;
+    for(int i=0; i<arr.Max; i++){
+        if(GetVehicleType(arr.ArrVehicle[i])==TRUCK)
+            quantTrucks=quantTrucks+1;
+        else
+            quantCar=quantCar+1;
+    }
 }
 
 
