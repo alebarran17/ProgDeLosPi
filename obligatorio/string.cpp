@@ -23,7 +23,6 @@ void print(string str){
 void scan(string &str){
                 char car;
                 int i = 0;
-                printf ("Ingrese una frase y termine con ENTER: ");
                 fflush (stdin);
                 scanf ("%c", &car);
                 while (car != '\n' && i < MAX-1)

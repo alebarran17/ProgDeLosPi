@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1663279589 source:d:\progdelospi\obligatorio\boolean.cpp
+	"boolean.h"
+	<stdio.h>
+
+1663279589 d:\progdelospi\obligatorio\boolean.h
+
+1663282853 source:d:\progdelospi\obligatorio\string.cpp
+	"string.h"
+	<stdio.h>
+
+1663279589 d:\progdelospi\obligatorio\string.h
+	"boolean.h"
+	<stdio.h>
+
+1663281132 source:d:\progdelospi\obligatorio\time.cpp
+	<stdio.h>
+	"time.h"
+
+1663280282 d:\progdelospi\obligatorio\time.h
+
+1663282714 source:d:\progdelospi\obligatorio\main.cpp
+	"vehicle.h"
+
+1663282719 d:\progdelospi\obligatorio\vehicle.h
+	"string.h"
+	"time.h"
+
+1663282775 source:d:\progdelospi\obligatorio\vehicle.cpp
+	"string.h"
+	"vehicle.h"
+

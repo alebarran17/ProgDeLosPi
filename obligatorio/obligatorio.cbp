@@ -32,7 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="boolean.cpp" />
+		<Unit filename="boolean.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="string.cpp" />
+		<Unit filename="string.h" />
+		<Unit filename="time.cpp" />
+		<Unit filename="time.h" />
+		<Unit filename="vehicle.cpp" />
+		<Unit filename="vehicle.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -1,9 +1,8 @@
-#include <iostream>
-
-using namespace std;
+#include "vehicle.h"
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    Vehicle v;
+    LoadVehicle(v);
     return 0;
 }
