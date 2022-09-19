@@ -12,7 +12,6 @@ int strlar(string str){
 //parte b
 void print(string str){
                 int i=0;
-                printf("La frase ingresada es: ");
                 while(i<MAX-1 && str[i]!='\0'){
                                 printf("%c", str[i]);
                                 i++;
