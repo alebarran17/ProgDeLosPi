@@ -6,8 +6,6 @@ void LoadTime(Time &time) {
     printf("Hora: ");
     scanf("%d", &time.Hours);
 
-    printf("%d", time.Hours);
-
     printf("Minutos: ");
     scanf("%d", &time.Minutes);
 }
