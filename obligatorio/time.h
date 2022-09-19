@@ -8,6 +8,8 @@ typedef struct {
 
 void LoadTime(Time &time);
 
+void ShowTime(Time time);
+
 int GetHours(Time time);
 
 int GetMinutes(Time time);

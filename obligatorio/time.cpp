@@ -10,6 +10,10 @@ void LoadTime(Time &time) {
     scanf("%d", &time.Minutes);
 }
 
+void ShowTime(Time t) {
+    printf("%d:%d\r\n", t.Hours, t.Minutes);
+}
+
 int GetHours(Time time) {
     return time.Hours;
 }
