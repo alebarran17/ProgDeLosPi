@@ -1,7 +1,7 @@
 #ifndef PARKING_H_INCLUDED
 #define PARKING_H_INCLUDED
 #include "vehicle.h"
-const int MAX_Park = 50;
+const int MAX_Park = 3;
 
 typedef struct{
     Vehicle ArrVehicle[MAX_Park];
@@ -38,9 +38,19 @@ void Quantity(Parking arr, int &quantCar, int &quantTrucks);
 // Devuelve un entero positivo si existe, o -1 si no existe
 int GetVehiclePos(Parking arre, string plate);
 
+// Devuelve el vehículo en el arreglo según su matrícula
+// Precondición: El vehiculo está en el arreglo.
+Vehicle GetVehicle(Parking arre, string plate);
+
 int GetIncome(Parking arre);
 
 void ShowIncome(Parking arre);
+
+int QuantityPerDepartment(Parking arr, string depa);
+
+void ShowVehiclesBetween(Parking arr, Time from, Time to);
+
+void ShowTrucksWithMoreKGThan(Parking arr, float kg);
 
 
 #endif // PARKING_H_INCLUDED

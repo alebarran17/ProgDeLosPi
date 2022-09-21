@@ -7,7 +7,7 @@ typedef char string[MAX];
 
 int strlar(string str);
 
-void print(string str);
+void print(string str, boolean newLine);
 
 void scan(string &str);
 

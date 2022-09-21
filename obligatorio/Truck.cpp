@@ -12,7 +12,7 @@ void LoadTruck(Truck &t){
 //Mostrar camioneta
 void ShowTruck(Truck t){
                 printf("El modelo de la camioneta es: ");
-                print(t.Model);
+                print(t.Model, TRUE);
                 printf("La capacidad de carga es de: %5.2f kilos\n", t.MaxLoad);
 }
 

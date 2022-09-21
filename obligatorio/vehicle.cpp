@@ -12,7 +12,13 @@ void LoadVehicle(Vehicle &v) {
     scanf("%ld", &v.DNI);
 
     printf("Cargue la hora de entrada...\r\n");
-    LoadTime(v.EntryTime);
+    do {
+        LoadTime(v.EntryTime);
+
+        if (GetHours(v.EntryTime) == 22) {
+            printf("El vehiculo no puede entrar despues las 22:00\r\n");
+        }
+    } while (GetHours(v.EntryTime) == 22);
 
     LoadVehicleType(v.Type);
     if (v.Type == CAR) {
@@ -24,15 +30,15 @@ void LoadVehicle(Vehicle &v) {
 
 void ShowVehicle(Vehicle v) {
     printf("Empadronado en: ");
-    print(v.Department);
+    print(v.Department, TRUE);
 
     printf("Matrícula: ");
-    print(v.Plate);
+    print(v.Plate, TRUE);
 
     printf("Cedula del conductor: %d\r\n", v.DNI);
 
     printf("Hora de entrada: ");
-    ShowTime(v.EntryTime);
+    ShowTime(v.EntryTime, TRUE);
 
     printf("Tipo de vehiculo: ");
     ShowVehicleType(v.Type);
@@ -45,11 +51,11 @@ void ShowVehicle(Vehicle v) {
 }
 
 void GetDepartment(Vehicle v, string &d) {
-    strcon(d, v.Department);
+    strcop(d, v.Department);
 }
 
 void GetPlate(Vehicle v, string &d) {
-    strcon(d, v.Plate);
+    strcop(d, v.Plate);
 }
 
 long int GetDNI(Vehicle v) {
@@ -70,4 +76,16 @@ Car GetCarDetails(Vehicle v) {
 
 Truck GetTruckDetails(Vehicle v) {
     return v.More.TruckDetails;
+}
+
+void ShowVehicleMin(Vehicle v, boolean addEntryTime) {
+    printf("Matricula: ");
+    print(v.Plate, FALSE);
+
+    printf(", cedula del conductor: %d", v.DNI);
+
+    if (addEntryTime == TRUE) {
+        printf(", hora de entrada: ");
+        ShowTime(v.EntryTime, FALSE);
+    }
 }

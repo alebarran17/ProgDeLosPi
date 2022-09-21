@@ -38,4 +38,6 @@ Car GetCarDetails(Vehicle v);
 
 Truck GetTruckDetails(Vehicle v);
 
+void ShowVehicleMin(Vehicle v, boolean addEntryTime);
+
 #endif // VEHICLE_H_INCLUDED

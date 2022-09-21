@@ -10,13 +10,15 @@ int strlar(string str){
                 return lar;
 }
 //parte b
-void print(string str){
+void print(string str, boolean newLine){
                 int i=0;
                 while(i<MAX-1 && str[i]!='\0'){
                                 printf("%c", str[i]);
                                 i++;
                 }
-                printf("\n");
+                if (newLine == TRUE) {
+                    printf("\n");
+                }
 }
 //parte c
 void scan(string &str){

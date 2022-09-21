@@ -1,4 +1,6 @@
 #include "Car.h"
+#include "boolean.h"
+
 #include <stdio.h>
 #include <locale.h>
 
@@ -14,7 +16,7 @@ void LoadCar(Car &c){
 //Mostrar el auto
 void ShowCar(Car c){
                 printf("La marca es: ");
-                print(c.Brand);
+                print(c.Brand, TRUE);
                 printf("El año es: %d\n", c.Year);
 }
 
