@@ -1,6 +1,7 @@
 #include "string.h"
 #include "vehicle.h"
 
+//Carga del Vehiculo
 void LoadVehicle(Vehicle &v) {
     printf("Ingrese el departamento donde el vehiculo fue empadronado: ");
     scan(v.Department);
@@ -28,6 +29,7 @@ void LoadVehicle(Vehicle &v) {
     }
 }
 
+//Muestra del vehiculo
 void ShowVehicle(Vehicle v) {
     printf("Empadronado en: ");
     print(v.Department, TRUE);
@@ -50,34 +52,42 @@ void ShowVehicle(Vehicle v) {
     }
 }
 
+//Procedimiento devuelve el departamento
 void GetDepartment(Vehicle v, string &d) {
     strcop(d, v.Department);
 }
 
+//Procedimiento devuelve la matricula
 void GetPlate(Vehicle v, string &d) {
     strcop(d, v.Plate);
 }
 
+//Funcion devuelve la cedula
 long int GetDNI(Vehicle v) {
     return v.DNI;
 }
 
+//Funcion devuelve el tiempo de entrada
 Time GetEntryTime(Vehicle v) {
     return v.EntryTime;
 }
 
+//Funcion devuelve el tipo de vehiculo
 VehicleType GetVehicleType(Vehicle v) {
     return v.Type;
 }
 
+//Funcion devuelve los datos del auto
 Car GetCarDetails(Vehicle v) {
     return v.More.CarDetails;
 }
 
+//Funcion devuelve los datos de la camioneta
 Truck GetTruckDetails(Vehicle v) {
     return v.More.TruckDetails;
 }
 
+//Funcion devuelve la matricula, la cedula del conductor y la hora de entrada de un auto
 void ShowVehicleMin(Vehicle v, boolean addEntryTime) {
     printf("Matricula: ");
     print(v.Plate, FALSE);

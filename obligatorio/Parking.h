@@ -9,7 +9,7 @@ typedef struct{
     int Income;
 } Parking;
 
-//Procedimiento inicia el Tope en uno
+//Procedimiento inicia el Tope en uno, y el ingreso en 0.
 void LoadParking(Parking &arr);
 
 //Funcion dice si el arreglo esta lleno
@@ -42,14 +42,19 @@ int GetVehiclePos(Parking arre, string plate);
 // Precondición: El vehiculo está en el arreglo.
 Vehicle GetVehicle(Parking arre, string plate);
 
+//Funcion devuelve los ingresos hasta el momento
 int GetIncome(Parking arre);
 
+//Procedimiento muestra los ingresos
 void ShowIncome(Parking arre);
 
+//Funcion cuenta la cantidad de autos que hay por departamento ingresado
 int QuantityPerDepartment(Parking arr, string depa);
 
+//Procedimiento muestra los vehiculos que estan entre dos horas
 void ShowVehiclesBetween(Parking arr, Time from, Time to);
 
+//Procedimiento muestra las camionetas con carga mas alta a la ingresada
 void ShowTrucksWithMoreKGThan(Parking arr, float kg);
 
 

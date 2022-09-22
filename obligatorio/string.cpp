@@ -1,6 +1,7 @@
 #include "string.h"
 #include <stdio.h>
 
+//Funcion calcula el largo del string
 int strlar(string str){
                 int lar=0, i=0;
                 while(str[i]!='\0' && i<MAX-1){
@@ -9,7 +10,8 @@ int strlar(string str){
                 }
                 return lar;
 }
-//parte b
+
+//Procedimiento muestra el string por pantalla
 void print(string str, boolean newLine){
                 int i=0;
                 while(i<MAX-1 && str[i]!='\0'){
@@ -20,7 +22,8 @@ void print(string str, boolean newLine){
                     printf("\n");
                 }
 }
-//parte c
+
+//Procedimiento para cargar un string
 void scan(string &str){
                 char car;
                 int i = 0;
@@ -35,7 +38,8 @@ void scan(string &str){
                 str[i]= '\0';
 
 }
-//parte d hasta aca anda
+
+//Funcion devuelve TRUE si el primero de ellos es menor (en orden alfabético) que el segundo, o FALSE en caso contrario.
 boolean strmen(string str1, string str2){
     boolean existe=FALSE;
     int i=0;
@@ -53,7 +57,8 @@ boolean strmen(string str1, string str2){
     else
             return FALSE;
 }
-//parte e este anda
+
+//Funcion devuelva TRUE si ambos strings son iguales o FALSE en caso contrario.
 boolean streq(string str1, string str2){
                 boolean iguales=TRUE;
                 int i=0;
@@ -68,7 +73,8 @@ boolean streq(string str1, string str2){
                 else
                     return FALSE;
 }
-//parte f
+
+//Procedimiento copia el segundo en el primero.
 void strcop(string &str1, string str2){
     int i=0;
     while(i<MAX-1 && str2[i]!='\0'){
@@ -77,6 +83,8 @@ void strcop(string &str1, string str2){
     }
     str1[i]='\0';
 }
+
+//Procedimiento concatena el 2do string con el primero y lo guarda en el primero
 void strcon(string &str1, string str2){
     int i=0,j=strlar(str1);
     while(i<MAX-1 && str2[i]!='\0'){
@@ -85,6 +93,8 @@ void strcon(string &str1, string str2){
     }
     str1[j+i]='\0';
 }
+
+//Procedimiento intercambia el primer string con el 2do
 void strswp(string &str1, string &str2){
     int i=0;
     char aux;

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "vehicleType.h"
 
+//Carga el tipo de vehiculo
 void LoadVehicleType(VehicleType &vt) {
     int opt = 0;
     do {
@@ -15,6 +16,7 @@ void LoadVehicleType(VehicleType &vt) {
     }
 }
 
+//Muestra el tipo de vehiculo
 void ShowVehicleType(VehicleType vt) {
     printf(vt == CAR ? "Auto" : "Camioneta");
     printf("\r\n");

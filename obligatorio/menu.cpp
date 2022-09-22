@@ -2,6 +2,7 @@
 
 #include "menu.h"
 
+//Funcion muestra el menu principal
 int ShowMainMenu() {
     printf("--------------------\r\n");
     printf("-- Menu principal --\r\n");
@@ -23,6 +24,7 @@ int ShowMainMenu() {
     return opt;
 }
 
+//Funcion muestra el menu secundario
 int ShowSecondaryMenu() {
     printf("-------------------------\r\n");
     printf("-- Consultas y listado --\r\n");

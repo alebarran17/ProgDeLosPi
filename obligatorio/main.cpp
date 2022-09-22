@@ -104,7 +104,7 @@ int main()
                         do {
                             LoadTime(now);
                             if (TimeLessThan(GetEntryTime(v), now)) {
-                                printf("El vehiculo no puede salir antes de que entro bro\r\n");
+                                printf("El vehiculo no puede salir antes de que entro\r\n");
                             }
                         } while (TimeLessThan(GetEntryTime(v), now));
 

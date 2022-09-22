@@ -71,3 +71,75 @@
 	"Truck.h"
 	<stdio.h>
 
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\boolean.cpp
+	"boolean.h"
+	<stdio.h>
+
+1663860286 c:\users\usuario\documents\github\progdelospi\obligatorio\boolean.h
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\car.cpp
+	"Car.h"
+	"boolean.h"
+	<stdio.h>
+	<locale.h>
+
+1663860286 c:\users\usuario\documents\github\progdelospi\obligatorio\car.h
+	"string.h"
+
+1663864846 c:\users\usuario\documents\github\progdelospi\obligatorio\string.h
+	"boolean.h"
+	<stdio.h>
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\main.cpp
+	"Parking.h"
+	"menu.h"
+
+1663862005 c:\users\usuario\documents\github\progdelospi\obligatorio\parking.h
+	"vehicle.h"
+
+1663863329 c:\users\usuario\documents\github\progdelospi\obligatorio\vehicle.h
+	"string.h"
+	"time.h"
+	"vehicleType.h"
+	"Car.h"
+	"Truck.h"
+
+1663862350 c:\users\usuario\documents\github\progdelospi\obligatorio\time.h
+	"boolean.h"
+
+1663862539 c:\users\usuario\documents\github\progdelospi\obligatorio\vehicletype.h
+
+1663860286 c:\users\usuario\documents\github\progdelospi\obligatorio\truck.h
+	"string.h"
+
+1663864323 c:\users\usuario\documents\github\progdelospi\obligatorio\menu.h
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\menu.cpp
+	<stdio.h>
+	"menu.h"
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\parking.cpp
+	"Parking.h"
+	"Truck.h"
+	<stdio.h>
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\string.cpp
+	"string.h"
+	<stdio.h>
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\time.cpp
+	<stdio.h>
+	"time.h"
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\truck.cpp
+	"Truck.h"
+	<stdio.h>
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\vehicle.cpp
+	"string.h"
+	"vehicle.h"
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\vehicletype.cpp
+	<stdio.h>
+	"vehicleType.h"
+
