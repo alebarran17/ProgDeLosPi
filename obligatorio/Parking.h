@@ -1,7 +1,7 @@
 #ifndef PARKING_H_INCLUDED
 #define PARKING_H_INCLUDED
 #include "vehicle.h"
-const int MAX_Park = 3;
+const int MAX_Park = 2;
 
 typedef struct{
     Vehicle ArrVehicle[MAX_Park];

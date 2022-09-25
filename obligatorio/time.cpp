@@ -42,6 +42,9 @@ Time GetDifference(Time from, Time to) {
     Time t;
     t.Hours = to.Hours - from.Hours;
     t.Minutes = to.Minutes - from.Minutes;
+    if(t.Minutes<0){
+                t.Minutes=60+t.Minutes;
+    }
     return t;
 }
 

@@ -32,7 +32,7 @@ boolean IsEmpty(Parking arr) {
 
 //Muestra los elementos del arreglo
 void ShowVehicles(Parking arr) {
-    printf("Hay %d elemetos en el arreglo...\r\n", arr.Max);
+    printf("Hay %d de vehiculos en el estacionamiento...\r\n", arr.Max);
     for (int i = 0; i < arr.Max; i++) {
         ShowVehicleMin(arr.ArrVehicle[i], TRUE);
         printf("\r\n");
