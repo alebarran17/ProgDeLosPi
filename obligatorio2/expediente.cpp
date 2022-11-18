@@ -6,8 +6,12 @@ void CargarExpediente(Expediente &e) {
     printf("Ingrese el código: ");
     scanf("%d", &e.id);
 
+    printf("\r\n");
+
     printf("Ingrese la carátula: ");
     scan(e.caratula);
+
+    printf("\r\n");
 
     printf("Ingrese la cantidad de páginas: ");
     scanf("%d", &e.paginas);

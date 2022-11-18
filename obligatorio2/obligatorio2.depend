@@ -5,9 +5,10 @@
 
 1668548333 e:\repos\progdelospi\obligatorio2\boolean.h
 
-1668809386 source:e:\repos\progdelospi\obligatorio2\main.cpp
+1668812206 source:e:\repos\progdelospi\obligatorio2\main.cpp
 	<locale.h>
 	"expediente.h"
+	"revision.h"
 
 1668809096 e:\repos\progdelospi\obligatorio2\expediente.h
 	"stringDinamico.h"
@@ -20,6 +21,27 @@
 	"stringDinamico.h"
 	<stdio.h>
 
-1668809232 source:e:\repos\progdelospi\obligatorio2\expediente.cpp
+1668812010 source:e:\repos\progdelospi\obligatorio2\expediente.cpp
 	"expediente.h"
+
+1668811029 source:e:\repos\progdelospi\obligatorio2\fecha.cpp
+	"Fecha.h"
+	<stdio.h>
+
+1668809811 e:\repos\progdelospi\obligatorio2\fecha.h
+	"boolean.h"
+
+1668811427 e:\repos\progdelospi\obligatorio2\revision.h
+	"fecha.h"
+	"stringDinamico.h"
+	"resultadoRevision.h"
+
+1668811224 e:\repos\progdelospi\obligatorio2\resultadorevision.h
+
+1668811908 source:e:\repos\progdelospi\obligatorio2\resultadorevision.cpp
+	<stdio.h>
+	"resultadoRevision.h"
+
+1668812214 source:e:\repos\progdelospi\obligatorio2\revision.cpp
+	"revision.h"
 
