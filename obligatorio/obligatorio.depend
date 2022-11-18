@@ -1,0 +1,145 @@
+# depslib dependency file v1.0
+1663621653 source:d:\progdelospi\obligatorio\boolean.cpp
+	"boolean.h"
+	<stdio.h>
+
+1663621750 d:\progdelospi\obligatorio\boolean.h
+
+1663710989 source:d:\progdelospi\obligatorio\string.cpp
+	"string.h"
+	<stdio.h>
+
+1663711134 d:\progdelospi\obligatorio\string.h
+	"boolean.h"
+	<stdio.h>
+
+1663713371 source:d:\progdelospi\obligatorio\time.cpp
+	<stdio.h>
+	"time.h"
+
+1663711961 d:\progdelospi\obligatorio\time.h
+	"boolean.h"
+
+1663713013 source:d:\progdelospi\obligatorio\main.cpp
+	"Parking.h"
+	"menu.h"
+
+1663711463 d:\progdelospi\obligatorio\vehicle.h
+	"string.h"
+	"time.h"
+	"vehicleType.h"
+	"Car.h"
+	"Truck.h"
+
+1663713727 source:d:\progdelospi\obligatorio\vehicle.cpp
+	"string.h"
+	"vehicle.h"
+
+1663711108 source:d:\progdelospi\obligatorio\car.cpp
+	"Car.h"
+	"boolean.h"
+	<stdio.h>
+	<locale.h>
+
+1663621393 d:\progdelospi\obligatorio\car.h
+	"string.h"
+
+1663711723 source:d:\progdelospi\obligatorio\truck.cpp
+	"Truck.h"
+	<stdio.h>
+
+1663621393 d:\progdelospi\obligatorio\truck.h
+	"string.h"
+
+1663625604 source:d:\progdelospi\obligatorio\menu.cpp
+	<stdio.h>
+	"menu.h"
+
+1663624616 d:\progdelospi\obligatorio\menu.h
+
+1663624138 d:\progdelospi\obligatorio\vehicletype.h
+
+1663713140 source:d:\progdelospi\obligatorio\vehicletype.cpp
+	<stdio.h>
+	"vehicleType.h"
+
+1663714287 d:\progdelospi\obligatorio\parking.h
+	"vehicle.h"
+
+1663714343 source:d:\progdelospi\obligatorio\parking.cpp
+	"Parking.h"
+	"Truck.h"
+	<stdio.h>
+
+1663864440 source:c:\users\usuario\documents\github\progdelospi\obligatorio\boolean.cpp
+	"boolean.h"
+	<stdio.h>
+
+1663860286 c:\users\usuario\documents\github\progdelospi\obligatorio\boolean.h
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\car.cpp
+	"Car.h"
+	"boolean.h"
+	<stdio.h>
+	<locale.h>
+
+1663860286 c:\users\usuario\documents\github\progdelospi\obligatorio\car.h
+	"string.h"
+
+1663864846 c:\users\usuario\documents\github\progdelospi\obligatorio\string.h
+	"boolean.h"
+	<stdio.h>
+
+1663866503 source:c:\users\usuario\documents\github\progdelospi\obligatorio\main.cpp
+	"Parking.h"
+	"menu.h"
+
+1664032784 c:\users\usuario\documents\github\progdelospi\obligatorio\parking.h
+	"vehicle.h"
+
+1663863329 c:\users\usuario\documents\github\progdelospi\obligatorio\vehicle.h
+	"string.h"
+	"time.h"
+	"vehicleType.h"
+	"Car.h"
+	"Truck.h"
+
+1663862350 c:\users\usuario\documents\github\progdelospi\obligatorio\time.h
+	"boolean.h"
+
+1663862539 c:\users\usuario\documents\github\progdelospi\obligatorio\vehicletype.h
+
+1663860286 c:\users\usuario\documents\github\progdelospi\obligatorio\truck.h
+	"string.h"
+
+1663864323 c:\users\usuario\documents\github\progdelospi\obligatorio\menu.h
+
+1663864323 source:c:\users\usuario\documents\github\progdelospi\obligatorio\menu.cpp
+	<stdio.h>
+	"menu.h"
+
+1664062807 source:c:\users\usuario\documents\github\progdelospi\obligatorio\parking.cpp
+	"Parking.h"
+	"Truck.h"
+	<stdio.h>
+
+1663864846 source:c:\users\usuario\documents\github\progdelospi\obligatorio\string.cpp
+	"string.h"
+	<stdio.h>
+
+1664063248 source:c:\users\usuario\documents\github\progdelospi\obligatorio\time.cpp
+	<stdio.h>
+	"time.h"
+
+1663860286 source:c:\users\usuario\documents\github\progdelospi\obligatorio\truck.cpp
+	"Truck.h"
+	<stdio.h>
+
+1663863329 source:c:\users\usuario\documents\github\progdelospi\obligatorio\vehicle.cpp
+	"string.h"
+	"vehicle.h"
+
+1663862539 source:c:\users\usuario\documents\github\progdelospi\obligatorio\vehicletype.cpp
+	<stdio.h>
+	"vehicleType.h"
+
