@@ -1,9 +1,7 @@
-#include <iostream>
-
-using namespace std;
+#include <locale.h>
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    setlocale(LC_ALL, "spanish");
     return 0;
 }

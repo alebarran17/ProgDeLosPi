@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1668548331 source:e:\repos\progdelospi\obligatorio2\boolean.cpp
+	"boolean.h"
+	<stdio.h>
+
+1668548333 e:\repos\progdelospi\obligatorio2\boolean.h
+
+1668809386 source:e:\repos\progdelospi\obligatorio2\main.cpp
+	<locale.h>
+	"expediente.h"
+
+1668809096 e:\repos\progdelospi\obligatorio2\expediente.h
+	"stringDinamico.h"
+
+1668548326 e:\repos\progdelospi\obligatorio2\stringdinamico.h
+	"boolean.h"
+	<stdio.h>
+
+1668809442 source:e:\repos\progdelospi\obligatorio2\stringdinamico.cpp
+	"stringDinamico.h"
+	<stdio.h>
+
+1668809232 source:e:\repos\progdelospi\obligatorio2\expediente.cpp
+	"expediente.h"
+

@@ -29,6 +29,8 @@ void strcop(string from, string &to) {
 }
 
 void scan(string &s) {
+    fflush(stdin);
+
     string aux = new char [MAX];
 
     char c;
