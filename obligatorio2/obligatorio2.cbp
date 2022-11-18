@@ -32,7 +32,21 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="boolean.cpp" />
+		<Unit filename="boolean.h" />
+		<Unit filename="escribano.cpp" />
+		<Unit filename="escribano.h" />
+		<Unit filename="expediente.cpp" />
+		<Unit filename="expediente.h" />
+		<Unit filename="fecha.cpp" />
+		<Unit filename="fecha.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="resultadoRevision.cpp" />
+		<Unit filename="resultadoRevision.h" />
+		<Unit filename="revision.cpp" />
+		<Unit filename="revision.h" />
+		<Unit filename="stringDinamico.cpp" />
+		<Unit filename="stringDinamico.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
