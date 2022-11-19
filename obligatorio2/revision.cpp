@@ -40,7 +40,7 @@ int ObtenerExpedienteIdRevision(Revision r) {
 }
 
 Fecha ObtenerFechaRevision(Revision r) {
-    return r.fecha
+    return r.fecha;
 }
 
 void ObtenerDescripcionRevision(Revision r, string &s) {
