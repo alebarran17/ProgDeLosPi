@@ -3,20 +3,17 @@
 void CargarExpediente(Expediente &e) {
     printf("=========== CARGAR EXPEDIENTE =========\r\n");
 
-    printf("Ingrese el código: ");
+    printf("Ingrese el código:\r\n");
+    printf(">>");
     scanf("%d", &e.id);
 
-    printf("\r\n");
-
-    printf("Ingrese la carátula: ");
+    printf("Ingrese la carátula:\r\n");
+    printf(">>");
     scan(e.caratula);
 
-    printf("\r\n");
-
-    printf("Ingrese la cantidad de páginas: ");
+    printf("Ingrese la cantidad de páginas:\r\n");
+    printf(">>");
     scanf("%d", &e.paginas);
-
-    printf("\r\n");
 }
 
 void MostrarExpediente(Expediente e) {
