@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ABBExpediente.cpp" />
+		<Unit filename="ABBExpediente.h" />
 		<Unit filename="boolean.cpp" />
 		<Unit filename="boolean.h" />
 		<Unit filename="escribano.cpp" />
