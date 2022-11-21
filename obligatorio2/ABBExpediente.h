@@ -9,16 +9,21 @@ typedef struct node {
     node* der;
 } ABBExpediente;
 
+typedef ABBExpediente* Arbol;
+
 // Agrega un expediente al arbol.
-void AgregarExpediente(ABBExpediente*& root, Expediente e);
+void AgregarExpediente(Arbol& root, Expediente e);
 
 // Imprime los nodos del arbol en orden.
-void MostrarArbol(ABBExpediente* root, Expediente e);
+void MostrarArbol(Arbol root, Expediente e);
 
 // Devuelve un puntero al expediente buscado, o NULL si no existe.
-Expediente* BuscarExpediente(ABBExpediente* root, int id);
+Expediente* BuscarExpediente(Arbol root, int id);
 
-// Devuelve un puntero al siguiente nodo del arbol según la propiedad ABB.
-ABBExpediente* SiguienteNodo(ABBExpediente* root, int id);
+void ListarExpedientes(Arbol root);
+
+void BorrarExpediente(Arbol& root, int id);
+
+Arbol BuscarExpedienteMinimo(Arbol root);
 
 #endif // ABBEXPEDIENTE_H_INCLUDED

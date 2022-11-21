@@ -1,7 +1,7 @@
 #include "expediente.h"
 
 void CargarExpediente(Expediente &e) {
-    printf("==== Cargar expediente ====\r\n");
+    printf("=========== CARGAR EXPEDIENTE =========\r\n");
 
     printf("Ingrese el código: ");
     scanf("%d", &e.id);
