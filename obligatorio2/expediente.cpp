@@ -38,3 +38,9 @@ void ObtenerCaratulaExpediente(Expediente e, string &s) {
 int ObtenerPaginasExpediente(Expediente e) {
     return e.paginas;
 }
+
+void GuardarExpediente(FILE* f, Expediente e) {
+    fwrite(&e.id, sizeof(int), 1, f);
+    GuardarString(e.caratula, f);
+    fwrite(&e.paginas, sizeof(int), 1, f);
+}

@@ -26,4 +26,8 @@ void BorrarExpediente(Arbol& root, int id);
 
 Arbol BuscarExpedienteMinimo(Arbol root);
 
+void GuardarArbolExpedientes(FILE* f, Arbol root);
+
+int ContarExpedientes(Arbol root);
+
 #endif // ABBEXPEDIENTE_H_INCLUDED

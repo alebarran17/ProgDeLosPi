@@ -120,24 +120,24 @@ boolean streq(string s1, string s2){
 }
 
 // Precondición: El archivo viene abierto para escritura.
-void Bajar_String (string s, FILE * f){
-                int i=0;
-                while(s[i] != '\0'){
-                            fwrite(&s[i], sizeof(char), 1, f);
-                            i++;
-                }
-                fwrite(&s[i], sizeof(char), 1, f);
+void GuardarString (string s, FILE * f){
+    int i=0;
+    while(s[i] != '\0'){
+        fwrite(&s[i], sizeof(char), 1, f);
+        i++;
+    }
+    fwrite(&s[i], sizeof(char), 1, f);
 }
 
 // Precondición: El archivo viene abierto para lectura, y el string debe venir creado.
-void Levantar_String (string &s, FILE * f){
-                string aux = new char[MAX];
-                int i=0;
-                fread(&aux[i], sizeof(char), 1, f);
-                while(aux[i]!='\0'){
-                            i++;
-                            fread(&aux[i], sizeof(char), 1, f);
-                }
-                strcop(aux, s);
-                strdestruir(aux);
+void CargarString (string &s, FILE * f){
+    string aux = new char[MAX];
+    int i=0;
+    fread(&aux[i], sizeof(char), 1, f);
+    while(aux[i]!='\0'){
+        i++;
+        fread(&aux[i], sizeof(char), 1, f);
+    }
+    strcop(aux, s);
+    strdestruir(aux);
 }

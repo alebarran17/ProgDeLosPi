@@ -26,9 +26,9 @@ boolean strmen(string s1, string s2);
 boolean streq(string s1, string s2);
 
 // Precondición: El archivo viene abierto para escritura.
-void Bajar_String (string s, FILE * f);
+void GuardarString(string s, FILE * f);
 
 // Precondición: El archivo viene abierto para lectura.
-void Levantar_String (string &s, FILE * f);
+void CargarString(string &s, FILE * f);
 
 #endif // STRINGDINAMICO_H_INCLUDED

@@ -66,3 +66,19 @@ void BorrarExpediente(Arbol& root, int id) {
 Arbol BuscarExpedienteMinimo(Arbol root) {
     return root->der != NULL ? root->der : root;
 }
+
+void GuardarArbolExpedientes(FILE* f, Arbol root) {
+    if (root != NULL) {
+        GuardarArbolExpedientes(f, root->izq);
+        GuardarArbolExpedientes(f, root->der);
+        GuardarExpediente(f, root->info);
+    }
+}
+
+int ContarExpedientes(Arbol root) {
+    if (root != NULL) {
+        return 1 + ContarExpedientes(root->izq) + ContarExpedientes(root->der);
+    } else {
+        return 0;
+    }
+}

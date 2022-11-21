@@ -25,6 +25,9 @@ int main()
     setlocale(LC_ALL, "spanish");
 
     ABBExpediente* root = NULL;
+    Expediente* ptr = NULL;
+
+    FILE* expFile = fopen("expedientes.dat", "wb");
 
     int opt;
     while ((opt = MostrarMenuPrincipal()) != 4) {
@@ -44,7 +47,6 @@ int main()
                 break;
             case 3:
                 printf("Ingrese el código del expediente a borrar:\r\n");
-                Expediente* ptr = NULL;
                 int id;
                 do {
                     printf(">> ");
@@ -57,6 +59,13 @@ int main()
                 break;
         }
         printf("\r\n");
+    }
+
+    int total = ContarExpedientes(root);
+    if (total > 0) {
+        printf("Guardando %d expedientes...\r\n", total);
+        GuardarArbolExpedientes(expFile, root);
+        printf("Expedientes guardados correctamente!\r\n", total);
     }
 
     return 0;
