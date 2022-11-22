@@ -47,3 +47,19 @@ boolean FechaEsValida(Fecha f){
     return f.dia >= 1 && f.dia <= max ? TRUE : FALSE;
 }
 
+
+void GuardarFecha(Fecha F, string NomArch){
+                FILE *f = fopen(NomArch, "ab");
+                fwrite (&F.dia, sizeof(int), 1, f);
+                fwrite (&F.mes, sizeof(int), 1, f);
+                fwrite (&F.anio, sizeof(int), 1, f);
+                fclose(f);
+}
+
+void CargarFecha(Fecha &F, string NomArch){
+                FILE * f = fopen(NomArch, "rb");
+                fread(&F.dia, sizeof(int), 1, f);
+                fread(&F.mes, sizeof(int), 1, f);
+                fread(&F.anio, sizeof(int), 1, f);
+                fclose(f);
+}

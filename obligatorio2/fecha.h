@@ -27,4 +27,8 @@ int ObtenerAnioFecha(Fecha f);
 //Función que determina si una fecha es válida.
 boolean FechaEsValida(Fecha f);
 
+void GuardarFecha(Fecha F, string NomArch);
+
+void CargarFecha(Fecha &F, string NomArch);
+
 #endif // FECHA_H_INCLUDED

@@ -50,3 +50,21 @@ void ObtenerDescripcionRevision(Revision r, string &s) {
 ResultadoRevision ObtenerResultadoRevision(Revision r) {
     return r.resultado;
 }
+
+void GuardarRevision(Revision R, string NomArch){
+                FILE * f = fopen(NomArch, "ab");
+                fwrite(&R.expedienteId, sizeof(int), 1, f);
+                BajarFecha(R.fecha, NomArch);
+                Bajar_String(R.descripcion, NomArch);
+                fwrite(&R.resultado, sizeof(enum), 1, f);
+                fclose(f);
+}
+
+void CargarRevision(Revision &R, string NomArch){
+                FILE * f = fopen(NomArch, "rb");
+                fread(&R.expedienteId, sizeof(int), 1, f);
+                CargarFecha(R.fecha, NomArch);
+                CargarString(R.descripcion, NomArch);
+                fread(&R.resultado, sizeof(enum), 1, f);
+                fclose(f);
+}

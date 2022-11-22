@@ -24,4 +24,8 @@ void ObtenerDescripcionRevision(Revision r, string &s);
 
 ResultadoRevision ObtenerResultadoRevision(Revision r);
 
+void GuardarRevision(Revision R, string NomArch);
+
+void CargarRevision(Revision &R, string NomArch);
+
 #endif // REVISION_H_INCLUDED
