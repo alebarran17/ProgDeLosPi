@@ -25,9 +25,18 @@ int main()
     setlocale(LC_ALL, "spanish");
 
     ABBExpediente* root = NULL;
-    Expediente* ptr = NULL;
 
-    FILE* expFile = fopen("expedientes.dat", "wb");
+    FILE* expFile = fopen("expedientes.dat", "rb");
+    LeerArbolExpedientes(expFile, root);
+    fclose(expFile);
+
+    expFile = fopen("expedientes.dat", "wb");
+
+    int total = ContarExpedientes(root);
+    if (total > 0) {
+        printf("%d expedientes fueron cargados correctamente!\r\n", total);
+        printf("\r\n");
+    }
 
     int opt;
     while ((opt = MostrarMenuPrincipal()) != 4) {
@@ -40,32 +49,34 @@ int main()
                     printf("Ya existe un expediente con ese código.\r\n");
                 } else {
                     AgregarExpediente(root, e);
+                    total++;
                 }
                 break;
             case 2:
+                printf("Actualmente hay %d expedientes guardados...\r\n", total);
                 ListarExpedientes(root);
                 break;
             case 3:
                 printf("Ingrese el código del expediente a borrar:\r\n");
+
                 int id;
                 do {
                     printf(">> ");
                     scanf("%d", &id);
-
-                    ptr = BuscarExpediente(root, id);
-                } while (ptr == NULL);
+                } while (BuscarExpediente(root, id) == NULL);
 
                 BorrarExpediente(root, id);
+                total--;
                 break;
         }
         printf("\r\n");
     }
 
-    int total = ContarExpedientes(root);
+    total = ContarExpedientes(root);
     if (total > 0) {
         printf("Guardando %d expedientes...\r\n", total);
         GuardarArbolExpedientes(expFile, root);
-        printf("Expedientes guardados correctamente!\r\n", total);
+        printf("Expedientes guardados correctamente!\r\n");
     }
 
     return 0;

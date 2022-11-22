@@ -21,4 +21,6 @@ int ObtenerPaginasExpediente(Expediente e);
 
 void GuardarExpediente(FILE* f, Expediente e);
 
+void LeerExpediente(FILE* f, Expediente& e);
+
 #endif // EXPEDIENTE_H_INCLUDED

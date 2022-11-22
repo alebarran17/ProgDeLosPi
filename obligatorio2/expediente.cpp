@@ -44,3 +44,9 @@ void GuardarExpediente(FILE* f, Expediente e) {
     GuardarString(e.caratula, f);
     fwrite(&e.paginas, sizeof(int), 1, f);
 }
+
+void LeerExpediente(FILE* f, Expediente& e) {
+    fread(&e.id, sizeof(int), 1, f);
+    CargarString(e.caratula, f);
+    fread(&e.paginas, sizeof(int), 1, f);
+}

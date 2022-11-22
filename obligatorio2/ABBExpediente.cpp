@@ -67,6 +67,17 @@ Arbol BuscarExpedienteMinimo(Arbol root) {
     return root->der != NULL ? root->der : root;
 }
 
+void LeerArbolExpedientes(FILE* f, Arbol &root) {
+    Expediente e;
+    root = NULL;
+    LeerExpediente(f, e);
+
+    while (!feof(f)) {
+        AgregarExpediente(root, e);
+        LeerExpediente(f, e);
+    }
+}
+
 void GuardarArbolExpedientes(FILE* f, Arbol root) {
     if (root != NULL) {
         GuardarArbolExpedientes(f, root->izq);
