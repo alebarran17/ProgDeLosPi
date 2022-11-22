@@ -1,45 +1,11 @@
 #include <locale.h>
 
 #include "ABBExpediente.h"
+#include "menu.h"
 
-int MostrarMenuPrincipal() {
-    printf("============ MENU PRINCIPAL ===========\r\n");
-    printf("1> Agregar expediente\r\n");
-    printf("2> Listar expedientes\r\n");
-    printf("3> Borrar expediente\r\n");
-    printf("4> Salir\r\n");
-
-    int o;
-    do {
-        printf(">> ");
-        scanf("%d", &o);
-    } while (o < 1 || o > 4);
-
-    printf("\r\n");
-
-    return o;
-}
-
-int main()
-{
-    setlocale(LC_ALL, "spanish");
-
-    ABBExpediente* root = NULL;
-
-    FILE* expFile = fopen("expedientes.dat", "rb");
-    LeerArbolExpedientes(expFile, root);
-    fclose(expFile);
-
-    expFile = fopen("expedientes.dat", "wb");
-
-    int total = ContarExpedientes(root);
-    if (total > 0) {
-        printf("%d expedientes fueron cargados correctamente!\r\n", total);
-        printf("\r\n");
-    }
-
+void ProcesarMenuExpedientes(ABBExpediente*& root, int& total) {
     int opt;
-    while ((opt = MostrarMenuPrincipal()) != 4) {
+    while ((opt = MostrarMenuExpedientes()) != 4) {
         switch (opt) {
             case 1:
                 Expediente e;
@@ -71,11 +37,51 @@ int main()
         }
         printf("\r\n");
     }
+}
+
+void ProcesarMenuRevisiones() {
+int opt;
+    while ((opt = MostrarMenuRevisiones()) != 1) {
+        printf("\r\n");
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "spanish");
+
+    ABBExpediente* root = NULL;
+
+    FILE* expFile = fopen("expedientes.dat", "rb");
+    if (expFile != NULL) LeerArbolExpedientes(expFile, root);
+    fclose(expFile);
+
+    int total = ContarExpedientes(root);
+    if (total > 0) {
+        printf("%d expedientes fueron cargados correctamente!\r\n", total);
+        printf("\r\n");
+    }
+
+    int opt;
+    while ((opt = IniciarMenu()) != 3) {
+        switch (opt) {
+            case 1:
+                ProcesarMenuExpedientes(root, total);
+                break;
+            case 2:
+                ProcesarMenuRevisiones();
+                break;
+        }
+        printf("\r\n");
+    }
 
     total = ContarExpedientes(root);
     if (total > 0) {
         printf("Guardando %d expedientes...\r\n", total);
+
+        expFile = fopen("expedientes.dat", "wb");
         GuardarArbolExpedientes(expFile, root);
+
         printf("Expedientes guardados correctamente!\r\n");
     }
 

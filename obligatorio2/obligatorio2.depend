@@ -57,13 +57,13 @@
 1668815506 e:\repos\progdelospi\obligatorio2\escribano.h
 	"stringDinamico.h"
 
-1669152773 source:d:\repos\personal\progdelospi\obligatorio2\abbexpediente.cpp
+1669153978 source:d:\repos\personal\progdelospi\obligatorio2\abbexpediente.cpp
 	"ABBExpediente.h"
 
-1669152149 d:\repos\personal\progdelospi\obligatorio2\abbexpediente.h
+1669153978 d:\repos\personal\progdelospi\obligatorio2\abbexpediente.h
 	"expediente.h"
 
-1669071205 d:\repos\personal\progdelospi\obligatorio2\expediente.h
+1669153978 d:\repos\personal\progdelospi\obligatorio2\expediente.h
 	"stringDinamico.h"
 
 1669069819 d:\repos\personal\progdelospi\obligatorio2\stringdinamico.h
@@ -83,19 +83,21 @@
 1669066196 d:\repos\personal\progdelospi\obligatorio2\escribano.h
 	"stringDinamico.h"
 
-1669152686 source:d:\repos\personal\progdelospi\obligatorio2\expediente.cpp
+1669153978 source:d:\repos\personal\progdelospi\obligatorio2\expediente.cpp
 	"expediente.h"
 
-1669066196 source:d:\repos\personal\progdelospi\obligatorio2\fecha.cpp
+1669153977 source:d:\repos\personal\progdelospi\obligatorio2\fecha.cpp
 	"Fecha.h"
 	<stdio.h>
 
-1669066196 d:\repos\personal\progdelospi\obligatorio2\fecha.h
+1669153977 d:\repos\personal\progdelospi\obligatorio2\fecha.h
+	"stringDinamico.h"
 	"boolean.h"
 
-1669152991 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
+1669155099 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
 	<locale.h>
 	"ABBExpediente.h"
+	"menu.h"
 
 1669066196 source:d:\repos\personal\progdelospi\obligatorio2\resultadorevision.cpp
 	<stdio.h>
@@ -103,10 +105,10 @@
 
 1669066196 d:\repos\personal\progdelospi\obligatorio2\resultadorevision.h
 
-1669066196 source:d:\repos\personal\progdelospi\obligatorio2\revision.cpp
+1669154841 source:d:\repos\personal\progdelospi\obligatorio2\revision.cpp
 	"revision.h"
 
-1669066196 d:\repos\personal\progdelospi\obligatorio2\revision.h
+1669153977 d:\repos\personal\progdelospi\obligatorio2\revision.h
 	"fecha.h"
 	"stringDinamico.h"
 	"resultadoRevision.h"
@@ -151,4 +153,10 @@
 1669130370 c:\users\usuario\documents\github\progdelospi\obligatorio2\fecha.h
 	"stringDinamico.h"
 	"boolean.h"
+
+1669155415 d:\repos\personal\progdelospi\obligatorio2\menu.h
+
+1669155196 source:d:\repos\personal\progdelospi\obligatorio2\menu.cpp
+	<stdio.h>
+	"menu.h"
 
