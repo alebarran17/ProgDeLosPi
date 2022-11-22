@@ -35,7 +35,7 @@ void InsertarRevision (Lista & L, Revision R){
                                                 aux -> sigRev = L;
                                                 L = aux;
                                 } else {
-                                InsertarRevision(L -> sig, R);
+                                InsertarRevision(L -> sigRev, R);
                                 }
                 }
 }
@@ -49,8 +49,17 @@ void GuardarListaRevisiones(Lista L, string nomArch){
                 fclose(f);
 }
 
-void LevantarListaRevisiones(Lista L){
-
+void LevantarListaRevisiones(Lista &L, string NomArch){
+                FILE * f = fopen (NomArch, "rb");
+                Revision buffer;
+                CrearListaRevision (L);
+                CargarRevision (buffer, f);
+                while (!feof(f))
+                {
+                InsertarRevision(L, buffer);
+                CargarRevision (buffer, f);
+                }
+                fclose (f);
 }
 
 void ListarRPorExpediente(Lista L, int ID){

@@ -26,6 +26,7 @@ ResultadoRevision ObtenerResultadoRevision(Revision r);
 
 void GuardarRevision(Revision R, string NomArch);
 
-void CargarRevision(Revision &R, string NomArch);
+//Precondicion: el archivo debe venir abierto para lectura.
+void CargarRevision(Revision &R, FILE * f);
 
 #endif // REVISION_H_INCLUDED

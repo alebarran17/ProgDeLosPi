@@ -1,6 +1,6 @@
 #ifndef FECHA_H_INCLUDED
 #define FECHA_H_INCLUDED
-
+#include "stringDinamico.h"
 #include "boolean.h"
 
 typedef struct {

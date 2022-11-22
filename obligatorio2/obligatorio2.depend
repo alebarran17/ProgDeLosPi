@@ -115,3 +115,40 @@
 	"stringDinamico.h"
 	<stdio.h>
 
+1669127128 source:c:\users\usuario\documents\github\progdelospi\obligatorio2\abbexpediente.cpp
+	"ABBExpediente.h"
+
+1669127128 c:\users\usuario\documents\github\progdelospi\obligatorio2\abbexpediente.h
+	"expediente.h"
+
+1669127128 c:\users\usuario\documents\github\progdelospi\obligatorio2\expediente.h
+	"stringDinamico.h"
+
+1669127128 c:\users\usuario\documents\github\progdelospi\obligatorio2\stringdinamico.h
+	"boolean.h"
+	<stdio.h>
+
+1668810019 c:\users\usuario\documents\github\progdelospi\obligatorio2\boolean.h
+
+1668810019 source:c:\users\usuario\documents\github\progdelospi\obligatorio2\boolean.cpp
+	"boolean.h"
+	<stdio.h>
+
+1669127128 source:c:\users\usuario\documents\github\progdelospi\obligatorio2\escribano.cpp
+	"stdio.h"
+	"escribano.h"
+
+1669127128 c:\users\usuario\documents\github\progdelospi\obligatorio2\escribano.h
+	"stringDinamico.h"
+
+1669127128 source:c:\users\usuario\documents\github\progdelospi\obligatorio2\expediente.cpp
+	"expediente.h"
+
+1669127780 source:c:\users\usuario\documents\github\progdelospi\obligatorio2\fecha.cpp
+	"Fecha.h"
+	<stdio.h>
+
+1669130370 c:\users\usuario\documents\github\progdelospi\obligatorio2\fecha.h
+	"stringDinamico.h"
+	"boolean.h"
+

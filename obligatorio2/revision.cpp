@@ -60,11 +60,10 @@ void GuardarRevision(Revision R, string NomArch){
                 fclose(f);
 }
 
-void CargarRevision(Revision &R, string NomArch){
-                FILE * f = fopen(NomArch, "rb");
+//Precondicion: el archivo debe venir abierto para lectura.
+void CargarRevision(Revision &R, FILE * f){
                 fread(&R.expedienteId, sizeof(int), 1, f);
                 CargarFecha(R.fecha, NomArch);
                 CargarString(R.descripcion, NomArch);
                 fread(&R.resultado, sizeof(enum), 1, f);
-                fclose(f);
 }

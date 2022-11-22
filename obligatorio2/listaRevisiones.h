@@ -5,7 +5,7 @@
 #include "boolean.h"
 
 typedef struct nodoR {
-                revision infoRev;
+                Revision infoRev;
                 nodoR * sigRev;
 } ListaRevision;
 
@@ -25,7 +25,7 @@ void InsertarRevision (Lista & L, Revision R);
 
 void GuardarListaRevisiones(Lista L, string nomArch);
 
-void LevantarListaRevisiones(Lista L);
+void LevantarListaRevisiones(Lista &L, string NomArch);
 
 void ListarRPorExpediente(Lista L, int ID);
 
