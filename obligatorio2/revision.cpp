@@ -1,27 +1,21 @@
 #include "revision.h"
 
 void CargarRevision(Revision &r) {
-    printf("==== Cargar revisión ====\r\n");
+    printf("============ CARGAR REVISION ==========\r\n");
 
-    printf("Ingrese el código del expediente: ");
+    printf("Ingrese el código del expediente:\r\n");
+    printf(">>");
     scanf("%d", &r.expedienteId);
 
-    printf("\r\n");
-
-    printf("Ahora se le solicitará que ingrese la fecha de creación...\r\n");
+    printf("Ingrese la fecha de creación:\r\n");
     CargarFecha(r.fecha);
 
-    printf("\r\n");
-
-    printf("Ingrese una descripción: ");
+    printf("Ingrese una descripción:\r\n");
+    printf(">>");
     scan(r.descripcion);
 
-    printf("\r\n");
-
-    printf("Seleccione el estado de la revisión:\r\n");
+    printf("Estado de la revisión:\r\n");
     CargarResultadoRevision(r.resultado);
-
-    printf("\r\n");
 }
 
 void MostrarRevision(Revision r) {
