@@ -4,6 +4,13 @@ void CrearListaRevision(Lista &L){
                 L = NULL;
 }
 
+void MostrarLista(Lista root) {
+    if (root != NULL) {
+        MostrarRevision(root->infoRev);
+        MostrarLista(root->sigRev);
+    }
+}
+
 boolean VaciaListaRevision(Lista L){
                 boolean esVacio = FALSE;
                 if (L == NULL)

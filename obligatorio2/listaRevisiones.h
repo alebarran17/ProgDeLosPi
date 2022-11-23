@@ -13,6 +13,8 @@ typedef ListaRevision * Lista;
 
 void CrearListaRevision(Lista &L);
 
+void MostrarLista(Lista root);
+
 boolean VaciaListaRevision(Lista L);
 
 /* Precondición: lista NO vacía */
