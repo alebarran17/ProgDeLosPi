@@ -24,7 +24,8 @@ void ObtenerDescripcionRevision(Revision r, string &s);
 
 ResultadoRevision ObtenerResultadoRevision(Revision r);
 
-void GuardarRevision(Revision R, string NomArch);
+//Precondicion: El archivo debe venir abierto para escritura
+void GuardarRevision(Revision R, FILE * f);
 
 //Precondicion: el archivo debe venir abierto para lectura.
 void CargarRevision(Revision &R, FILE * f);

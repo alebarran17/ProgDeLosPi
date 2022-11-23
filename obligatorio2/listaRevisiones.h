@@ -25,9 +25,9 @@ void Resto (Lista & L);
 
 void InsertarRevision (Lista & L, Revision R);
 
-void GuardarListaRevisiones(Lista L, string nomArch);
+void GuardarListaRevisiones(Lista L, FILE * f);
 
-void LevantarListaRevisiones(Lista &L, string NomArch);
+void LeerListaRevisiones(Lista &L, FILE * f);
 
 void ListarRPorExpediente(Lista L, int ID);
 

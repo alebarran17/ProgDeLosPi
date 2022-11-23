@@ -45,19 +45,18 @@ ResultadoRevision ObtenerResultadoRevision(Revision r) {
     return r.resultado;
 }
 
-void GuardarRevision(Revision R, string NomArch){
-                FILE * f = fopen(NomArch, "ab");
-                fwrite(&R.expedienteId, sizeof(int), 1, f);
-                BajarFecha(R.fecha, NomArch);
-                Bajar_String(R.descripcion, NomArch);
-                fwrite(&R.resultado, sizeof(enum), 1, f);
-                fclose(f);
+//Precondicion: El archivo debe venir abierto para escritura
+void GuardarRevision(Revision R, FILE * f){
+    fwrite(&R.expedienteId, sizeof(int), 1, f);
+    GuardarFecha(R.fecha, f);
+    GuardarString(R.descripcion, f);
+    fwrite(&R.resultado, sizeof(int), 1, f);
 }
 
 //Precondicion: el archivo debe venir abierto para lectura.
 void CargarRevision(Revision &R, FILE * f){
-                fread(&R.expedienteId, sizeof(int), 1, f);
-                CargarFecha(R.fecha, NomArch);
-                CargarString(R.descripcion, NomArch);
-                fread(&R.resultado, sizeof(enum), 1, f);
+    fread(&R.expedienteId, sizeof(int), 1, f);
+    LeerFecha(R.fecha, f);
+    LeerString(R.descripcion, f);
+    fread(&R.resultado, sizeof(int), 1, f);
 }

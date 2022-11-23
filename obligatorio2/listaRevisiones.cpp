@@ -47,26 +47,24 @@ void InsertarRevision (Lista & L, Revision R){
                 }
 }
 
-void GuardarListaRevisiones(Lista L, string nomArch){
-                FILE * f = fopen("Revisones.dat", "ab");
+//Precondicion: El archivo debe venir abierto para escritura
+void GuardarListaRevisiones(Lista L, FILE * f){
                 while(L != NULL){
-                                GuardarRevision(L->infoRev, "Revisiones.dat");
+                                GuardarRevision(L->infoRev, f);
                                 L = L->sigRev;
                 }
-                fclose(f);
 }
 
-void LevantarListaRevisiones(Lista &L, string NomArch){
-                FILE * f = fopen (NomArch, "rb");
-                Revision buffer;
-                CrearListaRevision (L);
-                CargarRevision (buffer, f);
-                while (!feof(f))
-                {
-                InsertarRevision(L, buffer);
-                CargarRevision (buffer, f);
-                }
-                fclose (f);
+//Precondicion: El archivo debe venir abierto para leectura
+void LeerListaRevisiones(Lista &root, FILE * f){
+    Revision buffer;
+    root = NULL;
+    CargarRevision (buffer, f);
+
+    while (!feof(f)) {
+        InsertarRevision(root, buffer);
+        CargarRevision (buffer, f);
+    }
 }
 
 void ListarRPorExpediente(Lista L, int ID){
