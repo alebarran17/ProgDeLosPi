@@ -29,6 +29,6 @@ boolean streq(string s1, string s2);
 void GuardarString(string s, FILE * f);
 
 // Precondición: El archivo viene abierto para lectura.
-void CargarString(string &s, FILE * f);
+void LeerString(string &s, FILE * f);
 
 #endif // STRINGDINAMICO_H_INCLUDED

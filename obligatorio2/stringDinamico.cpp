@@ -130,7 +130,7 @@ void GuardarString (string s, FILE * f){
 }
 
 // Precondición: El archivo viene abierto para lectura, y el string debe venir creado.
-void CargarString (string &s, FILE * f){
+void LeerString (string &s, FILE * f){
     string aux = new char[MAX];
     int i=0;
     fread(&aux[i], sizeof(char), 1, f);
