@@ -48,18 +48,29 @@ boolean FechaEsValida(Fecha f){
 }
 
 
-void GuardarFecha(Fecha F, string NomArch){
-                FILE *f = fopen(NomArch, "ab");
-                fwrite (&F.dia, sizeof(int), 1, f);
-                fwrite (&F.mes, sizeof(int), 1, f);
-                fwrite (&F.anio, sizeof(int), 1, f);
-                fclose(f);
+boolean FechaMasReciente(Fecha f1, Fecha f2){
+    boolean reciente = FALSE;
+    if(f1.anio > f2.anio){
+        reciente = TRUE;
+    }else
+        if(f1.anio == f2.anio){
+            if(f1.mes > f2.mes)
+                reciente = TRUE;
+            else
+                if(f1.mes == f2.mes){
+                    if(f1.dia > f2.dia)
+                        reciente = TRUE;
+            }
+        }
+    return reciente;
 }
 
-void CargarFecha(Fecha &F, string NomArch){
-                FILE * f = fopen(NomArch, "rb");
-                fread(&F.dia, sizeof(int), 1, f);
-                fread(&F.mes, sizeof(int), 1, f);
-                fread(&F.anio, sizeof(int), 1, f);
-                fclose(f);
+//Precondicion: EL archivo debe venir abierto para escritura.
+void GuardarFecha(Fecha F, FILE * f){
+                fwrite (&F, sizeof(Fecha), 1, f);
+}
+
+//Precondicion: EL archivo debe venir abierto para lectura.
+void LeerFecha(Fecha &F, FILE * f){
+                fread(&F, sizeof(Fecha), 1, f);
 }

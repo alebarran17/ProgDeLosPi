@@ -27,8 +27,12 @@ int ObtenerAnioFecha(Fecha f);
 //Función que determina si una fecha es válida.
 boolean FechaEsValida(Fecha f);
 
-void GuardarFecha(Fecha F, string NomArch);
+boolean FechaMasReciente(Fecha f1, Fecha f2);
 
-void CargarFecha(Fecha &F, string NomArch);
+//Precondicion: El archivo debe venir abierto para escritura.
+void GuardarFecha(Fecha F, FILE* f);
+
+//Precondicion: El archivo debe venir abierto para lectura.
+void LeerFecha(Fecha &F, FILE* f);
 
 #endif // FECHA_H_INCLUDED
