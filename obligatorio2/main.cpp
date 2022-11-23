@@ -60,11 +60,13 @@ void ProcesarMenuExpedientes() {
             case 1:
                 Expediente e;
                 CargarExpediente(e);
+                printf("\r\n");
 
-                if (BuscarExpediente(expedientes, e.id)) {
-                    printf("Ya existe un expediente con ese código.\r\n");
-                } else {
+                if (!BuscarExpediente(expedientes, e.id)) {
                     AgregarExpediente(expedientes, e);
+                    printf("[I] Expediente ingresado correctamente...\r\n");
+                } else {
+                    printf("[E] Ya existe un expediente con ese código...\r\n");
                 }
                 break;
 
@@ -73,15 +75,18 @@ void ProcesarMenuExpedientes() {
                 break;
 
             case 3:
-                printf("Ingrese el código del expediente a borrar:\r\n");
-
                 int id;
-                do {
-                    printf(">> ");
-                    scanf("%d", &id);
-                } while (BuscarExpediente(expedientes, id) == NULL);
+                printf("Ingrese el código del expediente a borrar:\r\n");
+                printf(">> ");
+                scanf("%d", &id);
+                printf("\r\n");
 
-                BorrarExpediente(expedientes, id);
+                if (BuscarExpediente(expedientes, id)) {
+                    BorrarExpediente(expedientes, id);
+                    printf("[I] Expediente eliminado correctamente...\r\n");
+                } else {
+                    printf("[E] No hemos podido encontrar el expediente con el código ingresado...\r\n");
+                }
                 break;
         }
         printf("\r\n");
@@ -95,7 +100,14 @@ void ProcesarMenuRevisiones() {
             case 1:
                 Revision r;
                 CargarRevision(r);
-                InsertarRevision(revisiones, r);
+                printf("\r\n");
+
+                if (BuscarExpediente(expedientes, r.expedienteId)) {
+                    InsertarRevision(revisiones, r);
+                    printf("[I] Revisión ingresada correctamente...\r\n");
+                } else {
+                    printf("[E] No hemos podido encontrar el expediente con el código ingresado...\r\n");
+                }
                 break;
 
             case 2:
