@@ -66,7 +66,7 @@
 1669153978 d:\repos\personal\progdelospi\obligatorio2\expediente.h
 	"stringDinamico.h"
 
-1669069819 d:\repos\personal\progdelospi\obligatorio2\stringdinamico.h
+1669216990 d:\repos\personal\progdelospi\obligatorio2\stringdinamico.h
 	"boolean.h"
 	<stdio.h>
 
@@ -83,21 +83,22 @@
 1669066196 d:\repos\personal\progdelospi\obligatorio2\escribano.h
 	"stringDinamico.h"
 
-1669153978 source:d:\repos\personal\progdelospi\obligatorio2\expediente.cpp
+1669216990 source:d:\repos\personal\progdelospi\obligatorio2\expediente.cpp
 	"expediente.h"
 
-1669153977 source:d:\repos\personal\progdelospi\obligatorio2\fecha.cpp
+1669217151 source:d:\repos\personal\progdelospi\obligatorio2\fecha.cpp
 	"Fecha.h"
 	<stdio.h>
 
-1669153977 d:\repos\personal\progdelospi\obligatorio2\fecha.h
+1669217160 d:\repos\personal\progdelospi\obligatorio2\fecha.h
 	"stringDinamico.h"
 	"boolean.h"
 
-1669155099 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
+1669217542 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
 	<locale.h>
-	"ABBExpediente.h"
 	"menu.h"
+	"ABBExpediente.h"
+	"listaRevisiones.h"
 
 1669066196 source:d:\repos\personal\progdelospi\obligatorio2\resultadorevision.cpp
 	<stdio.h>
@@ -105,15 +106,15 @@
 
 1669066196 d:\repos\personal\progdelospi\obligatorio2\resultadorevision.h
 
-1669154841 source:d:\repos\personal\progdelospi\obligatorio2\revision.cpp
+1669217300 source:d:\repos\personal\progdelospi\obligatorio2\revision.cpp
 	"revision.h"
 
-1669153977 d:\repos\personal\progdelospi\obligatorio2\revision.h
+1669216990 d:\repos\personal\progdelospi\obligatorio2\revision.h
 	"fecha.h"
 	"stringDinamico.h"
 	"resultadoRevision.h"
 
-1669069468 source:d:\repos\personal\progdelospi\obligatorio2\stringdinamico.cpp
+1669216990 source:d:\repos\personal\progdelospi\obligatorio2\stringdinamico.cpp
 	"stringDinamico.h"
 	<stdio.h>
 
@@ -156,7 +157,14 @@
 
 1669155415 d:\repos\personal\progdelospi\obligatorio2\menu.h
 
-1669155196 source:d:\repos\personal\progdelospi\obligatorio2\menu.cpp
+1669218403 source:d:\repos\personal\progdelospi\obligatorio2\menu.cpp
 	<stdio.h>
 	"menu.h"
+
+1669217906 source:d:\repos\personal\progdelospi\obligatorio2\listarevisiones.cpp
+	"listaRevisiones.h"
+
+1669217861 d:\repos\personal\progdelospi\obligatorio2\listarevisiones.h
+	"revision.h"
+	"boolean.h"
 

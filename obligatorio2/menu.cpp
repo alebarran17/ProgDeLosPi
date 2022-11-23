@@ -23,9 +23,11 @@ int MostrarMenuExpedientes() {
 
 int MostrarMenuRevisiones() {
     printf("============ MENU REVISIONES ============\r\n");
-    printf("1> Atrás\r\n");
+    printf("1> Agregar revision\r\n");
+    printf("2> Listar revisiones\r\n");
+    printf("3> Atrás\r\n");
 
-    return CargarOpcion(1);
+    return CargarOpcion(3);
 }
 
 int CargarOpcion(int max) {
