@@ -31,28 +31,26 @@ void Resto (Lista & L){
 }
 
 void InsertarRevision (Lista & L, Revision R){
-                Lista aux = new ListaRevision;
-                if(L == NULL){
-                                aux -> infoRev = R;
-                                aux -> sigRev = L;
-                                L = aux;
-                }else{
-                                if(ObtenerFechaRevision(R) < ObtenerFechaRevision(L -> infoRev)){
-                                                aux -> infoRev = R;
-                                                aux -> sigRev = L;
-                                                L = aux;
-                                } else {
-                                InsertarRevision(L -> sigRev, R);
-                                }
-                }
+    Lista aux = new ListaRevision;
+    if(L == NULL) {
+        aux -> infoRev = R;
+        aux -> sigRev = L;
+        L = aux;
+    } else if(FechaMasReciente(ObtenerFechaRevision(R), ObtenerFechaRevision(L -> infoRev))) {
+        aux -> infoRev = R;
+        aux -> sigRev = L;
+        L = aux;
+    } else {
+        InsertarRevision(L -> sigRev, R);
+    }
 }
 
 //Precondicion: El archivo debe venir abierto para escritura
 void GuardarListaRevisiones(Lista L, FILE * f){
-                while(L != NULL){
-                                GuardarRevision(L->infoRev, f);
-                                L = L->sigRev;
-                }
+    while(L != NULL){
+        GuardarRevision(L->infoRev, f);
+        L = L->sigRev;
+    }
 }
 
 //Precondicion: El archivo debe venir abierto para leectura
