@@ -42,7 +42,11 @@
 		<Unit filename="expediente.h" />
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
+		<Unit filename="listaRevisiones.cpp" />
+		<Unit filename="listaRevisiones.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.cpp" />
+		<Unit filename="menu.h" />
 		<Unit filename="resultadoRevision.cpp" />
 		<Unit filename="resultadoRevision.h" />
 		<Unit filename="revision.cpp" />
