@@ -94,7 +94,7 @@
 	"stringDinamico.h"
 	"boolean.h"
 
-1669217542 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
+1669219004 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
 	<locale.h>
 	"menu.h"
 	"ABBExpediente.h"
@@ -157,7 +157,7 @@
 
 1669155415 d:\repos\personal\progdelospi\obligatorio2\menu.h
 
-1669218403 source:d:\repos\personal\progdelospi\obligatorio2\menu.cpp
+1669219027 source:d:\repos\personal\progdelospi\obligatorio2\menu.cpp
 	<stdio.h>
 	"menu.h"
 

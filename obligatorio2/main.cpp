@@ -4,7 +4,56 @@
 #include "ABBExpediente.h"
 #include "listaRevisiones.h"
 
-void ProcesarMenuExpedientes(ABBExpediente*& root, int& total) {
+Arbol expedientes = NULL;
+Lista revisiones = NULL;
+
+void LeerArchivos() {
+    FILE* expFile = fopen("expedientes.dat", "rb");
+    if (expFile != NULL) LeerArbolExpedientes(expFile, expedientes);
+    fclose(expFile);
+
+    int expTotal = ContarExpedientes(expedientes);
+    if (expTotal > 0) {
+        printf("%d expedientes fueron cargados correctamente!\r\n", expTotal);
+    }
+
+    FILE* revFile = fopen("revisiones.dat", "rb");
+    if (revFile != NULL) LeerListaRevisiones(revisiones, revFile);
+    fclose(revFile);
+
+    int revTotal = ContarRevisiones(revisiones);
+    if (revTotal > 0) {
+        printf("%d revisiones fueron cargadas correctamente!\r\n", revTotal);
+    }
+
+    if (revTotal > 0 || expTotal > 0) {
+        printf("\r\n");
+    }
+}
+
+void GuardarArchivos() {
+    int expTotal = ContarExpedientes(expedientes);
+    if (expTotal > 0) {
+        printf("Guardando %d expedientes...\r\n", expTotal);
+
+        FILE* expFile = fopen("expedientes.dat", "wb");
+        GuardarArbolExpedientes(expFile, expedientes);
+
+        printf("Expedientes guardados correctamente!\r\n");
+    }
+
+    int revTotal = ContarRevisiones(revisiones);
+    if (revTotal > 0) {
+        printf("Guardando %d revisiones...\r\n", revTotal);
+
+        FILE* revFile = fopen("revisiones.dat", "wb");
+        GuardarListaRevisiones(revisiones, revFile);
+
+        printf("Revisiones guardadas correctamente!\r\n");
+    }
+}
+
+void ProcesarMenuExpedientes() {
     int opt;
     while ((opt = MostrarMenuExpedientes()) != 4) {
         switch (opt) {
@@ -12,17 +61,15 @@ void ProcesarMenuExpedientes(ABBExpediente*& root, int& total) {
                 Expediente e;
                 CargarExpediente(e);
 
-                if (BuscarExpediente(root, e.id)) {
+                if (BuscarExpediente(expedientes, e.id)) {
                     printf("Ya existe un expediente con ese código.\r\n");
                 } else {
-                    AgregarExpediente(root, e);
-                    total++;
+                    AgregarExpediente(expedientes, e);
                 }
                 break;
 
             case 2:
-                printf("Actualmente hay %d expedientes guardados...\r\n", total);
-                ListarExpedientes(root);
+                ListarExpedientes(expedientes);
                 break;
 
             case 3:
@@ -32,30 +79,27 @@ void ProcesarMenuExpedientes(ABBExpediente*& root, int& total) {
                 do {
                     printf(">> ");
                     scanf("%d", &id);
-                } while (BuscarExpediente(root, id) == NULL);
+                } while (BuscarExpediente(expedientes, id) == NULL);
 
-                BorrarExpediente(root, id);
-                total--;
+                BorrarExpediente(expedientes, id);
                 break;
         }
         printf("\r\n");
     }
 }
 
-void ProcesarMenuRevisiones(Lista& root, int& total) {
+void ProcesarMenuRevisiones() {
     int opt;
     while ((opt = MostrarMenuRevisiones()) != 3) {
         switch(opt) {
             case 1:
                 Revision r;
                 CargarRevision(r);
-                InsertarRevision(root, r);
-                total++;
+                InsertarRevision(revisiones, r);
                 break;
 
             case 2:
-                printf("Actualmente hay %d revisiones guardadas...\r\n", total);
-                MostrarLista(root);
+                MostrarLista(revisiones);
                 break;
         }
         printf("\r\n");
@@ -66,63 +110,21 @@ int main()
 {
     setlocale(LC_ALL, "spanish");
 
-    ABBExpediente* exp = NULL;
-    Lista rev = NULL;
-
-    FILE* expFile = fopen("expedientes.dat", "rb");
-    if (expFile != NULL) LeerArbolExpedientes(expFile, exp);
-    fclose(expFile);
-
-    int expTotal = ContarExpedientes(exp);
-    if (expTotal > 0) {
-        printf("%d expedientes fueron cargados correctamente!\r\n", expTotal);
-    }
-
-    FILE* revFile = fopen("revisiones.dat", "rb");
-    if (revFile != NULL) LeerListaRevisiones(rev, revFile);
-    fclose(revFile);
-
-    int revTotal = ContarRevisiones(rev);
-    if (revTotal > 0) {
-        printf("%d revisiones fueron cargadas correctamente!\r\n", revTotal);
-    }
-
-    if (revTotal > 0 || expTotal > 0) {
-        printf("\r\n");
-    }
+    LeerArchivos();
 
     int opt;
     while ((opt = IniciarMenu()) != 3) {
         switch (opt) {
             case 1:
-                ProcesarMenuExpedientes(exp, expTotal);
+                ProcesarMenuExpedientes();
                 break;
             case 2:
-                ProcesarMenuRevisiones(rev, revTotal);
+                ProcesarMenuRevisiones();
                 break;
         }
-        printf("\r\n");
     }
 
-    expTotal = ContarExpedientes(exp);
-    if (expTotal > 0) {
-        printf("Guardando %d expedientes...\r\n", expTotal);
-
-        expFile = fopen("expedientes.dat", "wb");
-        GuardarArbolExpedientes(expFile, exp);
-
-        printf("Expedientes guardados correctamente!\r\n");
-    }
-
-    revTotal = ContarRevisiones(rev);
-    if (revTotal > 0) {
-        printf("Guardando %d revisiones...\r\n", revTotal);
-
-        revFile = fopen("revisiones.dat", "wb");
-        GuardarListaRevisiones(rev, revFile);
-
-        printf("Revisiones guardadas correctamente!\r\n");
-    }
+    GuardarArchivos();
 
     return 0;
 }
