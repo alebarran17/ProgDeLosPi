@@ -68,3 +68,11 @@ void LeerListaRevisiones(Lista &root, FILE * f){
 void ListarRPorExpediente(Lista L, int ID){
 
 }
+
+int ContarRevisiones(Lista root) {
+    if (root != NULL) {
+        return 1 + ContarRevisiones(root->sigRev);
+    } else {
+        return 0;
+    }
+}

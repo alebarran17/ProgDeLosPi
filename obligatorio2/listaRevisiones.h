@@ -31,4 +31,6 @@ void LeerListaRevisiones(Lista &L, FILE * f);
 
 void ListarRPorExpediente(Lista L, int ID);
 
+int ContarRevisiones(Lista root);
+
 #endif // LISTAREVISIONES_H_INCLUDED
