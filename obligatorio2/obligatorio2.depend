@@ -94,8 +94,9 @@
 	"stringDinamico.h"
 	"boolean.h"
 
-1669219004 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
+1669221964 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
 	<locale.h>
+	"logger.h"
 	"menu.h"
 	"ABBExpediente.h"
 	"listaRevisiones.h"
@@ -167,4 +168,11 @@
 1669217861 d:\repos\personal\progdelospi\obligatorio2\listarevisiones.h
 	"revision.h"
 	"boolean.h"
+
+1669222264 d:\repos\personal\progdelospi\obligatorio2\logger.h
+	<stdarg.h>
+
+1669222091 source:d:\repos\personal\progdelospi\obligatorio2\logger.cpp
+	<stdio.h>
+	"logger.h"
 
