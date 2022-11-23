@@ -14,7 +14,7 @@ void LeerArchivos() {
 
     int expTotal = ContarExpedientes(expedientes);
     if (expTotal > 0) {
-        printf("%d expedientes fueron cargados correctamente!\r\n", expTotal);
+        printf("[I] %d expedientes fueron cargados correctamente!\r\n", expTotal);
     }
 
     FILE* revFile = fopen("revisiones.dat", "rb");
@@ -23,7 +23,7 @@ void LeerArchivos() {
 
     int revTotal = ContarRevisiones(revisiones);
     if (revTotal > 0) {
-        printf("%d revisiones fueron cargadas correctamente!\r\n", revTotal);
+        printf("[I] %d revisiones fueron cargadas correctamente!\r\n", revTotal);
     }
 
     if (revTotal > 0 || expTotal > 0) {
@@ -34,22 +34,22 @@ void LeerArchivos() {
 void GuardarArchivos() {
     int expTotal = ContarExpedientes(expedientes);
     if (expTotal > 0) {
-        printf("Guardando %d expedientes...\r\n", expTotal);
+        printf("[I] Guardando %d expedientes...\r\n", expTotal);
 
         FILE* expFile = fopen("expedientes.dat", "wb");
         GuardarArbolExpedientes(expFile, expedientes);
 
-        printf("Expedientes guardados correctamente!\r\n");
+        printf("[I] Expedientes guardados correctamente!\r\n");
     }
 
     int revTotal = ContarRevisiones(revisiones);
     if (revTotal > 0) {
-        printf("Guardando %d revisiones...\r\n", revTotal);
+        printf("[I] Guardando %d revisiones...\r\n", revTotal);
 
         FILE* revFile = fopen("revisiones.dat", "wb");
         GuardarListaRevisiones(revisiones, revFile);
 
-        printf("Revisiones guardadas correctamente!\r\n");
+        printf("[I] Revisiones guardadas correctamente!\r\n");
     }
 }
 
