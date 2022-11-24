@@ -1,7 +1,7 @@
 #include "listaRevisiones.h"
 
 void CrearListaRevision(Lista &L){
-                L = NULL;
+    L = NULL;
 }
 
 void MostrarLista(Lista root) {
@@ -21,22 +21,22 @@ void MostrarLista(Lista root, int expedienteId) {
 }
 
 boolean VaciaListaRevision(Lista L){
-                boolean esVacio = FALSE;
-                if (L == NULL)
-                esVacio = TRUE;
-                return esVacio;
+    boolean esVacio = FALSE;
+    if (L == NULL)
+    esVacio = TRUE;
+    return esVacio;
 }
 
 /* Precondición: lista NO vacía */
 Revision Primero (Lista L){
-                return L->infoRev;
+    return L->infoRev;
 }
 
 /* Precondición: lista NO vacía */
 void Resto (Lista & L){
-                Lista aux = L;
-                L = L -> sigRev;
-                delete aux;
+    Lista aux = L;
+    L = L -> sigRev;
+    delete aux;
 }
 
 void InsertarRevision (Lista & L, Revision R){
