@@ -14,6 +14,8 @@ void CargarExpediente(Expediente &e) {
     printf("Ingrese la cantidad de páginas:\r\n");
     printf(">> ");
     scanf("%d", &e.paginas);
+
+    CargarEscribano(e.escribano);
 }
 
 void MostrarExpediente(Expediente e) {
@@ -21,6 +23,9 @@ void MostrarExpediente(Expediente e) {
 
     printf("Carátula: ");
     print(e.caratula);
+
+    printf(" - Escribano: ");
+    MostrarEscribano(e.escribano);
 
     printf(" - Páginas: %d", e.paginas);
 

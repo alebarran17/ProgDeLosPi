@@ -2,11 +2,13 @@
 #define EXPEDIENTE_H_INCLUDED
 
 #include "stringDinamico.h"
+#include "escribano.h"
 
 typedef struct {
     int id;
     string caratula;
     int paginas;
+    Escribano escribano;
 } Expediente;
 
 void CargarExpediente(Expediente &e);

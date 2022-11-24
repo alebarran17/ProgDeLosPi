@@ -2,14 +2,16 @@
 #include "escribano.h"
 
 void CargarEscribano(Escribano &e){
-    printf("Ingrese el nombre del escribano: ");
+    printf("Ingrese el nombre del escribano:\r\n");
+    printf(">> ");
     scan(e.nombre);
-    printf("Ingrese el apellido del escribano: ");
+
+    printf("Ingrese el apellido del escribano:\r\n");
+    printf(">> ");
     scan(e.apellido);
 }
 
 void MostrarEscribano(Escribano e){
-    printf("Escribano: ");
     print(e.nombre);
     printf(" ");
     print(e.apellido);
