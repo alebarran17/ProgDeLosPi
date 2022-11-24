@@ -64,6 +64,7 @@ void ProcesarMenuExpedientes() {
 
                 if (!BuscarExpediente(expedientes, e.id)) {
                     AgregarExpediente(expedientes, e);
+                    MostrarExpediente(e);
                     printf("[I]: Expediente ingresado correctamente...\r\n");
                 } else {
                     printf("[E]: Ya existe un expediente con ese código...\r\n");
@@ -105,6 +106,7 @@ void ProcesarMenuRevisiones() {
 
                 if (BuscarExpediente(expedientes, r.expedienteId)) {
                     InsertarRevision(revisiones, r);
+                    MostrarRevision(r);
                     printf("[I]: Revisión ingresada correctamente...\r\n");
                 } else {
                     printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
