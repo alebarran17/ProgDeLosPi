@@ -16,13 +16,13 @@ void CargarResultadoRevision(ResultadoRevision &r) {
     switch (opt) {
         case 1:
             r = SATISFACTORIA;
-
+        break;
         case 2:
             r = INCOMPLETA;
-
+        break;
         case 3:
             r = PENDIENTE;
-
+        break;
     }
 }
 
