@@ -67,10 +67,10 @@ boolean FechaMasReciente(Fecha f1, Fecha f2){
 
 //Precondicion: EL archivo debe venir abierto para escritura.
 void GuardarFecha(Fecha F, FILE * f){
-                fwrite (&F, sizeof(Fecha), 1, f);
+    fwrite (&F, sizeof(Fecha), 1, f);
 }
 
 //Precondicion: EL archivo debe venir abierto para lectura.
 void LeerFecha(Fecha &F, FILE * f){
-                fread(&F, sizeof(Fecha), 1, f);
+    fread(&F, sizeof(Fecha), 1, f);
 }
