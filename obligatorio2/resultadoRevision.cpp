@@ -9,7 +9,7 @@ void CargarResultadoRevision(ResultadoRevision &r) {
 
     int opt;
     do {
-        printf(">> ");
+        printf("Ingrese una opcion de las de arriba: \n>> ");
         scanf("%d", &opt);
     } while (opt < 1 || opt > 3);
 
