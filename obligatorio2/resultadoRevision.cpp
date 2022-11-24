@@ -30,12 +30,16 @@ void MostrarResultadoRevision(ResultadoRevision r) {
     switch (r) {
         case SATISFACTORIA:
             printf("Satisfactoria");
-
+        break;
         case INCOMPLETA:
             printf("Incompleta");
-
+        break;
         case PENDIENTE:
             printf("Pendiente");
+        break;
+        default: 
+            printf("Error!");
+        break;
 
     }
 }
