@@ -1,6 +1,5 @@
 #include <locale.h>
 
-#include "logger.h"
 #include "menu.h"
 #include "ABBExpediente.h"
 #include "listaRevisiones.h"
@@ -15,7 +14,7 @@ void LeerArchivos() {
 
     int expTotal = ContarExpedientes(expedientes);
     if (expTotal > 0) {
-        info("%d expedientes fueron cargados correctamente!", expTotal);
+        printf("[I]: %d expedientes fueron cargados correctamente!\r\n", expTotal);
     }
 
     FILE* revFile = fopen("revisiones.dat", "rb");
@@ -24,7 +23,7 @@ void LeerArchivos() {
 
     int revTotal = ContarRevisiones(revisiones);
     if (revTotal > 0) {
-        info("%d revisiones fueron cargadas correctamente!", revTotal);
+        printf("[I]: %d revisiones fueron cargadas correctamente!\r\n", revTotal);
     }
 
     if (revTotal > 0 || expTotal > 0) {
@@ -35,22 +34,22 @@ void LeerArchivos() {
 void GuardarArchivos() {
     int expTotal = ContarExpedientes(expedientes);
     if (expTotal > 0) {
-        info("Guardando %d expedientes...", expTotal);
+        printf("[I]: Guardando %d expedientes...\r\n", expTotal);
 
         FILE* expFile = fopen("expedientes.dat", "wb");
         GuardarArbolExpedientes(expFile, expedientes);
 
-        info("Expedientes guardados correctamente!");
+        printf("[I]: Expedientes guardados correctamente!\r\n");
     }
 
     int revTotal = ContarRevisiones(revisiones);
     if (revTotal > 0) {
-        info("Guardando %d revisiones...", revTotal);
+        printf("[I]: Guardando %d revisiones...\r\n", revTotal);
 
         FILE* revFile = fopen("revisiones.dat", "wb");
         GuardarListaRevisiones(revisiones, revFile);
 
-        info("Revisiones guardadas correctamente!");
+        printf("[I]: Revisiones guardadas correctamente!\r\n");
     }
 }
 
@@ -65,9 +64,9 @@ void ProcesarMenuExpedientes() {
 
                 if (!BuscarExpediente(expedientes, e.id)) {
                     AgregarExpediente(expedientes, e);
-                    info("Expediente ingresado correctamente...");
+                    printf("[I]: Expediente ingresado correctamente...\r\n");
                 } else {
-                    error("Ya existe un expediente con ese código...");
+                    printf("[E]: Ya existe un expediente con ese código...\r\n");
                 }
                 break;
 
@@ -84,9 +83,9 @@ void ProcesarMenuExpedientes() {
 
                 if (BuscarExpediente(expedientes, id)) {
                     BorrarExpediente(expedientes, id);
-                    info("Expediente eliminado correctamente...");
+                    printf("[I]: Expediente eliminado correctamente...\r\n");
                 } else {
-                    error("No hemos podido encontrar el expediente con el código ingresado...");
+                    printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
                 }
                 break;
         }
@@ -105,9 +104,9 @@ void ProcesarMenuRevisiones() {
 
                 if (BuscarExpediente(expedientes, r.expedienteId)) {
                     InsertarRevision(revisiones, r);
-                    info("Revisión ingresada correctamente...");
+                    printf("[I]: Revisión ingresada correctamente...\r\n");
                 } else {
-                    error("No hemos podido encontrar el expediente con el código ingresado...");
+                    printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
                 }
                 break;
 

@@ -94,20 +94,19 @@
 	"stringDinamico.h"
 	"boolean.h"
 
-1669221964 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
+1669324790 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
 	<locale.h>
-	"logger.h"
 	"menu.h"
 	"ABBExpediente.h"
 	"listaRevisiones.h"
 
-1669066196 source:d:\repos\personal\progdelospi\obligatorio2\resultadorevision.cpp
+1669324545 source:d:\repos\personal\progdelospi\obligatorio2\resultadorevision.cpp
 	<stdio.h>
 	"resultadoRevision.h"
 
 1669066196 d:\repos\personal\progdelospi\obligatorio2\resultadorevision.h
 
-1669217300 source:d:\repos\personal\progdelospi\obligatorio2\revision.cpp
+1669305876 source:d:\repos\personal\progdelospi\obligatorio2\revision.cpp
 	"revision.h"
 
 1669216990 d:\repos\personal\progdelospi\obligatorio2\revision.h
