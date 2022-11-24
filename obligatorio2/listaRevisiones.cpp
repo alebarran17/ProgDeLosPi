@@ -65,14 +65,23 @@ void LeerListaRevisiones(Lista &root, FILE * f){
     }
 }
 
-void ListarRPorExpediente(Lista L, int ID){
-
-}
-
 int ContarRevisiones(Lista root) {
     if (root != NULL) {
         return 1 + ContarRevisiones(root->sigRev);
     } else {
         return 0;
+    }
+}
+
+void BorrarRevisiones (Lista &root, int expedienteId) {
+    if (root != NULL) {
+        if (root->infoRev.expedienteId == expedienteId) {
+            Lista aux = root;
+            root = root->sigRev;
+            delete aux;
+            BorrarRevisiones(root, expedienteId);
+        } else {
+            BorrarRevisiones(root->sigRev, expedienteId);
+        }
     }
 }

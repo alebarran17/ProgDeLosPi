@@ -57,7 +57,7 @@
 1668815506 e:\repos\progdelospi\obligatorio2\escribano.h
 	"stringDinamico.h"
 
-1669153978 source:d:\repos\personal\progdelospi\obligatorio2\abbexpediente.cpp
+1669325519 source:d:\repos\personal\progdelospi\obligatorio2\abbexpediente.cpp
 	"ABBExpediente.h"
 
 1669153978 d:\repos\personal\progdelospi\obligatorio2\abbexpediente.h
@@ -83,7 +83,7 @@
 1669066196 d:\repos\personal\progdelospi\obligatorio2\escribano.h
 	"stringDinamico.h"
 
-1669216990 source:d:\repos\personal\progdelospi\obligatorio2\expediente.cpp
+1669325832 source:d:\repos\personal\progdelospi\obligatorio2\expediente.cpp
 	"expediente.h"
 
 1669217151 source:d:\repos\personal\progdelospi\obligatorio2\fecha.cpp
@@ -94,13 +94,13 @@
 	"stringDinamico.h"
 	"boolean.h"
 
-1669324790 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
+1669327149 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
 	<locale.h>
 	"menu.h"
 	"ABBExpediente.h"
 	"listaRevisiones.h"
 
-1669324545 source:d:\repos\personal\progdelospi\obligatorio2\resultadorevision.cpp
+1669325485 source:d:\repos\personal\progdelospi\obligatorio2\resultadorevision.cpp
 	<stdio.h>
 	"resultadoRevision.h"
 
@@ -114,7 +114,7 @@
 	"stringDinamico.h"
 	"resultadoRevision.h"
 
-1669216990 source:d:\repos\personal\progdelospi\obligatorio2\stringdinamico.cpp
+1669325852 source:d:\repos\personal\progdelospi\obligatorio2\stringdinamico.cpp
 	"stringDinamico.h"
 	<stdio.h>
 
@@ -161,10 +161,10 @@
 	<stdio.h>
 	"menu.h"
 
-1669217906 source:d:\repos\personal\progdelospi\obligatorio2\listarevisiones.cpp
+1669327777 source:d:\repos\personal\progdelospi\obligatorio2\listarevisiones.cpp
 	"listaRevisiones.h"
 
-1669217861 d:\repos\personal\progdelospi\obligatorio2\listarevisiones.h
+1669326896 d:\repos\personal\progdelospi\obligatorio2\listarevisiones.h
 	"revision.h"
 	"boolean.h"
 

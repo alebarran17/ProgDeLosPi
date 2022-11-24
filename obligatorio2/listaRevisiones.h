@@ -29,8 +29,8 @@ void GuardarListaRevisiones(Lista L, FILE * f);
 
 void LeerListaRevisiones(Lista &L, FILE * f);
 
-void ListarRPorExpediente(Lista L, int ID);
-
 int ContarRevisiones(Lista root);
+
+void BorrarRevisiones(Lista &from, int expedienteId);
 
 #endif // LISTAREVISIONES_H_INCLUDED

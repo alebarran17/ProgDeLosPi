@@ -83,6 +83,7 @@ void ProcesarMenuExpedientes() {
 
                 if (BuscarExpediente(expedientes, id)) {
                     BorrarExpediente(expedientes, id);
+                    BorrarRevisiones(revisiones, id);
                     printf("[I]: Expediente eliminado correctamente...\r\n");
                 } else {
                     printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
@@ -118,8 +119,7 @@ void ProcesarMenuRevisiones() {
     }
 }
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "spanish");
 
     LeerArchivos();
