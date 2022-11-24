@@ -4,17 +4,15 @@ void CargarRevision(Revision &r) {
     printf("============ CARGAR REVISION ==========\r\n");
 
     printf("Ingrese el código del expediente:\r\n");
-    printf(">>");
+    printf(">> ");
     scanf("%d", &r.expedienteId);
 
-    printf("Ingrese la fecha de creación:\r\n");
     CargarFecha(r.fecha);
 
     printf("Ingrese una descripción:\r\n");
-    printf(">>");
+    printf(">> ");
     scan(r.descripcion);
 
-    printf("Estado de la revisión:\r\n");
     CargarResultadoRevision(r.resultado);
 }
 

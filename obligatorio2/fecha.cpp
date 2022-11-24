@@ -3,13 +3,16 @@
 
 // Cargar una fecha por teclado.
 void CargarFecha(Fecha &f){
-    printf("Ingrese el dia: ");
+    printf("Día de creación:\r\n");
+    printf(">> ");
     scanf("%d", &f.dia);
 
-    printf("Ingrese el mes: ");
+    printf("Mes de creación:\r\n");
+    printf(">> ");
     scanf("%d", &f.mes);
 
-    printf("Ingrese el año: ");
+    printf("Año de creación:\r\n");
+    printf(">> ");
     scanf("%d", &f.anio);
 }
 

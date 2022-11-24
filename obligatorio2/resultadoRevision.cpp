@@ -3,13 +3,11 @@
 #include "resultadoRevision.h"
 
 void CargarResultadoRevision(ResultadoRevision &r) {
-    printf("1> Satisfactoria\r\n");
-    printf("2> Incompleta\r\n");
-    printf("3> Pendiente\r\n");
+    printf("Estado de la revisión (1-SATISFACTORIA, 2-INCOMPLETA, 3-PENDIENTE):\r\n");
 
     int opt;
     do {
-        printf("Ingrese una opcion de las de arriba: \n>> ");
+        printf(">> ");
         scanf("%d", &opt);
     } while (opt < 1 || opt > 3);
 
