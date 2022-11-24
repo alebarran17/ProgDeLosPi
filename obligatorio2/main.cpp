@@ -96,7 +96,7 @@ void ProcesarMenuExpedientes() {
 
 void ProcesarMenuRevisiones() {
     int opt;
-    while ((opt = MostrarMenuRevisiones()) != 3) {
+    while ((opt = MostrarMenuRevisiones()) != 4) {
         switch(opt) {
             case 1:
                 Revision r;
@@ -113,6 +113,20 @@ void ProcesarMenuRevisiones() {
 
             case 2:
                 MostrarLista(revisiones);
+                break;
+
+            case 3:
+                int id;
+                printf("Ingrese el código del expediente a filtrar:\r\n");
+                printf(">> ");
+                scanf("%d", &id);
+                printf("\r\n");
+
+                if (BuscarExpediente(expedientes, id)) {
+                    MostrarLista(revisiones, id);
+                } else {
+                    printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
+                }
                 break;
         }
         printf("\r\n");

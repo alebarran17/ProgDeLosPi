@@ -15,6 +15,8 @@ void CrearListaRevision(Lista &L);
 
 void MostrarLista(Lista root);
 
+void MostrarLista(Lista root, int expedienteId);
+
 boolean VaciaListaRevision(Lista L);
 
 /* Precondición: lista NO vacía */

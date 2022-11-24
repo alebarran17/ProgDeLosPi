@@ -11,6 +11,15 @@ void MostrarLista(Lista root) {
     }
 }
 
+void MostrarLista(Lista root, int expedienteId) {
+    if (root != NULL) {
+        if (root->infoRev.expedienteId == expedienteId) {
+            MostrarRevision(root->infoRev);
+        }
+        MostrarLista(root->sigRev, expedienteId);
+    }
+}
+
 boolean VaciaListaRevision(Lista L){
                 boolean esVacio = FALSE;
                 if (L == NULL)
