@@ -27,5 +27,15 @@ void CargarResultadoRevision(ResultadoRevision &r) {
 }
 
 void MostrarResultadoRevision(ResultadoRevision r) {
+    switch (r) {
+        case SATISFACTORIA:
+            printf("Satisfactoria");
 
+        case INCOMPLETA:
+            printf("Incompleta");
+
+        case PENDIENTE:
+            printf("Pendiente");
+
+    }
 }
