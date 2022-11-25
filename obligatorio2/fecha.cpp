@@ -56,22 +56,10 @@ boolean FechaEsValida(Fecha f){
     return f.dia >= 1 && f.dia <= max ? TRUE : FALSE;
 }
 
-
 boolean FechaMasReciente(Fecha f1, Fecha f2){
-    boolean reciente = FALSE;
-    if(f1.anio > f2.anio){
-        reciente = TRUE;
-    }else
-        if(f1.anio == f2.anio){
-            if(f1.mes > f2.mes)
-                reciente = TRUE;
-            else
-                if(f1.mes == f2.mes){
-                    if(f1.dia > f2.dia)
-                        reciente = TRUE;
-            }
-        }
-    return reciente;
+    int f1Num = ObtenerAnioFecha(f1) * 10000 + ObtenerMesFecha(f1) * 100 + ObtenerDiaFecha(f1);
+    int f2Num = ObtenerAnioFecha(f2) * 10000 + ObtenerMesFecha(f2) * 100 + ObtenerDiaFecha(f2);
+    return f1Num == f2Num ? TRUE : FALSE;
 }
 
 boolean FechaMayorIgual(Fecha f1, Fecha f2) {
