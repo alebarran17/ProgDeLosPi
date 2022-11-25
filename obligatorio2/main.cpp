@@ -177,7 +177,7 @@ void ProcesarMenuRevisiones() {
 
                 if (revisiones != NULL) {
                     Fecha ultimaFecha = ObtenerFechaRevision(revisiones->infoRev);
-                    if (FechaMayorIgual(ultimaFecha, ObtenerFechaRevision(r))) {
+                    if (FechaMayorIgual(ultimaFecha, ObtenerFechaRevision(r)) == FALSE) {
                         printf("[E]: La fecha de revisión debe ser mayor a la última ingresada (");
                         MostrarFecha(ultimaFecha);
                         printf(")...\r\n");
