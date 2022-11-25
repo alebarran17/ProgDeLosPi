@@ -30,7 +30,7 @@ Expediente PrimerExpediente(Arbol root) {
 
 //Funcion: devuelve el ultimo expediente.
 Expediente UltimoExpediente(Arbol root) {
-    return root->der == NULL ? root->info : PrimerExpediente(root->der);
+    return root->der == NULL ? root->info : UltimoExpediente(root->der);
 }
 
 //Funcion: Devuelve un expediente con el numero de id ingresado.
@@ -45,7 +45,7 @@ Expediente* BuscarExpediente(Arbol root, int id) {
         return BuscarExpediente(root->der, id);
     }
 }
-//Procedimiento: Borra el expediente del id ingresado. 
+//Procedimiento: Borra el expediente del id ingresado.
 //Precondicion: El expediente deber existir.
 void BorrarExpediente(Arbol& root, int id) {
     if (ObtenerIdExpediente(root->info) == id) {
@@ -127,7 +127,7 @@ int ContarExpedientes(Arbol root, string apellido) {
     }
 }
 
-//Procedimiento: Devuelve el expediente con mas revisiones. 
+//Procedimiento: Devuelve el expediente con mas revisiones.
 void ExpedienteConMasRevisiones(Arbol root, Lista revisiones, int &rev, int &eid) {
     if (root != NULL) {
         int id = ObtenerIdExpediente(root->info);
