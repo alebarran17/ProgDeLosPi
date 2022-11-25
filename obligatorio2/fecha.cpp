@@ -81,7 +81,15 @@ boolean FechaEsValida(Fecha f){
     else
         max = 28;
 
-    return f.dia >= 1 && f.dia <= max ? TRUE : FALSE;
+    if (f.dia <= 0 || f.dia > max) {
+        return FALSE;
+    }
+
+    if (f.mes <= 0 || f.mes > 12) {
+        return FALSE;
+    }
+
+    return TRUE;
 }
 
 boolean FechaMasReciente(Fecha f1, Fecha f2){
