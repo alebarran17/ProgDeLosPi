@@ -41,6 +41,8 @@ void GuardarArchivos() {
         fclose(expFile);
 
         printf("[I]: Expedientes guardados correctamente!\r\n");
+    } else {
+        fclose(fopen("expedientes.dat", "w"));
     }
 
     int revTotal = ContarRevisiones(revisiones);
@@ -52,10 +54,8 @@ void GuardarArchivos() {
         fclose(revFile);
 
         printf("[I]: Revisiones guardadas correctamente!\r\n");
-    }
-
-    if (revTotal == 0 && expTotal == 0) {
-        printf("[I]: No hay cambios para guardar...\r\n");
+    } else {
+        fclose(fopen("revisiones.dat", "w"));
     }
 }
 
