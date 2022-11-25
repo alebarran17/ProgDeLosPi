@@ -16,4 +16,8 @@ void ObtenerNombreEscribano(Escribano e, string &s);
 
 void ObtenerApellidoEscribano(Escribano e, string &s);
 
+void GuardarEscribano(FILE* f, Escribano e);
+
+void LeerEscribano(FILE* f, Escribano &e);
+
 #endif // ESCRIBANO_H_INCLUDED

@@ -48,10 +48,12 @@ void GuardarExpediente(FILE* f, Expediente e) {
     fwrite(&e.id, sizeof(int), 1, f);
     GuardarString(e.caratula, f);
     fwrite(&e.paginas, sizeof(int), 1, f);
+    GuardarEscribano(f, e.escribano);
 }
 
 void LeerExpediente(FILE* f, Expediente& e) {
     fread(&e.id, sizeof(int), 1, f);
     LeerString(e.caratula, f);
     fread(&e.paginas, sizeof(int), 1, f);
+    LeerEscribano(f, e.escribano);
 }

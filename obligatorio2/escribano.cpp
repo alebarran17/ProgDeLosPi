@@ -24,3 +24,13 @@ void ObtenerNombreEscribano(Escribano e, string &s){
 void ObtenerApellidoEscribano(Escribano e, string &s){
     strcop(e.apellido, s);
 }
+
+void GuardarEscribano(FILE* f, Escribano e) {
+    GuardarString(e.nombre, f);
+    GuardarString(e.apellido, f);
+}
+
+void LeerEscribano(FILE* f, Escribano &e) {
+    LeerString(e.nombre, f);
+    LeerString(e.apellido, f);
+}
