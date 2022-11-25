@@ -6,9 +6,10 @@ int IniciarMenu() {
     printf("============= MENU PRINCIPAL ============\r\n");
     printf("1> Expedientes\r\n");
     printf("2> Revisiones\r\n");
-    printf("3> Salir\r\n");
+    printf("3> Guardar todo\r\n");
+    printf("4> Salir\r\n");
 
-    return CargarOpcion(3);
+    return CargarOpcion(4);
 }
 
 int MostrarMenuExpedientes() {

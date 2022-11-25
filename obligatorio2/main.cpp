@@ -51,6 +51,10 @@ void GuardarArchivos() {
 
         printf("[I]: Revisiones guardadas correctamente!\r\n");
     }
+
+    if (revTotal == 0 && expTotal == 0) {
+        printf("[I]: No hay cambios para guardar...\r\n");
+    }
 }
 
 void ProcesarMenuExpedientes() {
@@ -188,13 +192,17 @@ int main() {
     LeerArchivos();
 
     int opt;
-    while ((opt = IniciarMenu()) != 3) {
+    while ((opt = IniciarMenu()) != 4) {
         switch (opt) {
             case 1:
                 ProcesarMenuExpedientes();
                 break;
             case 2:
                 ProcesarMenuRevisiones();
+                break;
+            case 3:
+                GuardarArchivos();
+                printf("\r\n");
                 break;
         }
     }
