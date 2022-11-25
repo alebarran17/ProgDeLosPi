@@ -1,9 +1,11 @@
 #include "listaRevisiones.h"
 
+//Procedimiento: Crea una lista vacia.
 void CrearListaRevision(Lista &L){
     L = NULL;
 }
 
+//Procedimiento: Imprime la lista.
 void MostrarLista(Lista root) {
     if (root != NULL) {
         MostrarRevision(root->infoRev);
@@ -11,6 +13,7 @@ void MostrarLista(Lista root) {
     }
 }
 
+//Procedimiento: Muestra las revisiones con el id que le pasa.
 void MostrarLista(Lista root, int expedienteId) {
     if (root != NULL) {
         if (ObtenerExpedienteIdRevision(root->infoRev) == expedienteId) {
@@ -20,6 +23,7 @@ void MostrarLista(Lista root, int expedienteId) {
     }
 }
 
+//Funcion: Devuelve TRUE si la lista esta vacia, FALSE en caso contrario.
 boolean VaciaListaRevision(Lista L){
     boolean esVacio = FALSE;
     if (L == NULL)
@@ -27,18 +31,21 @@ boolean VaciaListaRevision(Lista L){
     return esVacio;
 }
 
-/* Precondición: lista NO vacía */
+//Funcion: Devuelve la primer revision.
+/* PrecondiciÃ³n: lista NO vacÃ­a */
 Revision Primero (Lista L){
     return L->infoRev;
 }
 
-/* Precondición: lista NO vacía */
+//Procedimiento: Devuelve del segundo en adelante.
+/* PrecondiciÃ³n: lista NO vacÃ­a */
 void Resto (Lista & L){
     Lista aux = L;
     L = L -> sigRev;
     delete aux;
 }
 
+//Procedimiento: Inserta una revision en la lista.
 void InsertarRevision (Lista & L, Revision R){
     Lista aux = new ListaRevision;
     if(L == NULL) {
@@ -54,6 +61,7 @@ void InsertarRevision (Lista & L, Revision R){
     }
 }
 
+//Procedimiento: Guarda la lista en un archivo.
 //Precondicion: El archivo debe venir abierto para escritura
 void GuardarListaRevisiones(Lista L, FILE * f){
     while(L != NULL){
@@ -62,7 +70,8 @@ void GuardarListaRevisiones(Lista L, FILE * f){
     }
 }
 
-//Precondicion: El archivo debe venir abierto para leectura
+//Procedimiento: Lee una lista desde un archivo.
+//Precondicion: El archivo debe venir abierto para lectura
 void LeerListaRevisiones(Lista &root, FILE * f){
     Revision buffer;
     root = NULL;
@@ -74,6 +83,7 @@ void LeerListaRevisiones(Lista &root, FILE * f){
     }
 }
 
+//Funcion: Cuenta la cantidad de revisiones.
 int ContarRevisiones(Lista root) {
     if (root != NULL) {
         return 1 + ContarRevisiones(root->sigRev);
@@ -82,6 +92,7 @@ int ContarRevisiones(Lista root) {
     }
 }
 
+//Funcion: Cuenta la cantidad de revisiones con el ID de expediente ingresado.
 int ContarRevisiones(Lista root, int expedienteId) {
     if (root != NULL) {
         if (ObtenerExpedienteIdRevision(root->infoRev) == expedienteId) {
@@ -94,6 +105,7 @@ int ContarRevisiones(Lista root, int expedienteId) {
     }
 }
 
+//Procedimiento: Devuelve la cantidad de revisiones satisfactorias, incompletas, y pendientes.
 void ContarRevisiones(Lista root, int& s, int& i, int& p) {
     s = i = p = 0;
     while (root != NULL) {
@@ -115,6 +127,7 @@ void ContarRevisiones(Lista root, int& s, int& i, int& p) {
     }
 }
 
+//Funcion: Cuenta la cantidad de revisiones entre dos fechas.
 int ContarRevisiones(Lista root, Fecha desde, Fecha hasta) {
     int total = 0;
     while (root != NULL) {
@@ -127,6 +140,7 @@ int ContarRevisiones(Lista root, Fecha desde, Fecha hasta) {
     return total;
 }
 
+//Procedimiento: Borra una revision de la lista.
 void BorrarRevisiones (Lista &root, int expedienteId) {
     if (root != NULL) {
         if (ObtenerExpedienteIdRevision(root->infoRev) == expedienteId) {
