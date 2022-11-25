@@ -115,6 +115,18 @@ void ContarRevisiones(Lista root, int& s, int& i, int& p) {
     }
 }
 
+int ContarRevisiones(Lista root, Fecha desde, Fecha hasta) {
+    int total = 0;
+    while (root != NULL) {
+        Fecha fechaRev = ObtenerFechaRevision(root->infoRev);
+        if (FechaMayorIgual(hasta, fechaRev) == TRUE && FechaMayorIgual(fechaRev, desde) == TRUE) {
+            total++;
+        }
+        root = FechaMayorIgual(fechaRev, desde) == TRUE ? root->sigRev : NULL;
+    }
+    return total;
+}
+
 void BorrarRevisiones (Lista &root, int expedienteId) {
     if (root != NULL) {
         if (root->infoRev.expedienteId == expedienteId) {

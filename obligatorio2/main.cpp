@@ -168,7 +168,7 @@ void ProcesarMenuExpedientes() {
 
 void ProcesarMenuRevisiones() {
     int opt;
-    while ((opt = MostrarMenuRevisiones()) != 5) {
+    while ((opt = MostrarMenuRevisiones()) != 6) {
         switch(opt) {
             case 1:
                 Revision r;
@@ -177,8 +177,10 @@ void ProcesarMenuRevisiones() {
 
                 if (revisiones != NULL) {
                     Fecha ultimaFecha = ObtenerFechaRevision(revisiones->infoRev);
-                    if (FechaMayorIgual(ultimaFecha, ObtenerFechaRevision(r)) == FALSE) {
-                        printf("[E]: La fecha de revisión debe ser mayor a la última ingresada (");
+                    if (FechaMayorIgual(ultimaFecha, ObtenerFechaRevision(r)) == TRUE) {
+                        printf("[E]: La fecha de revisión (");
+                        MostrarFecha(ObtenerFechaRevision(r));
+                        printf(") debe ser mayor a la última ingresada (");
                         MostrarFecha(ultimaFecha);
                         printf(")...\r\n");
 
@@ -200,6 +202,24 @@ void ProcesarMenuRevisiones() {
                 break;
 
             case 3:
+                Fecha from, to;
+
+                printf("Ingresa una fecha de inicio...\r\n");
+                CargarFecha(from, CargarFechaMinima());
+                printf("\r\n");
+
+                printf("Ingresa una fecha de fin...\r\n");
+                CargarFecha(to, from);
+                printf("\r\n");
+
+                printf("[I]: Hay %d revisiones creadas desde ", ContarRevisiones(revisiones, from, to));
+                MostrarFecha(from);
+                printf(" hasta ");
+                MostrarFecha(to);
+                printf(" inclusive\r\n");
+                break;
+
+            case 4:
                 int id;
                 printf("Ingrese el código del expediente a filtrar:\r\n");
                 printf(">> ");
@@ -213,7 +233,7 @@ void ProcesarMenuRevisiones() {
                 }
                 break;
 
-            case 4:
+            case 5:
                 int s, i, p;
                 ContarRevisiones(revisiones, s, i, p);
                 printf("[I]: Hay un total de %d revisiones: %d SATISFACTORIAS, %d INCOMPLETAS y %d PENDIENTES\r\n", s + i + p, s, i, p);
