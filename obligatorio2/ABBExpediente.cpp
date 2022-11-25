@@ -6,7 +6,7 @@ void AgregarExpediente(Arbol& root, Expediente e) {
         root->izq = NULL;
         root->der = NULL;
         root->info = e;
-    } else if (root->info.id > e.id) {
+    } else if (ObtenerIdExpediente(root->info) > ObtenerIdExpediente(e)) {
         AgregarExpediente(root->izq, e);
     } else {
         AgregarExpediente(root->der, e);
@@ -32,9 +32,9 @@ Expediente UltimoExpediente(Arbol root) {
 Expediente* BuscarExpediente(Arbol root, int id) {
     if (root == NULL) {
         return NULL;
-    } else if (root->info.id == id) {
+    } else if (ObtenerIdExpediente(root->info) == id) {
         return &root->info;
-    } else if (root->info.id > id) {
+    } else if (ObtenerIdExpediente(root->info) > id) {
         return BuscarExpediente(root->izq, id);
     } else {
         return BuscarExpediente(root->der, id);
@@ -42,7 +42,7 @@ Expediente* BuscarExpediente(Arbol root, int id) {
 }
 
 void BorrarExpediente(Arbol& root, int id) {
-    if (root->info.id == id) {
+    if (ObtenerIdExpediente(root->info) == id) {
         Arbol aux;
         if (root->der == NULL) {
             aux = root->izq;
@@ -54,9 +54,9 @@ void BorrarExpediente(Arbol& root, int id) {
             root = aux;
         } else {
             root->info = BuscarExpedienteMinimo(root)->info;
-            BorrarExpediente(root->der, root->info.id);
+            BorrarExpediente(root->der, ObtenerIdExpediente(root->info));
         }
-    } else if (root->info.id > id) {
+    } else if (ObtenerIdExpediente(root->info) > id) {
         BorrarExpediente(root->izq, id);
     } else {
         BorrarExpediente(root->der, id);
@@ -116,14 +116,14 @@ int ContarExpedientes(Arbol root, string apellido) {
 
 void ExpedienteConMasRevisiones(Arbol root, Lista revisiones, int& rev, int &eid) {
     if (root != NULL) {
-        Expediente e = root->info;
-        int c = ContarRevisiones(revisiones, e.id);
+        int id = ObtenerIdExpediente(root->info);
+        int c = ContarRevisiones(revisiones, id);
 
         if (rev < c) {
             rev = c;
-            eid = e.id;
-        } else if (rev == c && eid > e.id) {
-            eid = e.id;
+            eid = id;
+        } else if (rev == c && eid > id) {
+            eid = id;
         }
 
         ExpedienteConMasRevisiones(root->izq, revisiones, rev, eid);

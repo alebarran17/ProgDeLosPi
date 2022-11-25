@@ -13,7 +13,7 @@ void MostrarLista(Lista root) {
 
 void MostrarLista(Lista root, int expedienteId) {
     if (root != NULL) {
-        if (root->infoRev.expedienteId == expedienteId) {
+        if (ObtenerExpedienteIdRevision(root->infoRev) == expedienteId) {
             MostrarRevision(root->infoRev);
         }
         MostrarLista(root->sigRev, expedienteId);
@@ -84,7 +84,7 @@ int ContarRevisiones(Lista root) {
 
 int ContarRevisiones(Lista root, int expedienteId) {
     if (root != NULL) {
-        if (root->infoRev.expedienteId == expedienteId) {
+        if (ObtenerExpedienteIdRevision(root->infoRev) == expedienteId) {
             return 1 + ContarRevisiones(root->sigRev, expedienteId);
         } else {
             return ContarRevisiones(root->sigRev, expedienteId);
@@ -129,7 +129,7 @@ int ContarRevisiones(Lista root, Fecha desde, Fecha hasta) {
 
 void BorrarRevisiones (Lista &root, int expedienteId) {
     if (root != NULL) {
-        if (root->infoRev.expedienteId == expedienteId) {
+        if (ObtenerExpedienteIdRevision(root->infoRev) == expedienteId) {
             Lista aux = root;
             root = root->sigRev;
             delete aux;

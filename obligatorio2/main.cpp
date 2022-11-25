@@ -68,7 +68,7 @@ void ProcesarMenuExpedientes() {
                 CargarExpediente(e);
                 printf("\r\n");
 
-                if (!BuscarExpediente(expedientes, e.id)) {
+                if (!BuscarExpediente(expedientes, ObtenerIdExpediente(e))) {
                     AgregarExpediente(expedientes, e);
                     MostrarExpediente(e);
                     printf("[I]: Expediente ingresado correctamente...\r\n");
@@ -188,7 +188,7 @@ void ProcesarMenuRevisiones() {
                     }
                 }
 
-                if (BuscarExpediente(expedientes, r.expedienteId)) {
+                if (BuscarExpediente(expedientes, ObtenerExpedienteIdRevision(r))) {
                     InsertarRevision(revisiones, r);
                     MostrarRevision(r);
                     printf("[I]: Revisión ingresada correctamente...\r\n");
