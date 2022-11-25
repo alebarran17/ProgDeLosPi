@@ -25,10 +25,10 @@ void MostrarRevision(Revision r) {
     print(r.descripcion);
 
     printf(" - Código del expediente: %d", r.expedienteId);
-    
-    printf(" - Estado de la revision: ");
+
+    printf(" - Estado: ");
     MostrarResultadoRevision(r.resultado);
-    
+
     printf("\r\n");
 }
 
