@@ -31,6 +31,8 @@ boolean FechaEsValida(Fecha f);
 
 boolean FechaMasReciente(Fecha f1, Fecha f2);
 
+boolean FechaMayorIgual(Fecha f1, Fecha f2);
+
 //Precondicion: El archivo debe venir abierto para escritura.
 void GuardarFecha(Fecha F, FILE* f);
 

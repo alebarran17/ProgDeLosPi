@@ -149,6 +149,17 @@ void ProcesarMenuRevisiones() {
                 CargarRevision(r);
                 printf("\r\n");
 
+                if (revisiones != NULL) {
+                    Fecha ultimaFecha = ObtenerFechaRevision(revisiones->infoRev);
+                    if (FechaMayorIgual(ultimaFecha, ObtenerFechaRevision(r))) {
+                        printf("[E]: La fecha de revisión debe ser mayor a la última ingresada (");
+                        MostrarFecha(ultimaFecha);
+                        printf(")...\r\n");
+
+                        break;
+                    }
+                }
+
                 if (BuscarExpediente(expedientes, r.expedienteId)) {
                     InsertarRevision(revisiones, r);
                     MostrarRevision(r);
