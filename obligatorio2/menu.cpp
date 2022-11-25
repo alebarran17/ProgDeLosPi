@@ -33,7 +33,7 @@ int MostrarMenuRevisiones() {
     printf("============ MENU REVISIONES ============\r\n");
     printf("1> Agregar revisión\r\n");
     printf("2> Listar revisiones\r\n");
-    printf("3> Listar revisiones entre fechas\r\n");
+    printf("3> Contar revisiones entre fechas\r\n");
     printf("4> Listar revisiones por código\r\n");
     printf("5> Contar revisiones por tipo\r\n");
     printf("6> Atrás\r\n");
