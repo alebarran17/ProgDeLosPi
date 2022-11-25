@@ -72,7 +72,7 @@ void ProcesarMenuExpedientes() {
                 break;
 
             case 2:
-                ListarExpedientes(expedientes);
+                MostrarArbol(expedientes);
                 break;
 
             case 3:

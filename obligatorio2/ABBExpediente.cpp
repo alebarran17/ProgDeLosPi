@@ -13,11 +13,11 @@ void AgregarExpediente(Arbol& root, Expediente e) {
     }
 }
 
-void MostrarArbol(Arbol root, Expediente e) {
+void MostrarArbol(Arbol root) {
     if (root != NULL) {
-        MostrarArbol(root->izq, e);
-        MostrarExpediente(e);
-        MostrarArbol(root->der, e);
+        MostrarArbol(root->izq);
+        MostrarExpediente(root->info);
+        MostrarArbol(root->der);
     }
 }
 
@@ -30,14 +30,6 @@ Expediente* BuscarExpediente(Arbol root, int id) {
         return BuscarExpediente(root->izq, id);
     } else {
         return BuscarExpediente(root->der, id);
-    }
-}
-
-void ListarExpedientes(Arbol root) {
-    if (root != NULL) {
-        ListarExpedientes(root->izq);
-        MostrarExpediente(root->info);
-        ListarExpedientes(root->der);
     }
 }
 

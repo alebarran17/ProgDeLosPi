@@ -15,12 +15,10 @@ typedef ABBExpediente* Arbol;
 void AgregarExpediente(Arbol& root, Expediente e);
 
 // Imprime los nodos del arbol en orden.
-void MostrarArbol(Arbol root, Expediente e);
+void MostrarArbol(Arbol root);
 
 // Devuelve un puntero al expediente buscado, o NULL si no existe.
 Expediente* BuscarExpediente(Arbol root, int id);
-
-void ListarExpedientes(Arbol root);
 
 void BorrarExpediente(Arbol& root, int id);
 
