@@ -85,3 +85,23 @@ int ContarExpedientes(Arbol root) {
         return 0;
     }
 }
+
+int ContarExpedientes(Arbol root, string apellido) {
+    if (root != NULL) {
+        int total = 0;
+        total += ContarExpedientes(root->izq, apellido);
+        total += ContarExpedientes(root->der, apellido);
+
+        Escribano e;
+        ObtenerEscribano(root->info, e);
+        string aux;
+        ObtenerApellidoEscribano(e, aux);
+        if (streq(apellido, aux)) {
+            total += 1;
+        }
+
+        return total;
+    } else {
+        return 0;
+    }
+}

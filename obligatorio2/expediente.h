@@ -21,6 +21,8 @@ void ObtenerCaratulaExpediente(Expediente e, string &s);
 
 int ObtenerPaginasExpediente(Expediente e);
 
+void ObtenerEscribano(Expediente expediente, Escribano &escribano);
+
 void GuardarExpediente(FILE* f, Expediente e);
 
 void LeerExpediente(FILE* f, Expediente& e);

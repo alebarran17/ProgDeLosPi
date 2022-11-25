@@ -30,4 +30,6 @@ void LeerArbolExpedientes(FILE* f, Arbol &root);
 
 int ContarExpedientes(Arbol root);
 
+int ContarExpedientes(Arbol root, string apellido);
+
 #endif // ABBEXPEDIENTE_H_INCLUDED

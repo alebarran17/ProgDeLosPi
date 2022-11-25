@@ -17,8 +17,18 @@ void MostrarEscribano(Escribano e){
     print(e.apellido);
 }
 
+void CargarNombreEscribano(Escribano &e, string s) {
+    strcrear(e.nombre);
+    strcop(s, e.nombre);
+}
+
 void ObtenerNombreEscribano(Escribano e, string &s){
     strcop(e.nombre, s);
+}
+
+void CargarApellidoEscribano(Escribano &e, string s) {
+    strcrear(e.apellido);
+    strcop(s, e.apellido);
 }
 
 void ObtenerApellidoEscribano(Escribano e, string &s){

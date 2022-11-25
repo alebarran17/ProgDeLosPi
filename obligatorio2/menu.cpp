@@ -15,10 +15,11 @@ int MostrarMenuExpedientes() {
     printf("============ MENU EXPEDIENTES ===========\r\n");
     printf("1> Agregar expediente\r\n");
     printf("2> Listar expedientes\r\n");
-    printf("3> Borrar expediente\r\n");
-    printf("4> Atrás\r\n");
+    printf("3> Contar expedientes por apellido del escribano\r\n");
+    printf("4> Borrar expediente\r\n");
+    printf("5> Atrás\r\n");
 
-    return CargarOpcion(4);
+    return CargarOpcion(5);
 }
 
 int MostrarMenuRevisiones() {

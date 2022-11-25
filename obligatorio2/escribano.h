@@ -12,7 +12,11 @@ void CargarEscribano(Escribano &e);
 
 void MostrarEscribano(Escribano e);
 
+void CargarNombreEscribano(Escribano &e, string s);
+
 void ObtenerNombreEscribano(Escribano e, string &s);
+
+void CargarApellidoEscribano(Escribano &e, string s);
 
 void ObtenerApellidoEscribano(Escribano e, string &s);
 

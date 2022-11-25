@@ -55,7 +55,7 @@ void GuardarArchivos() {
 
 void ProcesarMenuExpedientes() {
     int opt;
-    while ((opt = MostrarMenuExpedientes()) != 4) {
+    while ((opt = MostrarMenuExpedientes()) != 5) {
         switch (opt) {
             case 1:
                 Expediente e;
@@ -76,6 +76,16 @@ void ProcesarMenuExpedientes() {
                 break;
 
             case 3:
+                string apellido;
+                printf("Ingrese el apellido del escribano:\r\n");
+                printf(">> ");
+                scan(apellido);
+
+                printf("[I]: Hay un total de %d expedientes con ese apellido\r\n", ContarExpedientes(expedientes, apellido));
+
+                break;
+
+            case 4:
                 int id;
                 printf("Ingrese el código del expediente a borrar:\r\n");
                 printf(">> ");

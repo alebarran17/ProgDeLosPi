@@ -44,6 +44,17 @@ int ObtenerPaginasExpediente(Expediente e) {
     return e.paginas;
 }
 
+void ObtenerEscribano(Expediente expediente, Escribano &escribano) {
+    string nombre;
+    ObtenerNombreEscribano(expediente.escribano, nombre);
+
+    string apellido;
+    ObtenerApellidoEscribano(expediente.escribano, apellido);
+
+    CargarNombreEscribano(escribano, nombre);
+    CargarApellidoEscribano(escribano, apellido);
+}
+
 void GuardarExpediente(FILE* f, Expediente e) {
     fwrite(&e.id, sizeof(int), 1, f);
     GuardarString(e.caratula, f);
