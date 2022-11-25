@@ -2,6 +2,8 @@
 
 #include "resultadoRevision.h"
 
+// Cargar la información del resultado de una revision
+// por teclado.
 void CargarResultadoRevision(ResultadoRevision &r) {
     printf("Estado de la revisión (1-SATISFACTORIA, 2-INCOMPLETA, 3-PENDIENTE):\r\n");
 
@@ -24,6 +26,8 @@ void CargarResultadoRevision(ResultadoRevision &r) {
     }
 }
 
+// Mostrar en pantalla la información del resultado
+// de una revision.
 void MostrarResultadoRevision(ResultadoRevision r) {
     switch (r) {
         case SATISFACTORIA:

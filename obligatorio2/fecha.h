@@ -9,36 +9,46 @@ typedef struct {
     int anio;
 } Fecha;
 
-// Cargar una fecha por teclado.
+// Cargar la informacion de la fecha por teclado.
 void CargarFecha(Fecha &f, Fecha minima);
 
+// Cargar la informacion de la fecha con los datos ingresados.
 void CargarFecha(Fecha &f, int anio, int mes, int dia);
 
+// Devolver la fecha minima aceptada por el programa.
 Fecha CargarFechaMinima();
 
-// Mostrar una fecha por pantalla.
+// Mostrar en pantalla la fecha ingresada.
 void MostrarFecha(Fecha f);
 
-// Selectora devuelve el dia.
+// Obtener el dia de la fecha ingresada.
 int ObtenerDiaFecha(Fecha f);
 
-// Selectora devuelve el mes.
+// Obtener el mes de la fecha ingresada.
 int ObtenerMesFecha(Fecha f);
 
-// Selectora devuelve el año.
+// Obtener el año de la fecha ingresada.
 int ObtenerAnioFecha(Fecha f);
 
-//Función que determina si una fecha es válida.
+// Validar el formato de la fecha ingresada.
 boolean FechaEsValida(Fecha f);
 
+// Comparar dos fechas devolviendo TRUE si la
+// primera es mayor estricto que la segunda.
+// De lo contrario devuelve FALSE.
 boolean FechaMasReciente(Fecha f1, Fecha f2);
 
+// Comparar dos fechas devolviendo TRUE si la
+// primera es mayor o igual que la segunda.
+// De lo contrario devuelve FALSE.
 boolean FechaMayorIgual(Fecha f1, Fecha f2);
 
-//Precondicion: El archivo debe venir abierto para escritura.
+// Guardar la información de la fecha en un archivo.
+// Precondicion: EL archivo debe venir abierto para escritura.
 void GuardarFecha(Fecha F, FILE* f);
 
-//Precondicion: El archivo debe venir abierto para lectura.
+// Cargar la información de la fecha desde un archivo.
+// Precondicion: EL archivo debe venir abierto para lectura.
 void LeerFecha(Fecha &F, FILE* f);
 
 #endif // FECHA_H_INCLUDED

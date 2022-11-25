@@ -3,7 +3,7 @@
 #include "Fecha.h"
 #include "boolean.h"
 
-// Cargar una fecha por teclado.
+// Cargar la informacion de la fecha por teclado.
 void CargarFecha(Fecha &f, Fecha minima){
     boolean valida = FALSE;
 
@@ -38,38 +38,41 @@ void CargarFecha(Fecha &f, Fecha minima){
     }
 }
 
+// Cargar la informacion de la fecha con los datos ingresados.
 void CargarFecha(Fecha &f, int anio, int mes, int dia) {
     f.anio = anio;
     f.mes = mes;
     f.dia = dia;
 }
 
+// Devolver la fecha minima aceptada por el programa.
 Fecha CargarFechaMinima() {
     Fecha min;
     CargarFecha(min, 1970, 1, 1);
     return min;
 }
 
-// Mostrar una fecha por pantalla.
+// Mostrar en pantalla la fecha ingresada.
 void MostrarFecha(Fecha f){
     printf("%d/%d/%d", f.dia, f.mes, f.anio);
 }
 
-// Selectora devuelve el dia.
+// Obtener el dia de la fecha ingresada.
 int ObtenerDiaFecha(Fecha f){
     return f.dia;
 }
 
-// Selectora devuelve el mes.
+// Obtener el mes de la fecha ingresada.
 int ObtenerMesFecha(Fecha f) {
     return f.mes;
 }
 
-// Selectora devuelve el año.
+// Obtener el año de la fecha ingresada.
 int ObtenerAnioFecha(Fecha f){
     return f.anio;
 }
 
+// Validar el formato de la fecha ingresada.
 boolean FechaEsValida(Fecha f){
     int max;
     if (f.mes == 1 || f.mes == 3 || f.mes == 5 || f.mes == 7 || f.mes == 8 || f.mes == 10 || f.mes == 12)
@@ -92,24 +95,32 @@ boolean FechaEsValida(Fecha f){
     return TRUE;
 }
 
+// Comparar dos fechas devolviendo TRUE si la
+// primera es mayor estricto que la segunda.
+// De lo contrario devuelve FALSE.
 boolean FechaMasReciente(Fecha f1, Fecha f2){
     int f1Num = ObtenerAnioFecha(f1) * 10000 + ObtenerMesFecha(f1) * 100 + ObtenerDiaFecha(f1);
     int f2Num = ObtenerAnioFecha(f2) * 10000 + ObtenerMesFecha(f2) * 100 + ObtenerDiaFecha(f2);
     return f1Num > f2Num ? TRUE : FALSE;
 }
 
+// Comparar dos fechas devolviendo TRUE si la
+// primera es mayor o igual que la segunda.
+// De lo contrario devuelve FALSE.
 boolean FechaMayorIgual(Fecha f1, Fecha f2) {
     int f1Num = ObtenerAnioFecha(f1) * 10000 + ObtenerMesFecha(f1) * 100 + ObtenerDiaFecha(f1);
     int f2Num = ObtenerAnioFecha(f2) * 10000 + ObtenerMesFecha(f2) * 100 + ObtenerDiaFecha(f2);
     return f1Num >= f2Num ? TRUE : FALSE;
 }
 
-//Precondicion: EL archivo debe venir abierto para escritura.
+// Guardar la información de la fecha en un archivo.
+// Precondicion: EL archivo debe venir abierto para escritura.
 void GuardarFecha(Fecha F, FILE * f){
     fwrite (&F, sizeof(Fecha), 1, f);
 }
 
-//Precondicion: EL archivo debe venir abierto para lectura.
+// Cargar la información de la fecha desde un archivo.
+// Precondicion: EL archivo debe venir abierto para lectura.
 void LeerFecha(Fecha &F, FILE * f){
     fread(&F, sizeof(Fecha), 1, f);
 }

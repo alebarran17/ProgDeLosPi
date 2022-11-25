@@ -2,6 +2,7 @@
 
 #include "menu.h"
 
+// Motrar el menu principal
 int IniciarMenu() {
     printf("============= MENU PRINCIPAL ============\r\n");
     printf("1> Expedientes\r\n");
@@ -12,6 +13,7 @@ int IniciarMenu() {
     return CargarOpcion(4);
 }
 
+// Motrar el menu de expedientes
 int MostrarMenuExpedientes() {
     printf("============ MENU EXPEDIENTES ===========\r\n");
     printf("1> Agregar expediente\r\n");
@@ -26,6 +28,7 @@ int MostrarMenuExpedientes() {
     return CargarOpcion(8);
 }
 
+// Motrar el menu de revisiones
 int MostrarMenuRevisiones() {
     printf("============ MENU REVISIONES ============\r\n");
     printf("1> Agregar revisión\r\n");
@@ -38,6 +41,7 @@ int MostrarMenuRevisiones() {
     return CargarOpcion(6);
 }
 
+// Devolver la opción seleccionada por teclado desde 1 hasta max.
 int CargarOpcion(int max) {
     int o;
     do {

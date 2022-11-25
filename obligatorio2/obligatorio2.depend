@@ -57,10 +57,10 @@
 1668815506 e:\repos\progdelospi\obligatorio2\escribano.h
 	"stringDinamico.h"
 
-1669385280 source:d:\repos\personal\progdelospi\obligatorio2\abbexpediente.cpp
+1669391553 source:d:\repos\personal\progdelospi\obligatorio2\abbexpediente.cpp
 	"ABBExpediente.h"
 
-1669385244 d:\repos\personal\progdelospi\obligatorio2\abbexpediente.h
+1669385810 d:\repos\personal\progdelospi\obligatorio2\abbexpediente.h
 	"expediente.h"
 	"listaRevisiones.h"
 
@@ -88,15 +88,16 @@
 1669381187 source:d:\repos\personal\progdelospi\obligatorio2\expediente.cpp
 	"expediente.h"
 
-1669381679 source:d:\repos\personal\progdelospi\obligatorio2\fecha.cpp
-	"Fecha.h"
+1669412340 source:d:\repos\personal\progdelospi\obligatorio2\fecha.cpp
 	<stdio.h>
+	"Fecha.h"
+	"boolean.h"
 
-1669381764 d:\repos\personal\progdelospi\obligatorio2\fecha.h
+1669390474 d:\repos\personal\progdelospi\obligatorio2\fecha.h
 	"stringDinamico.h"
 	"boolean.h"
 
-1669385369 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
+1669412047 source:d:\repos\personal\progdelospi\obligatorio2\main.cpp
 	<locale.h>
 	"menu.h"
 	"ABBExpediente.h"
@@ -108,7 +109,7 @@
 
 1669066196 d:\repos\personal\progdelospi\obligatorio2\resultadorevision.h
 
-1669381884 source:d:\repos\personal\progdelospi\obligatorio2\revision.cpp
+1669411857 source:d:\repos\personal\progdelospi\obligatorio2\revision.cpp
 	"revision.h"
 
 1669216990 d:\repos\personal\progdelospi\obligatorio2\revision.h
@@ -159,14 +160,14 @@
 
 1669155415 d:\repos\personal\progdelospi\obligatorio2\menu.h
 
-1669383846 source:d:\repos\personal\progdelospi\obligatorio2\menu.cpp
+1669388723 source:d:\repos\personal\progdelospi\obligatorio2\menu.cpp
 	<stdio.h>
 	"menu.h"
 
-1669384396 source:d:\repos\personal\progdelospi\obligatorio2\listarevisiones.cpp
+1669391919 source:d:\repos\personal\progdelospi\obligatorio2\listarevisiones.cpp
 	"listaRevisiones.h"
 
-1669383355 d:\repos\personal\progdelospi\obligatorio2\listarevisiones.h
+1669391364 d:\repos\personal\progdelospi\obligatorio2\listarevisiones.h
 	"revision.h"
 	"boolean.h"
 
