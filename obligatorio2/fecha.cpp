@@ -59,7 +59,7 @@ boolean FechaEsValida(Fecha f){
 boolean FechaMasReciente(Fecha f1, Fecha f2){
     int f1Num = ObtenerAnioFecha(f1) * 10000 + ObtenerMesFecha(f1) * 100 + ObtenerDiaFecha(f1);
     int f2Num = ObtenerAnioFecha(f2) * 10000 + ObtenerMesFecha(f2) * 100 + ObtenerDiaFecha(f2);
-    return f1Num == f2Num ? TRUE : FALSE;
+    return f1Num > f2Num ? TRUE : FALSE;
 }
 
 boolean FechaMayorIgual(Fecha f1, Fecha f2) {
