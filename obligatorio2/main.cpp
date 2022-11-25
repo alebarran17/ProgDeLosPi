@@ -61,7 +61,7 @@ void GuardarArchivos() {
 
 void ProcesarMenuExpedientes() {
     int opt;
-    while ((opt = MostrarMenuExpedientes()) != 7) {
+    while ((opt = MostrarMenuExpedientes()) != 8) {
         switch (opt) {
             case 1:
                 Expediente e;
@@ -87,6 +87,30 @@ void ProcesarMenuExpedientes() {
 
             case 3:
                 if (expedientes != NULL) {
+                    int id;
+                    printf("Ingrese el código del expediente a filtrar:\r\n");
+                    printf(">> ");
+                    scanf("%d", &id);
+                    printf("\r\n");
+
+                    if (BuscarExpediente(expedientes, id)) {
+                        int c = ContarRevisiones(revisiones, id);
+                        if (c > 0) {
+                            printf("El expediente %d tiene un total de %d revisiones:\r\n", id, c);
+                            MostrarLista(revisiones, id);
+                        } else {
+                            printf("[E]: No existen revisiones asociadas al expediente seleccionado...\r\n");
+                        }
+                    } else {
+                        printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
+                    }
+                } else {
+                    printf("[I]: No hay ningún expediente guardado\r\n");
+                }
+                break;
+
+            case 4:
+                if (expedientes != NULL) {
                     string apellido;
                     printf("Ingrese el apellido del escribano:\r\n");
                     printf(">> ");
@@ -98,7 +122,7 @@ void ProcesarMenuExpedientes() {
                 }
                 break;
 
-            case 4:
+            case 5:
                 if (expedientes != NULL) {
                     MostrarExpediente(PrimerExpediente(expedientes));
                     MostrarExpediente(UltimoExpediente(expedientes));
@@ -107,7 +131,7 @@ void ProcesarMenuExpedientes() {
                 }
                 break;
 
-            case 5:
+            case 6:
                 if (expedientes != NULL) {
                     int rev = -1;
                     int eid = -1;
@@ -118,7 +142,7 @@ void ProcesarMenuExpedientes() {
                 }
                 break;
 
-            case 6:
+            case 7:
                 if (expedientes != NULL) {
                     int id;
                     printf("Ingrese el código del expediente a borrar:\r\n");
