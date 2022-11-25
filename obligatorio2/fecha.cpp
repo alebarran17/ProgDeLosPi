@@ -16,6 +16,12 @@ void CargarFecha(Fecha &f){
     scanf("%d", &f.anio);
 }
 
+void CargarFecha(Fecha &f, int anio, int mes, int dia) {
+    f.anio = anio;
+    f.mes = mes;
+    f.dia = dia;
+}
+
 // Mostrar una fecha por pantalla.
 void MostrarFecha(Fecha f){
     printf("%d/%d/%d", f.dia, f.mes, f.anio);

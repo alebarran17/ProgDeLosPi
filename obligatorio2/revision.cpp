@@ -7,7 +7,21 @@ void CargarRevision(Revision &r) {
     printf(">> ");
     scanf("%d", &r.expedienteId);
 
-    CargarFecha(r.fecha);
+    boolean valida = FALSE;
+    while (valida == FALSE) {
+        CargarFecha(r.fecha);
+        if (FechaEsValida(r.fecha)) {
+            Fecha min;
+            CargarFecha(min, 1970, 1, 1);
+            if (FechaMasReciente(r.fecha, min)) {
+                valida = TRUE;
+            } else {
+                printf("[E]: La fecha mínima es 01/01/1970\r\n");
+            }
+        } else {
+            printf("[E]: La fecha ingresada no es válida\r\n");
+        }
+    }
 
     printf("Ingrese una descripción:\r\n");
     printf(">> ");
