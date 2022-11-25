@@ -38,6 +38,7 @@ void GuardarArchivos() {
 
         FILE* expFile = fopen("expedientes.dat", "wb");
         GuardarArbolExpedientes(expFile, expedientes);
+        fclose(expFile);
 
         printf("[I]: Expedientes guardados correctamente!\r\n");
     }
@@ -48,6 +49,7 @@ void GuardarArchivos() {
 
         FILE* revFile = fopen("revisiones.dat", "wb");
         GuardarListaRevisiones(revisiones, revFile);
+        fclose(revFile);
 
         printf("[I]: Revisiones guardadas correctamente!\r\n");
     }
