@@ -55,7 +55,7 @@ void GuardarArchivos() {
 
 void ProcesarMenuExpedientes() {
     int opt;
-    while ((opt = MostrarMenuExpedientes()) != 5) {
+    while ((opt = MostrarMenuExpedientes()) != 6) {
         switch (opt) {
             case 1:
                 Expediente e;
@@ -72,32 +72,52 @@ void ProcesarMenuExpedientes() {
                 break;
 
             case 2:
-                MostrarArbol(expedientes);
+                if (expedientes != NULL) {
+                    MostrarArbol(expedientes);
+                } else {
+                    printf("[I]: No hay ningún expediente guardado\r\n");
+                }
                 break;
 
             case 3:
-                string apellido;
-                printf("Ingrese el apellido del escribano:\r\n");
-                printf(">> ");
-                scan(apellido);
+                if (expedientes != NULL) {
+                    string apellido;
+                    printf("Ingrese el apellido del escribano:\r\n");
+                    printf(">> ");
+                    scan(apellido);
 
-                printf("[I]: Hay un total de %d expedientes con ese apellido\r\n", ContarExpedientes(expedientes, apellido));
-
+                    printf("[I]: Hay un total de %d expedientes con ese apellido\r\n", ContarExpedientes(expedientes, apellido));
+                } else {
+                    printf("[I]: No hay ningún expediente guardado\r\n");
+                }
                 break;
 
             case 4:
-                int id;
-                printf("Ingrese el código del expediente a borrar:\r\n");
-                printf(">> ");
-                scanf("%d", &id);
-                printf("\r\n");
-
-                if (BuscarExpediente(expedientes, id)) {
-                    BorrarExpediente(expedientes, id);
-                    BorrarRevisiones(revisiones, id);
-                    printf("[I]: Expediente eliminado correctamente...\r\n");
+                if (expedientes != NULL) {
+                    MostrarExpediente(PrimerExpediente(expedientes));
+                    MostrarExpediente(UltimoExpediente(expedientes));
                 } else {
-                    printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
+                    printf("[I]: No hay ningún expediente guardado\r\n");
+                }
+                break;
+
+            case 5:
+                if (expedientes != NULL) {
+                    int id;
+                    printf("Ingrese el código del expediente a borrar:\r\n");
+                    printf(">> ");
+                    scanf("%d", &id);
+                    printf("\r\n");
+
+                    if (BuscarExpediente(expedientes, id)) {
+                        BorrarExpediente(expedientes, id);
+                        BorrarRevisiones(revisiones, id);
+                        printf("[I]: Expediente eliminado correctamente...\r\n");
+                    } else {
+                        printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
+                    }
+                } else {
+                    printf("[I]: No hay ningún expediente guardado\r\n");
                 }
                 break;
         }

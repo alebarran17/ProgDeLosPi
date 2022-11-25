@@ -21,6 +21,14 @@ void MostrarArbol(Arbol root) {
     }
 }
 
+Expediente PrimerExpediente(Arbol root) {
+    return root->izq == NULL ? root->info : PrimerExpediente(root->izq);
+}
+
+Expediente UltimoExpediente(Arbol root) {
+    return root->der == NULL ? root->info : PrimerExpediente(root->der);
+}
+
 Expediente* BuscarExpediente(Arbol root, int id) {
     if (root == NULL) {
         return NULL;
