@@ -3,14 +3,14 @@
 void CargarRevision(Revision &r) {
     printf("============ CARGAR REVISION ==========\r\n");
 
-    printf("Ingrese el c骴igo del expediente:\r\n");
+    printf("Ingrese el c贸digo del expediente:\r\n");
     printf(">> ");
     scanf("%d", &r.expedienteId);
 
-    printf("Ingrese una fecha de creaci髇...\r\n");
+    printf("Ingrese una fecha de creaci贸n...\r\n");
     CargarFecha(r.fecha, CargarFechaMinima());
 
-    printf("Ingrese una descripci髇:\r\n");
+    printf("Ingrese una descripci贸n:\r\n");
     printf(">> ");
     scan(r.descripcion);
 
@@ -21,10 +21,14 @@ void MostrarRevision(Revision r) {
     printf("Fecha: ");
     MostrarFecha(r.fecha);
 
-    printf(" - Descripci髇: ");
+    printf(" - Descripci贸n: ");
     print(r.descripcion);
 
-    printf(" - C骴igo del expediente: %d", r.expedienteId);
+    printf(" - C贸digo del expediente: %d", r.expedienteId);
+    
+    printf(" - Estado de la revision: ");
+    MostrarResultadoRevision(r.resultado);
+    
     printf("\r\n");
 }
 
