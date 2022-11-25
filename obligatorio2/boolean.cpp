@@ -1,6 +1,7 @@
 #include "boolean.h"
 #include <stdio.h>
 
+//Procedimiento: Carga el booleano.
 void carga(boolean &b){
     int num;
     printf("0-No hay 1-Hay:\n");
@@ -10,6 +11,8 @@ void carga(boolean &b){
     else
         b = FALSE;
 }
+
+//Procedimiento: Imprime el boolean en pantalla.
 void mostrar(boolean b){
     if(b==TRUE)
         printf("Si");
