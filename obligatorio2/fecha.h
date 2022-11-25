@@ -10,9 +10,11 @@ typedef struct {
 } Fecha;
 
 // Cargar una fecha por teclado.
-void CargarFecha(Fecha &f);
+void CargarFecha(Fecha &f, Fecha minima);
 
 void CargarFecha(Fecha &f, int anio, int mes, int dia);
+
+Fecha CargarFechaMinima();
 
 // Mostrar una fecha por pantalla.
 void MostrarFecha(Fecha f);

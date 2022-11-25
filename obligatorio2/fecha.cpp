@@ -1,25 +1,53 @@
-#include "Fecha.h"
 #include <stdio.h>
 
+#include "Fecha.h"
+#include "boolean.h"
+
 // Cargar una fecha por teclado.
-void CargarFecha(Fecha &f){
-    printf("Día de creación:\r\n");
-    printf(">> ");
-    scanf("%d", &f.dia);
+void CargarFecha(Fecha &f, Fecha minima){
+    boolean valida = FALSE;
 
-    printf("Mes de creación:\r\n");
-    printf(">> ");
-    scanf("%d", &f.mes);
+    while (valida == FALSE) {
+        printf("Día:\r\n");
+        printf(">> ");
+        scanf("%d", &f.dia);
 
-    printf("Año de creación:\r\n");
-    printf(">> ");
-    scanf("%d", &f.anio);
+        printf("Mes:\r\n");
+        printf(">> ");
+        scanf("%d", &f.mes);
+
+        printf("Año:\r\n");
+        printf(">> ");
+        scanf("%d", &f.anio);
+
+        if (FechaEsValida(f) == TRUE) {
+            if (FechaMayorIgual(f, minima) == TRUE) {
+                valida = TRUE;
+            } else {
+                printf("\r\n");
+                printf("[E]: La fecha debe ser mayor a ");
+                MostrarFecha(minima);
+                printf("\r\n");
+                printf("\r\n");
+            }
+        } else {
+            printf("\r\n");
+            printf("[E]: La fecha ingresada no es válida\r\n");
+            printf("\r\n");
+        }
+    }
 }
 
 void CargarFecha(Fecha &f, int anio, int mes, int dia) {
     f.anio = anio;
     f.mes = mes;
     f.dia = dia;
+}
+
+Fecha CargarFechaMinima() {
+    Fecha min;
+    CargarFecha(min, 1970, 1, 1);
+    return min;
 }
 
 // Mostrar una fecha por pantalla.
