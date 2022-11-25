@@ -44,6 +44,7 @@ void scan(string &s) {
     }
     aux[i] = '\0';
 
+    strcrear(s);
     strcop(aux, s);
     strdestruir(aux);
 }
