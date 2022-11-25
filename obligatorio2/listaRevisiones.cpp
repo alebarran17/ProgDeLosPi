@@ -94,6 +94,27 @@ int ContarRevisiones(Lista root, int expedienteId) {
     }
 }
 
+void ContarRevisiones(Lista root, int& s, int& i, int& p) {
+    s = i = p = 0;
+    while (root != NULL) {
+        ResultadoRevision r = ObtenerResultadoRevision(root->infoRev);
+        switch (r) {
+            case SATISFACTORIA:
+                s++;
+                break;
+            case INCOMPLETA:
+                i++;
+                break;
+            case PENDIENTE:
+                p++;
+                break;
+
+        }
+
+        root = root->sigRev;
+    }
+}
+
 void BorrarRevisiones (Lista &root, int expedienteId) {
     if (root != NULL) {
         if (root->infoRev.expedienteId == expedienteId) {

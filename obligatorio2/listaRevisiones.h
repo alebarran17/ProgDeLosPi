@@ -35,6 +35,8 @@ int ContarRevisiones(Lista root);
 
 int ContarRevisiones(Lista root, int expedienteId);
 
+void ContarRevisiones(Lista root, int& s, int& i, int& p);
+
 void BorrarRevisiones(Lista &from, int expedienteId);
 
 #endif // LISTAREVISIONES_H_INCLUDED

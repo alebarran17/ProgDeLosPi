@@ -138,7 +138,7 @@ void ProcesarMenuExpedientes() {
 
 void ProcesarMenuRevisiones() {
     int opt;
-    while ((opt = MostrarMenuRevisiones()) != 4) {
+    while ((opt = MostrarMenuRevisiones()) != 5) {
         switch(opt) {
             case 1:
                 Revision r;
@@ -170,6 +170,12 @@ void ProcesarMenuRevisiones() {
                 } else {
                     printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
                 }
+                break;
+
+            case 4:
+                int s, i, p;
+                ContarRevisiones(revisiones, s, i, p);
+                printf("[I]: Hay un total de %d revisiones: %d SATISFACTORIAS, %d INCOMPLETAS y %d PENDIENTES\r\n", s + i + p, s, i, p);
                 break;
         }
         printf("\r\n");

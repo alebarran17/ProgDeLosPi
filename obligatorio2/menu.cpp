@@ -29,9 +29,10 @@ int MostrarMenuRevisiones() {
     printf("1> Agregar revisión\r\n");
     printf("2> Listar revisiones\r\n");
     printf("3> Listar revisiones por código\r\n");
-    printf("4> Atrás\r\n");
+    printf("4> Contar revisiones por tipo\r\n");
+    printf("5> Atrás\r\n");
 
-    return CargarOpcion(4);
+    return CargarOpcion(5);
 }
 
 int CargarOpcion(int max) {
