@@ -2,6 +2,7 @@
 #define ABBEXPEDIENTE_H_INCLUDED
 
 #include "expediente.h"
+#include "listaRevisiones.h"
 
 typedef struct node {
     Expediente info;
@@ -35,5 +36,7 @@ void LeerArbolExpedientes(FILE* f, Arbol &root);
 int ContarExpedientes(Arbol root);
 
 int ContarExpedientes(Arbol root, string apellido);
+
+void ExpedienteConMasRevisiones(Arbol root, Lista revisiones, int& rev, int &eid);
 
 #endif // ABBEXPEDIENTE_H_INCLUDED

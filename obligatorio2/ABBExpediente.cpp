@@ -113,3 +113,20 @@ int ContarExpedientes(Arbol root, string apellido) {
         return 0;
     }
 }
+
+void ExpedienteConMasRevisiones(Arbol root, Lista revisiones, int& rev, int &eid) {
+    if (root != NULL) {
+        Expediente e = root->info;
+        int c = ContarRevisiones(revisiones, e.id);
+
+        if (rev < c) {
+            rev = c;
+            eid = e.id;
+        } else if (rev == c && eid > e.id) {
+            eid = e.id;
+        }
+
+        ExpedienteConMasRevisiones(root->izq, revisiones, rev, eid);
+        ExpedienteConMasRevisiones(root->der, revisiones, rev, eid);
+    }
+}

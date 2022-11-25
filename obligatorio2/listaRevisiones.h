@@ -33,6 +33,8 @@ void LeerListaRevisiones(Lista &L, FILE * f);
 
 int ContarRevisiones(Lista root);
 
+int ContarRevisiones(Lista root, int expedienteId);
+
 void BorrarRevisiones(Lista &from, int expedienteId);
 
 #endif // LISTAREVISIONES_H_INCLUDED

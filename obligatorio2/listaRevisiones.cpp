@@ -82,6 +82,18 @@ int ContarRevisiones(Lista root) {
     }
 }
 
+int ContarRevisiones(Lista root, int expedienteId) {
+    if (root != NULL) {
+        if (root->infoRev.expedienteId == expedienteId) {
+            return 1 + ContarRevisiones(root->sigRev, expedienteId);
+        } else {
+            return ContarRevisiones(root->sigRev, expedienteId);
+        }
+    } else {
+        return 0;
+    }
+}
+
 void BorrarRevisiones (Lista &root, int expedienteId) {
     if (root != NULL) {
         if (root->infoRev.expedienteId == expedienteId) {

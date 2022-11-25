@@ -55,7 +55,7 @@ void GuardarArchivos() {
 
 void ProcesarMenuExpedientes() {
     int opt;
-    while ((opt = MostrarMenuExpedientes()) != 6) {
+    while ((opt = MostrarMenuExpedientes()) != 7) {
         switch (opt) {
             case 1:
                 Expediente e;
@@ -102,6 +102,17 @@ void ProcesarMenuExpedientes() {
                 break;
 
             case 5:
+                if (expedientes != NULL) {
+                    int rev = -1;
+                    int eid = -1;
+                    ExpedienteConMasRevisiones(expedientes, revisiones, rev, eid);
+                    printf("[I]: El expediente con más revisiones es el %d con un total de %d revisiones\r\n", eid, rev);
+                } else {
+                    printf("[I]: No hay ningún expediente guardado\r\n");
+                }
+                break;
+
+            case 6:
                 if (expedientes != NULL) {
                     int id;
                     printf("Ingrese el código del expediente a borrar:\r\n");
