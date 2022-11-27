@@ -12,40 +12,48 @@ typedef struct node {
 
 typedef ABBExpediente* Arbol;
 
-// Agrega un expediente al arbol.
+// Agregar un expediente al arbol.
 void AgregarExpediente(Arbol& root, Expediente e);
 
-// Imprime los nodos del arbol en orden.
+// Mostrar en pantalla todos los expedientes.
 void MostrarArbol(Arbol root);
 
-//Devuelve el primer expediente.
+// Obtener el expediente con el codigo de identificacion menor.
 Expediente PrimerExpediente(Arbol root);
 
-//Devuelve el ultimo expediente.
+// Obtener el expediente con el codigo de identificacion mayor.
 Expediente UltimoExpediente(Arbol root);
 
-// Devuelve un puntero al expediente buscado, o NULL si no existe.
+// Obtener un expediente con el codigo de identificacion ingresado,
+// o NULL si no existe en el arbol.
 Expediente* BuscarExpediente(Arbol root, int id);
 
-//Borrar un expediente.
+// Eliminar el expediente del arbol con el codigo de
+// identificacion ingresado.
+// Precondicion: El expediente debe existir.
 void BorrarExpediente(Arbol& root, int id);
 
-//Busca el expediente con menor codigo.
+// Devolver el nodo del arbol cuyo numero de identificacion
+// es el menor de todos.
 Arbol BuscarExpedienteMinimo(Arbol root);
 
-//Guarda el arbol de expedientes en un archivo.
-void GuardarArbolExpedientes(FILE* f, Arbol root);
-
-//Lee desde un archivo un arbol de expedientes.
+// Cargar la información de todos los expedientes desde un archivo.
+// Precondicion: El archivo debe venir abierto para lectura.
 void LeerArbolExpedientes(FILE* f, Arbol &root);
 
-//Cuenta la cantidad de expedientes.
+// Guardar la información de todos los expedientes en un archivo.
+// Precondicion: El archivo debe venir abierto para escritura.
+void GuardarArbolExpedientes(FILE* f, Arbol root);
+
+// Devolver la cantidad total de expedientes en el arbol.
 int ContarExpedientes(Arbol root);
 
-//Cuenta la cantidad de expedientes dado un apellido.
+// Devolver la cantidad de expedientes cuyo apellido del escribano
+// coincide con el ingresado.
 int ContarExpedientes(Arbol root, string apellido);
 
-//Devuelve el expediente con mas revisiones.
+// Devolver el codigo de identificacion y la cantidad de revisiones
+// del expediente con mas revisiones.
 void ExpedienteConMasRevisiones(Arbol root, Lista revisiones, int& rev, int &eid);
 
 #endif // ABBEXPEDIENTE_H_INCLUDED
