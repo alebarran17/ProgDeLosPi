@@ -107,12 +107,21 @@ boolean strmen(string s1, string s2) {
     return existe;
 }
 
-boolean streq(string s1, string s2){
+boolean streq(string s1, string s2, boolean ignoreCase){
     boolean iguales = TRUE;
     int i = 0;
     while(s1[i] != '\0' && s2[i] != '\0' && iguales == TRUE){
-        if(s1[i]!=s2[i])
-                iguales=FALSE;
+        if(ignoreCase == FALSE) {
+            if (s1[i] != s2[i]) {
+                iguales = FALSE;
+            }
+        } else {
+            int c1 = s1[i] >= 65 && s1[i] <= 90 ? s1[i] + 32 : s1[i];
+            int c2 = s2[i] >= 65 && s2[i] <= 90 ? s2[i] + 32 : s2[i];
+            if (c1 != c2) {
+                iguales = FALSE;
+            }
+        }
         i++;
     }
     if(s1[i]!='\0' || s2[i]!='\0')

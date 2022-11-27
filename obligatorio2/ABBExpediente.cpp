@@ -122,7 +122,7 @@ int ContarExpedientes(Arbol root, string apellido) {
         ObtenerEscribano(root->info, e);
         string aux;
         ObtenerApellidoEscribano(e, aux);
-        if (streq(apellido, aux)) {
+        if (streq(apellido, aux, TRUE)) {
             total += 1;
         }
 

@@ -23,7 +23,7 @@ void print(string s1);
 
 boolean strmen(string s1, string s2);
 
-boolean streq(string s1, string s2);
+boolean streq(string s1, string s2, boolean ignoreCase);
 
 // Precondición: El archivo viene abierto para escritura.
 void GuardarString(string s, FILE * f);
