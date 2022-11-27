@@ -198,45 +198,61 @@ void ProcesarMenuRevisiones() {
                 break;
 
             case 2:
-                MostrarLista(revisiones);
+                if (revisiones != NULL) {
+                    MostrarLista(revisiones);
+                } else {
+                    printf("[I]: No hay ninguna revisión guardada\r\n");
+                }
                 break;
 
             case 3:
-                Fecha from, to;
+                if (revisiones != NULL) {
+                    Fecha from, to;
 
-                printf("Ingresa una fecha de inicio...\r\n");
-                CargarFecha(from, CargarFechaMinima());
-                printf("\r\n");
+                    printf("Ingresa una fecha de inicio...\r\n");
+                    CargarFecha(from, CargarFechaMinima());
+                    printf("\r\n");
 
-                printf("Ingresa una fecha de fin...\r\n");
-                CargarFecha(to, from);
-                printf("\r\n");
+                    printf("Ingresa una fecha de fin...\r\n");
+                    CargarFecha(to, from);
+                    printf("\r\n");
 
-                printf("[I]: Hay %d revisiones creadas desde ", ContarRevisiones(revisiones, from, to));
-                MostrarFecha(from);
-                printf(" hasta ");
-                MostrarFecha(to);
-                printf(" inclusive\r\n");
+                    printf("[I]: Hay %d revisiones creadas desde ", ContarRevisiones(revisiones, from, to));
+                    MostrarFecha(from);
+                    printf(" hasta ");
+                    MostrarFecha(to);
+                    printf(" inclusive\r\n");
+                } else {
+                    printf("[I]: No hay ninguna revisión guardada\r\n");
+                }
                 break;
 
             case 4:
-                int id;
-                printf("Ingrese el código del expediente a filtrar:\r\n");
-                printf(">> ");
-                scanf("%d", &id);
-                printf("\r\n");
+                if (revisiones != NULL) {
+                    int id;
+                    printf("Ingrese el código del expediente a filtrar:\r\n");
+                    printf(">> ");
+                    scanf("%d", &id);
+                    printf("\r\n");
 
-                if (BuscarExpediente(expedientes, id)) {
-                    MostrarLista(revisiones, id);
+                    if (BuscarExpediente(expedientes, id)) {
+                        MostrarLista(revisiones, id);
+                    } else {
+                        printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
+                    }
                 } else {
-                    printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
+                    printf("[I]: No hay ninguna revisión guardada\r\n");
                 }
                 break;
 
             case 5:
-                int s, i, p;
-                ContarRevisiones(revisiones, s, i, p);
-                printf("[I]: Hay un total de %d revisiones: %d SATISFACTORIAS, %d INCOMPLETAS y %d PENDIENTES\r\n", s + i + p, s, i, p);
+                if (revisiones != NULL) {
+                    int s, i, p;
+                    ContarRevisiones(revisiones, s, i, p);
+                    printf("[I]: Hay un total de %d revisiones: %d SATISFACTORIAS, %d INCOMPLETAS y %d PENDIENTES\r\n", s + i + p, s, i, p);
+                } else {
+                    printf("[I]: No hay ninguna revisión guardada\r\n");
+                }
                 break;
         }
         printf("\r\n");
