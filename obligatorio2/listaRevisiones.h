@@ -11,9 +11,6 @@ typedef struct nodoR {
 
 typedef ListaRevision * Lista;
 
-//Crea una lista vacia.
-void CrearListaRevision(Lista &L);
-
 //Imprime la lista.
 void MostrarLista(Lista root);
 

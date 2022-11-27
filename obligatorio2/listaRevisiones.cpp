@@ -1,9 +1,5 @@
 #include "listaRevisiones.h"
 
-//Procedimiento: Crea una lista vacia.
-void CrearListaRevision(Lista &L){
-    L = NULL;
-}
 
 //Procedimiento: Imprime la lista.
 void MostrarLista(Lista root) {
