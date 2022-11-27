@@ -34,9 +34,21 @@ void MostrarRevision(Revision r) {
     printf("\r\n");
 }
 
+// Cargar el codigo de identificacion del expediente
+// de una revision por teclado.
+void CargarExpedienteIdRevision(Revision& r) {
+    printf(">> ");
+    scanf("%d", &r.expedienteId);
+}
+
 // Devolver el identificador del expediente de la revision.
 int ObtenerExpedienteIdRevision(Revision r) {
     return r.expedienteId;
+}
+
+// Cargar la fecha de una revision por teclado.
+void CargarFechaRevision(Revision& r) {
+    CargarFecha(r.fecha, CargarFechaMinima());
 }
 
 // Devolver la fecha de la revision.

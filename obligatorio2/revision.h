@@ -18,8 +18,15 @@ void CargarRevision(Revision &r);
 // Mostrar en pantalla la información de una revisión.
 void MostrarRevision(Revision r);
 
+// Cargar el codigo de identificacion del expediente
+// de una revision por teclado.
+void CargarExpedienteIdRevision(Revision& r);
+
 // Devolver el identificador del expediente de la revision.
 int ObtenerExpedienteIdRevision(Revision r);
+
+// Cargar la fecha de una revision por teclado.
+void CargarFechaRevision(Revision& r);
 
 // Devolver la fecha de la revision.
 Fecha ObtenerFechaRevision(Revision r);

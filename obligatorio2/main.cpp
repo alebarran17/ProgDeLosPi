@@ -181,24 +181,30 @@ void ProcesarMenuRevisiones() {
 
                 if (revisiones != NULL) {
                     Fecha ultimaFecha = ObtenerFechaRevision(revisiones->infoRev);
-                    if (FechaMayorIgual(ultimaFecha, ObtenerFechaRevision(r)) == TRUE) {
+                    while (FechaMayorIgual(ObtenerFechaRevision(r), ultimaFecha) == FALSE) {
                         printf("[E]: La fecha de revisión (");
                         MostrarFecha(ObtenerFechaRevision(r));
                         printf(") debe ser mayor a la última ingresada (");
                         MostrarFecha(ultimaFecha);
                         printf(")...\r\n");
+                        printf("[E]: Por favor, ingresa una fecha mayor o igual a la última ingresada:\r\n");
+                        CargarFechaRevision(r);
 
-                        break;
+                        printf("\r\n");
                     }
                 }
 
-                if (BuscarExpediente(expedientes, ObtenerExpedienteIdRevision(r))) {
-                    InsertarRevision(revisiones, r);
-                    MostrarRevision(r);
-                    printf("[I]: Revisión ingresada correctamente...\r\n");
-                } else {
+                while (BuscarExpediente(expedientes, ObtenerExpedienteIdRevision(r)) == NULL) {
                     printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
+                    printf("[E]: Por favor, ingresa un código de identificación existente:\r\n");
+                    CargarExpedienteIdRevision(r);
+
+                    printf("\r\n");
                 }
+
+                InsertarRevision(revisiones, r);
+                MostrarRevision(r);
+                printf("[I]: Revisión ingresada correctamente...\r\n");
                 break;
 
             case 2:
