@@ -245,7 +245,7 @@ void ProcesarMenuRevisiones() {
                     scanf("%d", &id);
                     printf("\r\n");
 
-                    if (BuscarExpediente(expedientes, id)) {
+                    if (BuscarExpediente(expedientes, id) != NULL) {
                         MostrarLista(revisiones, id);
                     } else {
                         printf("[E]: No hemos podido encontrar el expediente con el código ingresado...\r\n");
