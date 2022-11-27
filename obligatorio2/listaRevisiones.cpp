@@ -1,7 +1,6 @@
 #include "listaRevisiones.h"
 
-
-//Procedimiento: Imprime la lista.
+// Mostrar en pantalla todas las revisiones.
 void MostrarLista(Lista root) {
     if (root != NULL) {
         MostrarRevision(root->infoRev);
@@ -9,7 +8,8 @@ void MostrarLista(Lista root) {
     }
 }
 
-//Procedimiento: Muestra las revisiones con el id que le pasa.
+// Mostrar en pantalla todas las revisiones cuya relación con
+// el expediente sea igual al ingresado.
 void MostrarLista(Lista root, int expedienteId) {
     if (root != NULL) {
         if (ObtenerExpedienteIdRevision(root->infoRev) == expedienteId) {
@@ -19,7 +19,7 @@ void MostrarLista(Lista root, int expedienteId) {
     }
 }
 
-//Funcion: Devuelve TRUE si la lista esta vacia, FALSE en caso contrario.
+// Devolver TRUE si la lista esta vacia, FALSE en caso contrario.
 boolean VaciaListaRevision(Lista L){
     boolean esVacio = FALSE;
     if (L == NULL)
@@ -27,21 +27,7 @@ boolean VaciaListaRevision(Lista L){
     return esVacio;
 }
 
-//Funcion: Devuelve la primer revision.
-/* Precondición: lista NO vacía */
-Revision Primero (Lista L){
-    return L->infoRev;
-}
-
-//Procedimiento: Devuelve del segundo en adelante.
-/* Precondición: lista NO vacía */
-void Resto (Lista & L){
-    Lista aux = L;
-    L = L -> sigRev;
-    delete aux;
-}
-
-//Procedimiento: Inserta una revision en la lista.
+// Agregar una revision a la lista.
 void InsertarRevision (Lista & L, Revision R){
     Lista aux = new ListaRevision;
     if(L == NULL) {
@@ -57,8 +43,8 @@ void InsertarRevision (Lista & L, Revision R){
     }
 }
 
-//Procedimiento: Guarda la lista en un archivo.
-//Precondicion: El archivo debe venir abierto para escritura
+// Guardar la información de todas las revisiones en un archivo.
+// Precondicion: El archivo debe venir abierto para escritura.
 void GuardarListaRevisiones(Lista L, FILE * f){
     while(L != NULL){
         GuardarRevision(L->infoRev, f);
@@ -66,8 +52,8 @@ void GuardarListaRevisiones(Lista L, FILE * f){
     }
 }
 
-//Procedimiento: Lee una lista desde un archivo.
-//Precondicion: El archivo debe venir abierto para lectura
+// Cargar la información de todas las revisiones desde un archivo.
+// Precondicion: El archivo debe venir abierto para lectura.
 void LeerListaRevisiones(Lista &root, FILE * f){
     Revision buffer;
     root = NULL;
@@ -79,7 +65,7 @@ void LeerListaRevisiones(Lista &root, FILE * f){
     }
 }
 
-//Funcion: Cuenta la cantidad de revisiones.
+// Devolver la cantidad total de revisiones en la lista.
 int ContarRevisiones(Lista root) {
     if (root != NULL) {
         return 1 + ContarRevisiones(root->sigRev);
@@ -88,7 +74,8 @@ int ContarRevisiones(Lista root) {
     }
 }
 
-//Funcion: Cuenta la cantidad de revisiones con el ID de expediente ingresado.
+// Devolver la cantidad total de revisiones cuyo codigo de
+// identificacion del expediente sea igual al ingresado.
 int ContarRevisiones(Lista root, int expedienteId) {
     if (root != NULL) {
         if (ObtenerExpedienteIdRevision(root->infoRev) == expedienteId) {
@@ -101,7 +88,7 @@ int ContarRevisiones(Lista root, int expedienteId) {
     }
 }
 
-//Procedimiento: Devuelve la cantidad de revisiones satisfactorias, incompletas, y pendientes.
+// Devolver la cantidad total de revisiones en la lista por resultado.
 void ContarRevisiones(Lista root, int& s, int& i, int& p) {
     s = i = p = 0;
     while (root != NULL) {
@@ -123,7 +110,8 @@ void ContarRevisiones(Lista root, int& s, int& i, int& p) {
     }
 }
 
-//Funcion: Cuenta la cantidad de revisiones entre dos fechas.
+// Devolver la cantidad total de revisiones en la lista dentro de un
+// rango de fechas.
 int ContarRevisiones(Lista root, Fecha desde, Fecha hasta) {
     int total = 0;
     while (root != NULL) {
@@ -136,7 +124,8 @@ int ContarRevisiones(Lista root, Fecha desde, Fecha hasta) {
     return total;
 }
 
-//Procedimiento: Borra una revision de la lista.
+// Eliminar las revisiones de la lista con el codigo de
+// identificacion del expediente ingresado.
 void BorrarRevisiones (Lista &root, int expedienteId) {
     if (root != NULL) {
         if (ObtenerExpedienteIdRevision(root->infoRev) == expedienteId) {
