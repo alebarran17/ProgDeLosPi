@@ -34,6 +34,13 @@ void MostrarExpediente(Expediente e) {
     printf("\r\n");
 }
 
+// Cargar el codigo de identificacion de un expediente
+// por teclado.
+void CargarIdExpediente(Expediente& e) {
+    printf(">> ");
+    scanf("%d", &e.id);
+}
+
 // Obtener el identificador del expediente ingresado.
 int ObtenerIdExpediente(Expediente e) {
     return e.id;

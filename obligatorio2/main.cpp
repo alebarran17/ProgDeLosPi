@@ -68,13 +68,17 @@ void ProcesarMenuExpedientes() {
                 CargarExpediente(e);
                 printf("\r\n");
 
-                if (!BuscarExpediente(expedientes, ObtenerIdExpediente(e))) {
-                    AgregarExpediente(expedientes, e);
-                    MostrarExpediente(e);
-                    printf("[I]: Expediente ingresado correctamente...\r\n");
-                } else {
+                while (BuscarExpediente(expedientes, ObtenerIdExpediente(e)) != NULL) {
                     printf("[E]: Ya existe un expediente con ese código...\r\n");
+                    printf("[E]: Por favor, ingresa un nuevo código de identificación:\r\n");
+                    CargarIdExpediente(e);
+
+                    printf("\r\n");
                 }
+
+                AgregarExpediente(expedientes, e);
+                MostrarExpediente(e);
+                printf("[I]: Expediente ingresado correctamente...\r\n");
                 break;
 
             case 2:

@@ -17,6 +17,10 @@ void CargarExpediente(Expediente &e);
 // Mostrar en pantalla la información del expediente ingresado.
 void MostrarExpediente(Expediente e);
 
+// Cargar el codigo de identificacion de un expediente
+// por teclado.
+void CargarIdExpediente(Expediente& e);
+
 // Obtener el identificador del expediente ingresado.
 int ObtenerIdExpediente(Expediente e);
 
