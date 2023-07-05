@@ -1,6 +1,8 @@
 #ifndef PREVIATURAS_H_INCLUDED
 #define PREVIATURAS_H_INCLUDED
 
+#include "Escolaridad.h"
+
 const int N = 30;
 typedef int Grafo[N][N];
 
@@ -25,8 +27,14 @@ void InsertarArista(Grafo& g, int v, int u);
 
 /// Operaciones adicionales.
 
-void DFS(Grafo g, int v, bool& visitados[N]);
+void DFS_Previas(Grafo g, int v, bool& visitados[N]);
+
+void ListarPrevias(Grafo g, int v);
+
+void DFS_Ciclos(Grafo g, int v, bool& visitados[N]);
 
 bool ContieneCiclos(Grafo g);
+
+bool AproboPreviasInmediatas(Grafo g, Escolaridad e, int v);
 
 #endif // PREVIATURAS_H_INCLUDED

@@ -1,12 +1,14 @@
 #ifndef ALUMNO_H_INCLUDED
 #define ALUMNO_H_INCLUDED
 
+#include "Escolaridad.h"
+
 typedef struct {
     int cedula;
     string nombre;
     string apellido;
     string telefono;
-    ListaCursos cursos;
+    Escolaridad escolaridad;
 } Alumno;
 
 void CargarAlumno(Alumno& a);
@@ -19,6 +21,10 @@ void ObtenerApellidoAlumno(Alumno a, string& s);
 
 void ObtenerTelefonoAlumno(Alumno a, string& s);
 
-ListaCursos ObtenerCursosAlumno(Alumno a);
+Escolaridad ObtenerEscolaridadAlumno(Alumno a);
+
+void SetEscolaridadAlumno(Alumno &a, Escolaridad e);
+
+void MostrarAlumno(Alumno a);
 
 #endif // ALUMNO_H_INCLUDED

@@ -27,8 +27,13 @@ Curso KEsimo(Escolaridad e, int n);
 
 /// Operaciones adicionales.
 
-void InsBack(Escolaridad e);
+void InsBack(Escolaridad &e, Curso c);
 
 void ListarOrdenada(Escolaridad e);
+
+bool AproboAsignatura(Escolaridad e, int asignaturaId);
+
+/// Precondición: La lista no es vacía.
+Curso Ultimo(Escolaridad e);
 
 #endif // LPPFCURSOS_H_INCLUDED
