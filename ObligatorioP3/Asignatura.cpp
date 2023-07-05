@@ -7,6 +7,8 @@ void CargarAsignatura(Asignatura& a){
     printf("Ingrese un nombre de asignatura: ");
     scan(nombre);
     printf("\r\n");
+    printf("Ingrese la cantidad de horas: ");
+    printf("\r\n");
 }
 
 void ObtenerNombre(Asignatura a, String& s){
