@@ -1,9 +1,10 @@
 #ifndef ASIGNATURA_H_INCLUDED
 #define ASIGNATURA_H_INCLUDED
+#include "String.h"
 
 typedef struct {
     int idAsignatura;
-    string nombre;
+    String nombre;
     int horas;
 } Asignatura;
 

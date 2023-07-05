@@ -5,9 +5,9 @@
 
 typedef struct {
     int cedula;
-    string nombre;
-    string apellido;
-    string telefono;
+    String nombre;
+    String apellido;
+    String telefono;
     Escolaridad escolaridad;
 } Alumno;
 

@@ -1,11 +1,13 @@
 #ifndef CURSO_H_INCLUDED
 #define CURSO_H_INCLUDED
+#include "String.h"
+#include "Fecha.h"
 
 const int NOTA_MINIMA = 6;
 
 typedef struct {
     int asignaturaId;
-    string nombreAsignatura;
+    String nombreAsignatura;
     Fecha finalizacion;
     int calificacion;
 } Curso;

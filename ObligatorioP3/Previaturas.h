@@ -1,6 +1,7 @@
 #ifndef PREVIATURAS_H_INCLUDED
 #define PREVIATURAS_H_INCLUDED
 
+#include "Carrera.h"
 #include "Escolaridad.h"
 
 const int N = 30;
