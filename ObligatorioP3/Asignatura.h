@@ -1,5 +1,6 @@
 #ifndef ASIGNATURA_H_INCLUDED
 #define ASIGNATURA_H_INCLUDED
+
 #include "String.h"
 
 typedef struct {
@@ -10,7 +11,7 @@ typedef struct {
 
 void CargarAsignatura(Asignatura& a);
 
-void ObtenerNombre(Asignatura a, string& s);
+void ObtenerNombre(Asignatura a, String& s);
 
 void ObtenerHoras(Asignatura a);
 
