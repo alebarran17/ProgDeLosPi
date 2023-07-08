@@ -16,7 +16,7 @@ void CargarCurso(Curso& c);
 
 int ObtenerAsignaturaIDCurso(Curso c);
 
-void ObtenerNombreAsignaturaCurso(Curso c, string& s);
+void ObtenerNombreAsignaturaCurso(Curso c, String& s);
 
 Fecha ObtenerFinalizacionCurso(Curso c);
 

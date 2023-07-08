@@ -15,11 +15,11 @@ void CargarAlumno(Alumno& a);
 
 long ObtenerCedulaAlumno(Alumno a);
 
-void ObtenerNombreAlumno(Alumno a, string& s);
+void ObtenerNombreAlumno(Alumno a, String& s);
 
-void ObtenerApellidoAlumno(Alumno a, string& s);
+void ObtenerApellidoAlumno(Alumno a, String& s);
 
-void ObtenerTelefonoAlumno(Alumno a, string& s);
+void ObtenerTelefonoAlumno(Alumno a, String& s);
 
 Escolaridad ObtenerEscolaridadAlumno(Alumno a);
 

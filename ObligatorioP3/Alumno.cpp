@@ -30,7 +30,7 @@ long ObtenerCedulaAlumno(Alumno a) {
     return a.cedula;
 }
 
-void ObtenerNombreAlumno(Alumno a, string& s) {
+void ObtenerNombreAlumno(Alumno a, String& s) {
     strcpy(a.nombre, s);
 }
 
