@@ -13,8 +13,8 @@ void CargarAsignatura(Asignatura& a);
 
 void ObtenerNombre(Asignatura a, String& s);
 
-void ObtenerHoras(Asignatura a);
+int ObtenerHoras(Asignatura a);
 
-void MostrarAsignatura(Asignatura c);
+void MostrarAsignatura(Asignatura a);
 
 #endif // ASIGNATURA_H_INCLUDED
