@@ -3,8 +3,6 @@
 
 #include <stdio.h>
 
-#include "Boolean.h"
-
 const int MAX = 200;
 typedef char * String;
 
@@ -30,10 +28,10 @@ void strswp(String &s1, String &s2);
 void print(String s1);
 
 //Devuelva TRUE si el primero de ellos es menor (en orden alfabético) que el segundo, o FALSE en caso contrario.
-boolean strmen(String s1, String s2);
+bool strmen(String s1, String s2);
 
 //Devuelve TRUE si ambos strings son iguales o FALSE en caso contrario.
-boolean streq(String s1, String s2, boolean ignoreCase);
+bool streq(String s1, String s2, bool ignoreCase);
 
 // Precondición: El archivo viene abierto para escritura.
 void GuardarString(String s, FILE * f);
@@ -42,13 +40,13 @@ void GuardarString(String s, FILE * f);
 void LeerString(String &s, FILE * f);
 
 //Verifica que nombre sea alfabético
-boolean NombreAlfabetico(String nom);
+bool NombreAlfabetico(String nom);
 
 //Pasa a mayusculas el String
 void PasarMayus(String &nombre);
 
 //Verifica que el parametro sea "->"
-boolean EsFlecha(String flecha);
+bool EsFlecha(String flecha);
 
 //Libera el espacio de memoria usado por le string
 void LiberarString(String &s);
@@ -63,9 +61,9 @@ void Recortar(String &input);
 void Substr(String &input, int from);
 
 //Devuelve si el string es vacio
-boolean StringVacio(String input);
+bool StringVacio(String input);
 
 //Valida que el formato de la fecha sea valido
-boolean ValidarFormato(String fecha);
+bool ValidarFormato(String fecha);
 
 #endif // STRING_H_INCLUDED
