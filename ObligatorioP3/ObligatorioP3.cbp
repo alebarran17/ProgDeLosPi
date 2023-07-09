@@ -38,12 +38,16 @@
 		<Unit filename="Asignatura.h" />
 		<Unit filename="Carrera.cpp" />
 		<Unit filename="Carrera.h" />
+		<Unit filename="Curso.cpp" />
 		<Unit filename="Curso.h" />
 		<Unit filename="Escolaridad.cpp" />
 		<Unit filename="Escolaridad.h" />
 		<Unit filename="Estudiantes.h" />
+		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="Previaturas.h" />
+		<Unit filename="String.cpp" />
+		<Unit filename="String.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
