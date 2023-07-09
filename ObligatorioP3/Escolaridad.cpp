@@ -29,7 +29,7 @@ Curso KEsimo(Escolaridad e, int n) {
         c++;
     }
 
-    return e.pri.curso;
+    return e.pri->curso;
 }
 
 /// Operaciones adicionales.
