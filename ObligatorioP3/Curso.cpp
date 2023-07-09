@@ -12,7 +12,7 @@ void CargarCurso(Curso& c){
     CargarFecha(c.finalizacion);
     printf("\r\n");
     printf("Ingrese la calificacion: ");
-    scanf("%d", c.calificacion);
+    scanf("%d", &c.calificacion);
 }
 
 int ObtenerAsignaturaIDCurso(Curso c){

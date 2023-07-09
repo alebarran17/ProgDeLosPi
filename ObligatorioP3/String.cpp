@@ -106,7 +106,7 @@ bool strmen(String s1, String s2) {
     return existe;
 }
 
-bool streq(String s1, String s2, boolean ignoreCase){
+bool streq(String s1, String s2, bool ignoreCase){
     bool iguales = true;
     int i = 0;
     while(s1[i] != '\0' && s2[i] != '\0' && iguales == true){

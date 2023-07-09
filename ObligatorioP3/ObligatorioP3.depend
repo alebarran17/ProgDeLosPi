@@ -19,7 +19,7 @@
 
 1688863183 c:\users\usuario\documents\github\progdelospi\obligatoriop3\fecha.h
 
-1688863282 source:c:\users\usuario\documents\github\progdelospi\obligatoriop3\asignatura.cpp
+1688863451 source:c:\users\usuario\documents\github\progdelospi\obligatoriop3\asignatura.cpp
 	"Asignatura.h"
 
 1688855102 c:\users\usuario\documents\github\progdelospi\obligatoriop3\asignatura.h
@@ -28,6 +28,10 @@
 1688595982 source:c:\users\usuario\documents\github\progdelospi\obligatoriop3\carrera.cpp
 	"Carrera.h"
 
-1688596268 c:\users\usuario\documents\github\progdelospi\obligatoriop3\carrera.h
+1688865523 c:\users\usuario\documents\github\progdelospi\obligatoriop3\carrera.h
 	"Asignatura.h"
+
+1688863986 source:c:\users\usuario\documents\github\progdelospi\obligatoriop3\curso.cpp
+	"Curso.h"
+	<stdio.h>
 

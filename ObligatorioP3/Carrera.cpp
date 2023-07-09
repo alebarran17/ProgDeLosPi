@@ -27,7 +27,7 @@ void InsBack(Carrera &c, Asignatura a){
 }
 
 ///Lista por pantalla la secuencia.
-void Listar(Carrera &c){
+void Listar(Carrera c){
     int i;
     for(i = 0; i<c.tope; i++){
         MostrarAsignatura(c.arr[i]);
