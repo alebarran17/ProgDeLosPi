@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1688863258 source:c:\users\usuario\documents\github\progdelospi\obligatoriop3\alumno.cpp
+	"Alumno.h"
+	"Escolaridad.h"
+	<stdio.h>
+
+1688855453 c:\users\usuario\documents\github\progdelospi\obligatoriop3\alumno.h
+	"Escolaridad.h"
+
+1688594808 c:\users\usuario\documents\github\progdelospi\obligatoriop3\escolaridad.h
+	"Curso.h"
+
+1688855453 c:\users\usuario\documents\github\progdelospi\obligatoriop3\curso.h
+	"String.h"
+	"Fecha.h"
+
+1688855453 c:\users\usuario\documents\github\progdelospi\obligatoriop3\string.h
+	<stdio.h>
+
+1688863183 c:\users\usuario\documents\github\progdelospi\obligatoriop3\fecha.h
+
+1688863282 source:c:\users\usuario\documents\github\progdelospi\obligatoriop3\asignatura.cpp
+	"Asignatura.h"
+
+1688855102 c:\users\usuario\documents\github\progdelospi\obligatoriop3\asignatura.h
+	"String.h"
+
+1688595982 source:c:\users\usuario\documents\github\progdelospi\obligatoriop3\carrera.cpp
+	"Carrera.h"
+
+1688596268 c:\users\usuario\documents\github\progdelospi\obligatoriop3\carrera.h
+	"Asignatura.h"
+
