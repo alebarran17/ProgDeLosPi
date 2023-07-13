@@ -42,13 +42,17 @@
 		<Unit filename="Curso.h" />
 		<Unit filename="Escolaridad.cpp" />
 		<Unit filename="Escolaridad.h" />
+		<Unit filename="Estudiantes.cpp" />
 		<Unit filename="Estudiantes.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Previaturas.cpp" />
 		<Unit filename="Previaturas.h" />
 		<Unit filename="String.cpp" />
 		<Unit filename="String.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 			<code_completion />

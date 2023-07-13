@@ -19,4 +19,6 @@ int ObtenerAnioFecha(Fecha f);
 
 bool FechaPosterior(Fecha a, Fecha b);
 
+bool ValidarFormato(Fecha f);
+
 #endif // FECHA_H_INCLUDED

@@ -4,7 +4,7 @@
 #include "Escolaridad.h"
 
 typedef struct {
-    int cedula;
+    long cedula;
     String nombre;
     String apellido;
     String telefono;

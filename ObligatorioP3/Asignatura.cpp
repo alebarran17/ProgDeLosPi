@@ -1,15 +1,14 @@
 #include "Asignatura.h"
 
 void CargarAsignatura(Asignatura& a){
-    printf("Ingrese un ID de asignatura: ");
-    scanf("%d", &a.idAsignatura);
-    printf("\r\n");
     printf("Ingrese un nombre de asignatura: ");
     scan(a.nombre);
-    printf("\r\n");
     printf("Ingrese la cantidad de horas: ");
     scanf("%d", &a.horas);
-    printf("\r\n");
+}
+
+int ObtenerIdAsignatura(Asignatura a) {
+    return a.idAsignatura;
 }
 
 void ObtenerNombre(Asignatura a, String& s){
@@ -22,11 +21,9 @@ int ObtenerHoras(Asignatura a){
 }
 
 void MostrarAsignatura(Asignatura a){
-    printf("El numero de la asignatura es %d", a.idAsignatura);
-    printf("\r\n");
-    printf("El nombre de la asignatura es: ");
+    printf("%d> ", a.idAsignatura);
     print(a.nombre);
     printf("\r\n");
-    printf("La cantidad de horas son %d", a.horas);
-    printf("\r\n");
+
+    printf(">> %d horas\r\n", a.horas);
 }

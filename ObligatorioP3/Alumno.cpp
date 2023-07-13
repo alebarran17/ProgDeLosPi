@@ -3,19 +3,17 @@
 #include <stdio.h>
 
 void CargarAlumno(Alumno& a) {
-    String aux;
-
-    printf("Ingrese el número de cédula: ");
-    scanf("%ld", a.cedula);
+    printf("Ingrese el nï¿½mero de cï¿½dula: ");
+    scanf("%ld", &a.cedula);
 
     printf("Ingrese el nombre: ");
-    scan(aux);
+    scan(a.nombre);
 
     printf("Ingrese el apellido: ");
-    scan(aux);
+    scan(a.apellido);
 
-    printf("Ingrese el número de teléfono: ");
-    scan(aux);
+    printf("Ingrese el nï¿½mero de telï¿½fono: ");
+    scan(a.telefono);
 
     a.escolaridad = Crear();
 }
@@ -36,7 +34,7 @@ void ObtenerTelefonoAlumno(Alumno a, String& s) {
     strcop(a.telefono, s);
 }
 
-Escolaridad ObtenerCursosAlumno(Alumno a) {
+Escolaridad ObtenerEscolaridadAlumno(Alumno a) {
     return a.escolaridad;
 }
 
@@ -47,12 +45,15 @@ void SetEscolaridadAlumno(Alumno &a, Escolaridad e) {
 void MostrarAlumno(Alumno a) {
     printf("Nombre: ");
     print(a.nombre);
+    printf("\r\n");
 
     printf("Apellido: ");
     print(a.apellido);
+    printf("\r\n");
 
-    printf("Teléfono: ");
+    printf("Telï¿½fono: ");
     print(a.telefono);
+    printf("\r\n");
 
     printf("Cantidad de cursos: %d\r\n", Largo(a.escolaridad));
 }

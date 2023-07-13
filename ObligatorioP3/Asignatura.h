@@ -11,6 +11,8 @@ typedef struct {
 
 void CargarAsignatura(Asignatura& a);
 
+int ObtenerIdAsignatura(Asignatura a);
+
 void ObtenerNombre(Asignatura a, String& s);
 
 int ObtenerHoras(Asignatura a);

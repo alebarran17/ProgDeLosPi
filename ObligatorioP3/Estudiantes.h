@@ -9,7 +9,7 @@ typedef struct _h_node {
 } HNode;
 
 const int B = 100;
-typedef Alumno* Estudiantes[B];
+typedef HNode* Estudiantes[B];
 
 /// Operaciones primitivas.
 
@@ -23,7 +23,7 @@ bool Member(Estudiantes e, int k);
 
 /// Inserta un elemento de tipo T en el diccionario.
 /// Precondición: el elemento a insertar no es miembro del diccionario.
-void Insert(Estudiantes& e, Alumno a);
+void Insert(Estudiantes e, Alumno a);
 
 void Modify(Estudiantes &e, Alumno a);
 
