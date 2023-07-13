@@ -7,7 +7,6 @@ const int NOTA_MINIMA = 6;
 
 typedef struct {
     int asignaturaId;
-    String nombreAsignatura;
     Fecha finalizacion;
     int calificacion;
 } Curso;
@@ -15,8 +14,6 @@ typedef struct {
 void CargarCurso(Curso& c);
 
 int ObtenerAsignaturaIDCurso(Curso c);
-
-void ObtenerNombreAsignaturaCurso(Curso c, string& s);
 
 Fecha ObtenerFinalizacionCurso(Curso c);
 

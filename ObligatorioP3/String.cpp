@@ -86,50 +86,50 @@ void print(String s1) {
     }
 }
 
-boolean strmen(String s1, String s2) {
-    boolean existe=FALSE;
+bool strmen(String s1, String s2) {
+    bool existe=false;
     int i=0;
     while(i<MAX-1 && !existe){
         if(s1[i]==s2[i])
             i++;
         else
-            existe=TRUE;
+            existe=true;
     }
     if(existe){
         if(s1[i]<s2[i]){
-            existe=TRUE;
+            existe=true;
         }else
-            existe=FALSE;
+            existe=false;
     }else
-            existe=FALSE;
+            existe=false;
 
     return existe;
 }
 
-boolean streq(String s1, String s2, boolean ignoreCase){
-    boolean iguales = TRUE;
+bool streq(String s1, String s2, bool ignoreCase){
+    bool iguales = true;
     int i = 0;
-    while(s1[i] != '\0' && s2[i] != '\0' && iguales == TRUE){
-        if(ignoreCase == FALSE) {
+    while(s1[i] != '\0' && s2[i] != '\0' && iguales == true){
+        if(ignoreCase == false) {
             if (s1[i] != s2[i]) {
-                iguales = FALSE;
+                iguales = false;
             }
         } else {
             int c1 = s1[i] >= 65 && s1[i] <= 90 ? s1[i] + 32 : s1[i];
             int c2 = s2[i] >= 65 && s2[i] <= 90 ? s2[i] + 32 : s2[i];
             if (c1 != c2) {
-                iguales = FALSE;
+                iguales = false;
             }
         }
         i++;
     }
     if(s1[i]!='\0' || s2[i]!='\0')
-                iguales=FALSE;
+                iguales=false;
     return iguales;
 }
 
-boolean EsFlecha(String flecha) {
-    return strlar(flecha) == 2 && flecha[0] == '-' && flecha[1] == '>' ? TRUE : FALSE;
+bool EsFlecha(String flecha) {
+    return strlar(flecha) == 2 && flecha[0] == '-' && flecha[1] == '>' ? true : false;
 }
 
 void PasarMayus(String &nombre) {
@@ -143,13 +143,13 @@ void PasarMayus(String &nombre) {
     }
 }
 
-boolean NombreAlfabetico(String nom) {
-    boolean alph = TRUE;
+bool NombreAlfabetico(String nom) {
+    bool alph = false;
 
     int i = 0;
-    while(nom[i] != '\0' && alph == TRUE){
+    while(nom[i] != '\0' && alph == false){
         int c = nom[i];
-        alph = (c >= 97 && c <= 122) || (c >= 65 && c <= 90) ? TRUE : FALSE;
+        alph = (c >= 97 && c <= 122) || (c >= 65 && c <= 90) ? true : false;
         i++;
     }
 
@@ -203,8 +203,8 @@ void Substr(String &input, int from) { //Devuelve el string desde donde termina 
     LiberarString(aux);
 }
 
-boolean StringVacio(String input) {
-    return strlar(input) == 0 && input[0] == '\0' ? TRUE : FALSE;
+bool StringVacio(String input) {
+    return strlar(input) == 0 && input[0] == '\0' ? true : false;
 }
 
 void GuardarString(String s, FILE *f) {
@@ -236,16 +236,16 @@ void LeerString(String &s, FILE *f) {
 }
 
 
-boolean ValidarFormato(String fecha) {
-    boolean r = TRUE;
+bool ValidarFormato(String fecha) {
+    bool r = false;
     int aux = 0;
-    while (fecha[aux] != '\0' && r == TRUE) {
+    while (fecha[aux] != '\0' && r == false) {
         if (fecha[aux] != '/') {
             int c = fecha[aux];
-            r = c >= 48 && c <= 57 ? TRUE : FALSE;
+            r = c >= 48 && c <= 57 ? true : false;
         } else {
             if (aux != 2 && aux != 5) {
-                r = FALSE;
+                r = false;
             }
         }
 
@@ -253,7 +253,7 @@ boolean ValidarFormato(String fecha) {
     }
 
     if (aux != 10) {
-        r = FALSE;
+        r = false;
     }
 
     return r;

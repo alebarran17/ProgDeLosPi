@@ -12,7 +12,7 @@ typedef struct {
 /// Operaciones primitivas.
 
 /// Crea una secuencia vacía.
-void Crear(Carrera c);
+void Crear(Carrera &c);
 
 /// Devuelve la cantidad de elementos de la secuencia.
 int Largo(Carrera c);
@@ -24,7 +24,7 @@ Asignatura KEsimo(Carrera c, int k);
 /// Operaciones adicionales.
 
 ///Agrega un elemento al final del secuencia.
-void InsBack(Carrera c, Asignatura a);
+void InsBack(Carrera &c, Asignatura &a);
 
 ///Lista por pantalla la secuencia.
 void Listar(Carrera c);

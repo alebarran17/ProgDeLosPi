@@ -21,15 +21,17 @@ Asignatura KEsimo(Carrera c, int k){
 /// Operaciones adicionales.
 
 ///Agrega un elemento al final del secuencia.
-void InsBack(Carrera &c, Asignatura a){
+void InsBack(Carrera &c, Asignatura &a){
+    a.idAsignatura = c.tope + 1;
     c.arr[c.tope] = a;
     c.tope++;
 }
 
 ///Lista por pantalla la secuencia.
-void Listar(Carrera &c){
+void Listar(Carrera c){
     int i;
     for(i = 0; i<c.tope; i++){
         MostrarAsignatura(c.arr[i]);
+        printf("\r\n");
     }
 }

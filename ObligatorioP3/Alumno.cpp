@@ -3,47 +3,39 @@
 #include <stdio.h>
 
 void CargarAlumno(Alumno& a) {
-    String aux;
-
     printf("Ingrese el número de cédula: ");
-    scanf("%ld", a.cedula);
+    scanf("%ld", &a.cedula);
 
     printf("Ingrese el nombre: ");
-    scan(aux);
-    strcpy(aux, a.nombre);
-    strdestroy(aux);
+    scan(a.nombre);
 
     printf("Ingrese el apellido: ");
-    scan(aux);
-    strcpy(aux, a.apellido);
-    strdestroy(aux);
+    scan(a.apellido);
 
     printf("Ingrese el número de teléfono: ");
-    scan(aux);
-    strcpy(aux, a.telefono);
-    strdestroy(aux);
+    scan(a.telefono);
 
-    a.cursos = Crear();
+    a.escolaridad = Crear();
 }
 
 long ObtenerCedulaAlumno(Alumno a) {
     return a.cedula;
 }
 
-void ObtenerNombreAlumno(Alumno a, string& s) {
-    strcpy(a.nombre, s);
+void ObtenerNombreAlumno(Alumno a, String& s) {
+    strcop(a.nombre, s);
 }
 
-void ObtenerApellidoAlumno(Alumno a, string& s) {
-    strcpy(a.apellido, s);
+void ObtenerApellidoAlumno(Alumno a, String& s) {
+    strcop(a.apellido, s);
 }
 
-void ObtenerTelefonoAlumno(Alumno a, string& s) {
-    strcpy(a.telefono, s);
+void ObtenerTelefonoAlumno(Alumno a, String& s) {
+    strcop(a.telefono, s);
 }
 
-ListaCursos ObtenerCursosAlumno(Alumno a) {
-    return a.cursos;
+Escolaridad ObtenerEscolaridadAlumno(Alumno a) {
+    return a.escolaridad;
 }
 
 void SetEscolaridadAlumno(Alumno &a, Escolaridad e) {
@@ -53,12 +45,15 @@ void SetEscolaridadAlumno(Alumno &a, Escolaridad e) {
 void MostrarAlumno(Alumno a) {
     printf("Nombre: ");
     print(a.nombre);
+    printf("\r\n");
 
     printf("Apellido: ");
     print(a.apellido);
+    printf("\r\n");
 
     printf("Teléfono: ");
     print(a.telefono);
+    printf("\r\n");
 
     printf("Cantidad de cursos: %d\r\n", Largo(a.escolaridad));
 }

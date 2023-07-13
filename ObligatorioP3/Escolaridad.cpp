@@ -29,15 +29,15 @@ Curso KEsimo(Escolaridad e, int n) {
         c++;
     }
 
-    return e.pri.curso;
+    return e.pri->curso;
 }
 
 /// Operaciones adicionales.
 
 void InsBack(Escolaridad &e, Curso c) {
-    ENode nodo = ENode;
-    nodo.curso = c;
-    nodo.sig = NULL;
+    ENode* nodo = new ENode;
+    nodo->curso = c;
+    nodo->sig = NULL;
 
     if (e.ult == NULL) {
         e.pri = e.ult = nodo;
@@ -49,7 +49,7 @@ void InsBack(Escolaridad &e, Curso c) {
 
 void ListarOrdenada(Escolaridad e){
     while (e.pri != NULL) {
-        MostrarCurso(e.pri);
+        MostrarCurso(e.pri->curso);
         e.pri = e.pri->sig;
     }
 }

@@ -34,16 +34,30 @@
 		</Compiler>
 		<Unit filename="Alumno.cpp" />
 		<Unit filename="Alumno.h" />
+		<Unit filename="Asignatura.cpp" />
 		<Unit filename="Asignatura.h" />
+		<Unit filename="Carrera.cpp" />
 		<Unit filename="Carrera.h" />
+		<Unit filename="Curso.cpp" />
 		<Unit filename="Curso.h" />
+		<Unit filename="Escolaridad.cpp" />
 		<Unit filename="Escolaridad.h" />
+		<Unit filename="Estudiantes.cpp" />
 		<Unit filename="Estudiantes.h" />
+		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Previaturas.cpp" />
 		<Unit filename="Previaturas.h" />
+		<Unit filename="String.cpp" />
+		<Unit filename="String.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
