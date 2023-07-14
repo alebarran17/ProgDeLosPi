@@ -49,6 +49,7 @@ void ListarPrevias(Previaturas g, Carrera c, int v) {
     }
 
     DFS_Previas(g, c, v, visitados);
+    printf("\r\n");
 }
 
 void DFS_Ciclos(Previaturas g, int v, bool visitados[CANT_ASIGNATURAS], bool& ciclo) {

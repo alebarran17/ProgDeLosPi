@@ -8,19 +8,16 @@ void ProcesarMenuAsignaturas(Carrera &carrera) {
     while (opt != 3) {
         switch(opt) {
             case 1:
-                {
-                    if (Largo(carrera) == CANT_ASIGNATURAS) {
-                        printf("[E]: Se llegó al máximo de asignaturas.\r\n");
+                if (Largo(carrera) == CANT_ASIGNATURAS) {
+                    printf("[E]: Se llegó al máximo de asignaturas.\r\n");
+                } else {
+                    Asignatura a;
+                    CargarAsignatura(a);
+                    if (ExisteAsignatura(carrera, a)) {
+                        printf("[E]: El nombre de la asignatura ya existe.\r\n");
                     } else {
-                        Asignatura a;
-                        CargarAsignatura(a);
-                        if (ExisteAsignatura(carrera, a)) {
-                            printf("[E]: El nombre de la asignatura ya existe.\r\n");
-                        } else {
-                            InsBack(carrera, a);
-                            int idAsignatura = ObtenerIdAsignatura(a);
-                            printf("[I]: Asignatura agregada correctamente con ID: %d.\r\n", idAsignatura);
-                        }
+                        InsBack(carrera, a);
+                        printf("[I]: Asignatura agregada correctamente con ID: %d.\r\n", ObtenerIdAsignatura(a));
                     }
                 }
                 break;
@@ -43,7 +40,6 @@ void ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
                     int v = CargarOpcion(0, CANT_ASIGNATURAS);
                     if (v > Largo(carrera) - 1) {
                         printf("[E]: La asignatura %d no existe.\r\n", v);
-                        printf("\r\n");
                     } else {
                         ListarPrevias(previas, carrera, v);
                     }
@@ -55,21 +51,19 @@ void ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
                     int v = CargarOpcion(0, CANT_ASIGNATURAS);
                     if (v > Largo(carrera) - 1) {
                         printf("[E]: La asignatura %d no existe.\r\n", v);
-                        printf("\r\n");
                     } else {
                         printf(">> Ingrese la asignatura previa:\r\n");
                         int u = CargarOpcion(0, CANT_ASIGNATURAS);
                         if (u > Largo(carrera) - 1) {
                             printf("[E]: La asignatura %d no existe.\r\n", u);
-                            printf("\r\n");
                         } else {
                               InsertarArista(previas, v, u);
-                              printf("\r\n");
                             }
                         }
                 }
                 break;
         }
+                        printf("\r\n");
         opt = MenuPrevias();
     }
 }
@@ -119,13 +113,11 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     int idAsignatura = ObtenerAsignaturaIDCurso(c);
                     if (idAsignatura > Largo(carrera)) {
                         printf("[E]: La asignatura %d no existe.\r\n", idAsignatura);
-                        printf("\r\n");
                         break;
                     }
 
                     if (!ValidarFormato(finalizadoEn)) {
                         printf("[E]: La fecha ingresada no es válida.\r\n");
-                        printf("\r\n");
                         break;
                     }
 
@@ -146,7 +138,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                         if (FechaPosterior(ObtenerFinalizacionCurso(ultimo), finalizadoEn)) {
                             printf("[E]: La fecha ingresada debe ser posterior a ");
                             MostrarFecha(ObtenerFinalizacionCurso(ultimo));
-                            printf("\r\n\r\n");
+                            printf("\r\n");
                             break;
                         }
                     }
