@@ -11,10 +11,13 @@ void ProcesarMenuAsignaturas(Carrera &carrera) {
                 {
                     Asignatura a;
                     CargarAsignatura(a);
-                    InsBack(carrera, a);
-
-                    int idAsignatura = ObtenerIdAsignatura(a);
-                    printf("[I]: Asignatura agregada correctamente con ID: %d.\r\n", idAsignatura);
+                    if(ExisteAsignatura(carrera, a))
+                        printf("La asignatura ya existe.");
+                    else{
+                        InsBack(carrera, a);
+                        int idAsignatura = ObtenerIdAsignatura(a);
+                        printf("[I]: Asignatura agregada correctamente con ID: %d.\r\n", idAsignatura);
+                    }
                 }
                 break;
             case 2:

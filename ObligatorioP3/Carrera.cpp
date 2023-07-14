@@ -35,3 +35,17 @@ void Listar(Carrera c){
         printf("\r\n");
     }
 }
+
+bool ExisteAsignatura(Carrera c, Asignatura a){
+    bool existe = false;
+    int i = 0;
+    String aux1, aux2;
+    while (!existe && i<c.tope){
+        ObtenerNombre(c.arr[i], aux1);
+        ObtenerNombre(a, aux2);
+        if(streq(aux1, aux2, true))
+            existe = true;
+        i++;
+    }
+    return existe;
+}
