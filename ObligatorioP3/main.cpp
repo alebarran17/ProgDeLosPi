@@ -35,7 +35,7 @@ void ProcesarMenuAsignaturas(Carrera &carrera) {
     }
 }
 
-int ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
+void ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
     int opt = MenuPrevias();
     while (opt != 3) {
         switch(opt) {
@@ -53,19 +53,20 @@ int ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
                 break;
             case 2:
                 {
-                    printf(">> Ingrese la asignatura padre:\r\n");
+                    printf(">> Ingrese la asignatura a agregar previas:\r\n");
                     int v = CargarOpcion(N + 1);
                     if (v > Largo(carrera)) {
                         printf("[E]: La asignatura %d no existe.\r\n", v);
                         printf("\r\n");
                     } else {
-                        printf(">> Ingrese la asignatura hija:\r\n");
+                        printf(">> Ingrese la asignatura previa:\r\n");
                         int u = CargarOpcion(N + 1);
                         if (u > Largo(carrera)) {
                             printf("[E]: La asignatura %d no existe.\r\n", u);
                             printf("\r\n");
                         } else {
-                            InsertarArista(previas, v - 1, u - 1);
+                              InsertarArista(previas, v - 1, u - 1);
+                            }
                         }
                     }
                 }
@@ -73,7 +74,7 @@ int ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
         }
         opt = MenuPrevias();
     }
-}
+
 
 void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas previas) {
     int opt = MenuAlumno();
@@ -86,7 +87,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     printf(">> ");
                     scanf("%ld", &dni);
                     if (!Member(estudiantes, dni)) {
-                        printf("[E]: El alumno con cédula %d no está registrado.\r\n", dni);
+                        printf("[E]: El alumno con cédula %ld no está registrado.\r\n", dni);
                     } else {
                         printf("\r\n");
                         Alumno a = Find(estudiantes, dni);
@@ -106,7 +107,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                         Insert(estudiantes, a);
 
                         long dni = ObtenerCedulaAlumno(a);
-                        printf("[I]: Alumno registrado correctamente con la cédula %d.\r\n", dni);
+                        printf("[I]: Alumno registrado correctamente con la cédula %ld.\r\n", dni);
                     }
                 }
                 break;
@@ -132,7 +133,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
 
                         Alumno a = Find(estudiantes, dni);
                         if (!Member(estudiantes, dni)) {
-                            printf("[E]: El alumno con cédula %d no está registrado.\r\n", dni);
+                            printf("[E]: El alumno con cédula %ld no está registrado.\r\n", dni);
                         } else {
                             bool fechaValida = true;
                             Escolaridad escolaridad = ObtenerEscolaridadAlumno(a);
@@ -172,7 +173,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
 
                     Alumno a = Find(estudiantes, dni);
                     if (!Member(estudiantes, dni)) {
-                        printf("[E]: El alumno con cédula %d no está registrado.\r\n", dni);
+                        printf("[E]: El alumno con cédula %ld no está registrado.\r\n", dni);
                     } else {
                         Escolaridad escolaridad = ObtenerEscolaridadAlumno(a);
                         ListarOrdenada(escolaridad);
@@ -195,32 +196,6 @@ int main()
 
     Estudiantes estudiantes;
     Make(estudiantes);
-
-    Asignatura m1;
-    m1.nombre = "M1";
-    m1.horas = 20;
-
-    Asignatura m2;
-    m2.nombre = "M2";
-    m2.horas = 23;
-
-    InsBack(carrera, m1);
-    InsBack(carrera, m2);
-
-    Alumno nico;
-    nico.cedula = 52526535;
-    nico.nombre = "Nicolas";
-    nico.apellido = "Villar";
-    nico.telefono = "098119968";
-    nico.escolaridad = Crear();
-
-    Curso c;
-    CargarCurso(c);
-    Escolaridad e;
-    e = Crear();
-    InsBack(e, c);
-    SetEscolaridadAlumno(nico, e);
-    Insert(estudiantes, nico);
 
     int opt = MenuPrincipal();
     while (opt != 4) {
