@@ -25,6 +25,7 @@ bool Member(Estudiantes e, int k);
 /// Precondición: el elemento a insertar no es miembro del diccionario.
 void Insert(Estudiantes e, Alumno a);
 
+///Modifica un estudiante del hash
 void Modify(Estudiantes &e, Alumno a);
 
 /// Dada la clave de un elemento devuelve el elemento con dicha clave
