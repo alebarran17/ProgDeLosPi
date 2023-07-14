@@ -9,15 +9,19 @@ void ProcesarMenuAsignaturas(Carrera &carrera) {
         switch(opt) {
             case 1:
                 {
-                    Asignatura a;
-                    CargarAsignatura(a);
-                    if(ExisteAsignatura(carrera, a))
-                        printf("La asignatura ya existe.");
-                    else{
-                        InsBack(carrera, a);
-                        int idAsignatura = ObtenerIdAsignatura(a);
-                        printf("[I]: Asignatura agregada correctamente con ID: %d.\r\n", idAsignatura);
-                    }
+                     if(Largo(carrera) == CANT_ASIGNATURAS){
+                         printf("[E]: Se llego al maximo de asignaturas.\r\n");
+                     }else{
+                        Asignatura a;
+                        CargarAsignatura(a);
+                        if(ExisteAsignatura(carrera, a))
+                            printf("[E]: La asignatura ya existe.\r\n");
+                        else{
+                            InsBack(carrera, a);
+                            int idAsignatura = ObtenerIdAsignatura(a);
+                            printf("[I]: Asignatura agregada correctamente con ID: %d.\r\n", idAsignatura);
+                            }
+                       }
                 }
                 break;
             case 2:
