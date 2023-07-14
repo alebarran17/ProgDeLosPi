@@ -21,14 +21,13 @@ void InsertarArista(Previaturas g, int v, int u);
 
 /// Operaciones adicionales.
 
-void DFS_Previas(Previaturas g, Carrera c, int v, bool visitados[N]);
-
+///Lista las previas de un alumno.
 void ListarPrevias(Previaturas g, Carrera c, int v);
 
-void DFS_Ciclos(Previaturas g, int v, bool visitados[N], bool& ciclo);
-
+///Determina si un grafo contiene ciclos.
 bool ContieneCiclos(Previaturas g, int v);
 
+///Determina si un alumno aprobo las previas inmediatas a una asignatura.
 bool AproboPreviasInmediatas(Previaturas g, Escolaridad e, int v);
 
 #endif // PREVIATURAS_H_INCLUDED
