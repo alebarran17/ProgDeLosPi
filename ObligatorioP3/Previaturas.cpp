@@ -21,7 +21,7 @@ bool PerteneceArista(Previaturas g, int v, int u) {
 void InsertarArista(Previaturas g, int v, int u) {
     g[v][u] = 1;
     if (ContieneCiclos(g, v)) {
-        // TODO: error
+        printf("[E]: Error fatal\r\n");
         g[v][u] = 0;
     }
 }
