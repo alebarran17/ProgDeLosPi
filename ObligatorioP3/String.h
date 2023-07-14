@@ -45,7 +45,7 @@ void PasarMayus(String &nombre);
 ///Libera el espacio de memoria usado por le string
 void LiberarString(String &s);
 
-//Devuelve la primera palabra del string
+///Devuelve la primera palabra del string
 void PrimerPalabra(String &input, String &palabra);
 
 ///Elimina los espacios que esten delante de la primer palabra.
