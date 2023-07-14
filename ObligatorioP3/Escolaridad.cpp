@@ -57,12 +57,14 @@ void ListarOrdenada(Escolaridad e){
 bool AproboAsignatura(Escolaridad e, int asignaturaId) {
     bool aprobo = false;
     while (e.pri != NULL && !aprobo) {
-        Fecha f = ObtenerFinalizacionCurso(e.pri->curso);
-        if (f.dia > 0) {
-            aprobo = true;
-        } else {
-            e.pri = e.pri->sig;
+        int auxId = ObtenerAsignaturaIDCurso(e.pri->curso);
+        if (ObtenerAsignaturaIDCurso(e.pri->curso) == asignaturaId) {
+            int calif = ObtenerCalifiacionCurso(e.pri->curso);
+            if (calif >= NOTA_MINIMA) {
+                aprobo = true;
+            }
         }
+        e.pri = e.pri->sig;
     }
 
     return aprobo;
