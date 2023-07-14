@@ -33,9 +33,6 @@ bool strmen(String s1, String s2);
 ///Devuelve TRUE si ambos strings son iguales o FALSE en caso contrario.
 bool streq(String s1, String s2, bool ignoreCase);
 
-/// Precondición: El archivo viene abierto para escritura.
-void GuardarString(String s, FILE * f);
-
 ///Verifica que nombre sea alfabético
 bool NombreAlfabetico(String nom);
 

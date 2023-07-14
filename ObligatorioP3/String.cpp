@@ -128,10 +128,6 @@ bool streq(String s1, String s2, bool ignoreCase){
     return iguales;
 }
 
-bool EsFlecha(String flecha) {
-    return strlar(flecha) == 2 && flecha[0] == '-' && flecha[1] == '>' ? true : false;
-}
-
 void PasarMayus(String &nombre) {
     int i = 0;
     while(nombre[i] != '\0'){
@@ -205,34 +201,6 @@ void Substr(String &input, int from) { //Devuelve el string desde donde termina 
 
 bool StringVacio(String input) {
     return strlar(input) == 0 && input[0] == '\0' ? true : false;
-}
-
-void GuardarString(String s, FILE *f) {
-    int i = 0;
-    while (s[i] != '\0') {
-        fwrite(&s[i], sizeof(char), 1, f);
-        i++;
-    }
-    // escribo el '\0'
-    fwrite(&s[i], sizeof(char), 1, f);
-
-}
-
-void LeerString(String &s, FILE *f) {
-    int i = 0;
-    String aux;
-
-    aux = new char[MAX];
-    fread(&aux[i], sizeof(char), 1, f);
-
-    while (!feof(f) && (aux[i] != '\0')) {
-        i++;
-        fread(&aux[i], sizeof(char), 1, f);
-    }
-
-    strcrear(s);
-    strcop(aux, s);
-    delete[] aux;
 }
 
 
