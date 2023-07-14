@@ -21,7 +21,7 @@ bool PerteneceArista(Previaturas g, int v, int u) {
 void InsertarArista(Previaturas g, int v, int u) {
     g[v][u] = 1;
     if (ContieneCiclos(g, v)) {
-        printf("[E]: Error fatal\r\n");
+        printf("[E]: %d no puede ser previa de %d porque generaría un ciclo.\r\n", u, v);
         g[v][u] = 0;
     }
 }
@@ -83,8 +83,10 @@ bool AproboPreviasInmediatas(Previaturas g, Escolaridad e, int v) {
     bool aprobo = true;
     int i = 0;
     while (i < N && aprobo) {
-        if (g[v][i] == 0) {
-            aprobo = false;
+        if (g[v][i] == 1 && v != i) {
+            if (!AproboAsignatura(e, i)) {
+                aprobo = false;
+            }
         }
         i++;
     }
