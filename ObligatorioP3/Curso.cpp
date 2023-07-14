@@ -16,6 +16,10 @@ int ObtenerAsignaturaIDCurso(Curso c){
     return c.asignaturaId;
 }
 
+void ObtenerNombreAsignatura(Curso c, String &s){
+    strcop(c.nombreAsig, s);
+}
+
 Fecha ObtenerFinalizacionCurso(Curso c){
     return c.finalizacion;
 }

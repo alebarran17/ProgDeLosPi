@@ -7,6 +7,7 @@ const int NOTA_MINIMA = 6;
 
 typedef struct {
     int asignaturaId;
+    String nombreAsig;
     Fecha finalizacion;
     int calificacion;
 } Curso;
@@ -16,6 +17,9 @@ void CargarCurso(Curso& c);
 
 ///Devuelve la identificacion de la asignatura asociada al curso
 int ObtenerAsignaturaIDCurso(Curso c);
+
+///Devuelve el nombre de la asignatura
+void ObtenerNombreAsignatura(Curso c, String &s);
 
 ///Devuelve la fecha de finalizacion del curso
 Fecha ObtenerFinalizacionCurso(Curso c);
