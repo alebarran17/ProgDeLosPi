@@ -11,14 +11,19 @@ typedef struct {
     int calificacion;
 } Curso;
 
+///Cargar curso por teclado
 void CargarCurso(Curso& c);
 
+///Devuelve la identificacion de la asignatura asociada al curso
 int ObtenerAsignaturaIDCurso(Curso c);
 
+///Devuelve la fecha de finalizacion del curso
 Fecha ObtenerFinalizacionCurso(Curso c);
 
+///Devuelve la calificacion del curso
 int ObtenerCalifiacionCurso(Curso c);
 
+///Muestra el curso
 void MostrarCurso(Curso c);
 
 #endif // CURSO_H_INCLUDED
