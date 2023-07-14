@@ -4,8 +4,8 @@
 
 /// Crea un grafo vacío.
 void Crear(Previaturas& g) {
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
+    for (int i = 0; i < CANT_ASIGNATURAS; i++) {
+        for (int j = 0; j < CANT_ASIGNATURAS; j++) {
             g[i][j] = 0;
         }
     }
@@ -28,10 +28,10 @@ void InsertarArista(Previaturas g, int v, int u) {
 
 /// Operaciones adicionales.
 
-void DFS_Previas(Previaturas g, Carrera c, int v, bool visitados[N]) {
+void DFS_Previas(Previaturas g, Carrera c, int v, bool visitados[CANT_ASIGNATURAS]) {
     visitados[v] = true;
 
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < CANT_ASIGNATURAS; i++) {
         if (!visitados[i] && PerteneceArista(g, v, i)) {
             Asignatura a = KEsimo(c, i);
             MostrarAsignatura(a);
@@ -43,19 +43,19 @@ void DFS_Previas(Previaturas g, Carrera c, int v, bool visitados[N]) {
 }
 
 void ListarPrevias(Previaturas g, Carrera c, int v) {
-    bool visitados[N];
-    for (int i = 0; i < N; i++) {
+    bool visitados[CANT_ASIGNATURAS];
+    for (int i = 0; i < CANT_ASIGNATURAS; i++) {
         visitados[i] = false;
     }
 
     DFS_Previas(g, c, v, visitados);
 }
 
-void DFS_Ciclos(Previaturas g, int v, bool visitados[N], bool& ciclo) {
+void DFS_Ciclos(Previaturas g, int v, bool visitados[CANT_ASIGNATURAS], bool& ciclo) {
     visitados[v] = true;
 
     int i = 0;
-    while (i < N && !ciclo) {
+    while (i < CANT_ASIGNATURAS && !ciclo) {
         if (i != v && PerteneceArista(g, v, i)) {
             if (!visitados[i]) {
                 DFS_Ciclos(g, i, visitados, ciclo);
@@ -68,8 +68,8 @@ void DFS_Ciclos(Previaturas g, int v, bool visitados[N], bool& ciclo) {
 }
 
 bool ContieneCiclos(Previaturas g, int v) {
-    bool visitados[N];
-    for (int i = 0; i < N; i++) {
+    bool visitados[CANT_ASIGNATURAS];
+    for (int i = 0; i < CANT_ASIGNATURAS; i++) {
         visitados[i] = false;
     }
 
@@ -82,7 +82,7 @@ bool ContieneCiclos(Previaturas g, int v) {
 bool AproboPreviasInmediatas(Previaturas g, Escolaridad e, int v) {
     bool aprobo = true;
     int i = 0;
-    while (i < N && aprobo) {
+    while (i < CANT_ASIGNATURAS && aprobo) {
         if (g[v][i] == 1 && v != i) {
             if (!AproboAsignatura(e, i)) {
                 aprobo = false;

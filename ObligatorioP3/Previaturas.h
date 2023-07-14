@@ -4,8 +4,7 @@
 #include "Carrera.h"
 #include "Escolaridad.h"
 
-const int N = 30;
-typedef int Previaturas[N][N];
+typedef int Previaturas[CANT_ASIGNATURAS][CANT_ASIGNATURAS];
 
 /// Operaciones primitivas.
 

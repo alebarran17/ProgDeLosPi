@@ -40,7 +40,7 @@ void ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
             case 1:
                 {
                     printf(">> Ingrese la asignatura para listar:\r\n");
-                    int v = CargarOpcion(0, N);
+                    int v = CargarOpcion(0, CANT_ASIGNATURAS);
                     if (v > Largo(carrera) - 1) {
                         printf("[E]: La asignatura %d no existe.\r\n", v);
                         printf("\r\n");
@@ -52,13 +52,13 @@ void ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
             case 2:
                 {
                     printf(">> Ingrese la asignatura a agregar previas:\r\n");
-                    int v = CargarOpcion(0, N);
+                    int v = CargarOpcion(0, CANT_ASIGNATURAS);
                     if (v > Largo(carrera) - 1) {
                         printf("[E]: La asignatura %d no existe.\r\n", v);
                         printf("\r\n");
                     } else {
                         printf(">> Ingrese la asignatura previa:\r\n");
-                        int u = CargarOpcion(0, N);
+                        int u = CargarOpcion(0, CANT_ASIGNATURAS);
                         if (u > Largo(carrera) - 1) {
                             printf("[E]: La asignatura %d no existe.\r\n", u);
                             printf("\r\n");
