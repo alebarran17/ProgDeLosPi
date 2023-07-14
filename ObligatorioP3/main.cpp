@@ -179,9 +179,6 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     }
                 }
                 break;
-            default:
-                printf("Error");
-            break;
         }
         printf("\r\n");
         opt = MenuAlumno();
@@ -217,6 +214,12 @@ int main()
     nico.telefono = "098119968";
     nico.escolaridad = Crear();
 
+    Curso c;
+    CargarCurso(c);
+    Escolaridad e;
+    e = Crear();
+    InsBack(e, c);
+    SetEscolaridadAlumno(nico, e);
     Insert(estudiantes, nico);
 
     int opt = MenuPrincipal();
