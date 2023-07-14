@@ -15,7 +15,7 @@ void ProcesarMenuAsignaturas(Carrera &carrera) {
                         Asignatura a;
                         CargarAsignatura(a);
                         if(ExisteAsignatura(carrera, a))
-                            printf("[E]: La asignatura ya existe.\r\n");
+                            printf("[E]: El nombre de la asignatura ya existe.\r\n");
                         else{
                             InsBack(carrera, a);
                             int idAsignatura = ObtenerIdAsignatura(a);
@@ -179,6 +179,9 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     }
                 }
                 break;
+            default:
+                printf("Error");
+            break;
         }
         printf("\r\n");
         opt = MenuAlumno();
