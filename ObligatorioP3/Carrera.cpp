@@ -22,7 +22,7 @@ Asignatura KEsimo(Carrera c, int k){
 
 ///Agrega un elemento al final del secuencia.
 void InsBack(Carrera &c, Asignatura &a){
-    a.idAsignatura = c.tope + 1;
+    a.idAsignatura = c.tope;
     c.arr[c.tope] = a;
     c.tope++;
 }

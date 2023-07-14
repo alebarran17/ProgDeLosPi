@@ -2,6 +2,7 @@
 #define CURSO_H_INCLUDED
 #include "String.h"
 #include "Fecha.h"
+#include "Carrera.h"
 
 const int NOTA_MINIMA = 6;
 
@@ -23,7 +24,9 @@ Fecha ObtenerFinalizacionCurso(Curso c);
 ///Devuelve la calificacion del curso
 int ObtenerCalifiacionCurso(Curso c);
 
+Asignatura ObtenerAsignaturaPorID(Curso c, Carrera carrera);
+
 ///Muestra el curso
-void MostrarCurso(Curso c);
+void MostrarCurso(Curso c, Carrera carrera);
 
 #endif // CURSO_H_INCLUDED

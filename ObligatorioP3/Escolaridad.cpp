@@ -47,9 +47,9 @@ void InsBack(Escolaridad &e, Curso c) {
     }
 }
 
-void ListarOrdenada(Escolaridad e){
+void ListarOrdenada(Escolaridad e, Carrera c){
     while (e.pri != NULL) {
-        MostrarCurso(e.pri->curso);
+        MostrarCurso(e.pri->curso, c);
         e.pri = e.pri->sig;
     }
 }

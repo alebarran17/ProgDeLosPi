@@ -2,6 +2,7 @@
 #define LPPFCURSOS_H_INCLUDED
 
 #include "Curso.h"
+#include "Carrera.h"
 
 typedef struct _e_node {
     Curso curso;
@@ -29,7 +30,7 @@ Curso KEsimo(Escolaridad e, int n);
 ///Inserta un elemento al final de la lista
 void InsBack(Escolaridad &e, Curso c);
 ///Lista en pantalla la escolaridad de forma ordenada
-void ListarOrdenada(Escolaridad e);
+void ListarOrdenada(Escolaridad e, Carrera c);
 ///Demuestra si la asignatura se aprobo
 bool AproboAsignatura(Escolaridad e, int asignaturaId);
 

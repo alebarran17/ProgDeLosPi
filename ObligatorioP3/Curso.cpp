@@ -24,9 +24,26 @@ int ObtenerCalifiacionCurso(Curso c){
     return c.calificacion;
 }
 
-void MostrarCurso(Curso c){
-    printf("El ID de asignatura es: %d\r\n",c.asignaturaId);
-    printf("La fecha es: ");
+Asignatura ObtenerAsignaturaPorID(Curso c, Carrera carrera) {
+    int asignaturaId = c.asignaturaId;
+    return KEsimo(carrera, asignaturaId);
+}
+
+void MostrarCurso(Curso c, Carrera carrera){
+    Asignatura asignatura = ObtenerAsignaturaPorID(c, carrera);
+
+    printf("%d>> ", c.asignaturaId);
+    print(asignatura.nombre);
+    printf("\r\n");
+
+    printf(">> Finalizado en: ");
     MostrarFecha(c.finalizacion);
-    printf("La calificacion es: %d", c.calificacion);
+    printf("\r\n");
+
+    printf(">> La calificacion es: %d", c.calificacion);
+    if (c.calificacion >= NOTA_MINIMA) {
+        printf(" (aprobada)");
+    }
+
+    printf("\r\n");
 }

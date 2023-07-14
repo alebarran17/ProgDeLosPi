@@ -9,6 +9,6 @@ int MenuPrevias();
 
 int MenuAlumno();
 
-int CargarOpcion(int max);
+int CargarOpcion(int min, int max);
 
 #endif // MENU_H_INCLUDED

@@ -12,7 +12,7 @@ int MenuPrincipal() {
     printf("3> Alumnos...\r\n");
     printf("4> Salir\r\n");
 
-    return CargarOpcion(4);
+    return CargarOpcion(1, 4);
 }
 
 int MenuAsignaturas() {
@@ -27,7 +27,7 @@ int MenuAsignaturas() {
     printf("2> Listar asignaturas\r\n");
     printf("3> Atrás\r\n");
 
-    return CargarOpcion(3);
+    return CargarOpcion(1, 3);
 }
 
 int MenuPrevias() {
@@ -42,7 +42,7 @@ int MenuPrevias() {
     printf("2> Agregar previa\r\n");
     printf("3> Atrás\r\n");
 
-    return CargarOpcion(3);
+    return CargarOpcion(1, 3);
 }
 
 int MenuAlumno() {
@@ -57,16 +57,17 @@ int MenuAlumno() {
     printf("2> Agregar alumno\r\n");
     printf("3> Agregar asignatura a escolaridad\r\n");
     printf("4> Listar escolaridad de alumno\r\n");
+    printf("5> Atrás\r\n");
 
-    return CargarOpcion(5);
+    return CargarOpcion(1, 5);
 }
 
-int CargarOpcion(int max) {
+int CargarOpcion(int min, int max) {
     int o;
     do {
         printf(">> ");
         scanf("%d", &o);
-    } while (o < 1 || o > max);
+    } while (o < min || o > max);
 
     printf("\r\n");
 
