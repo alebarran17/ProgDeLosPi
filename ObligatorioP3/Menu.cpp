@@ -17,8 +17,6 @@ int MenuPrincipal() {
 
 int MenuAsignaturas() {
     printf("======================================\r\n");
-    printf("====   Universidad de los capos   ====\r\n");
-    printf("====                              ====\r\n");
     printf("====         ASIGNATURAS          ====\r\n");
     printf("======================================\r\n");
 
@@ -32,8 +30,6 @@ int MenuAsignaturas() {
 
 int MenuPrevias() {
     printf("======================================\r\n");
-    printf("====   Universidad de los capos   ====\r\n");
-    printf("====                              ====\r\n");
     printf("====           PREVIAS            ====\r\n");
     printf("======================================\r\n");
 
@@ -47,8 +43,6 @@ int MenuPrevias() {
 
 int MenuAlumno() {
     printf("======================================\r\n");
-    printf("====   Universidad de los capos   ====\r\n");
-    printf("====                              ====\r\n");
     printf("====           ALUMNOS            ====\r\n");
     printf("======================================\r\n");
 
