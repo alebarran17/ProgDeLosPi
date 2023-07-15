@@ -25,6 +25,7 @@ void ProcesarMenuAsignaturas(Carrera &carrera) {
                     printf("Ingrese la cantidad de horas: ");
                     scanf("%d", &horas);
                     if (horas < 1) {
+                        printf("\r\n");
                         printf("[E]: Las horas de la asignatura debe ser mayor a uno.\r\n");
                         break;
                     }
@@ -135,6 +136,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     } else if (Member(estudiantes, dni)) {
                         printf("\r\n");
                         printf("[E]: El alumno con cédula %ld ya está registrado.\r\n", dni);
+                        break;
                     }
 
                     String nombre;
@@ -215,7 +217,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     }
 
                     long dni;
-                    printf("Ingrese la cédula del estudiante:\r\n");
+                    printf("Ingrese la cédula del estudiante: ");
                     scanf("%ld", &dni);
 
                     if (!Member(estudiantes, dni)) {
@@ -228,6 +230,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     Escolaridad escolaridad = ObtenerEscolaridadAlumno(a);
 
                     if (AproboAsignatura(escolaridad, asignaturaId)) {
+                        printf("\r\n");
                         printf("[E]: La asignatura ingresada ya fue aprobada por el alumno.\r\n");
                         break;
                     }
@@ -255,6 +258,8 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     InsBack(escolaridad, c);
                     SetEscolaridadAlumno(a, escolaridad);
                     Modify(estudiantes, a);
+
+                    printf("[I]: Asignatura %d agregada a la escolaridad de %ld.\r\n", asignaturaId, dni);
                 }
                 break;
             case 4:
