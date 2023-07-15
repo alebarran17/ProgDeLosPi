@@ -43,17 +43,14 @@ void SetEscolaridadAlumno(Alumno &a, Escolaridad e) {
 }
 
 void MostrarAlumno(Alumno a) {
-    printf("Nombre: ");
     print(a.nombre);
-    printf("\r\n");
-
-    printf("Apellido: ");
+    printf(" ");
     print(a.apellido);
-    printf("\r\n");
+    printf(" (%ld):\r\n", a.cedula);
 
-    printf("Teléfono: ");
+    printf("\tNúmero de contacto: ");
     print(a.telefono);
     printf("\r\n");
 
-    printf("Cantidad de cursos: %d\r\n", Largo(a.escolaridad));
+    printf("\tCantidad de cursos: %d\r\n", Largo(a.escolaridad));
 }

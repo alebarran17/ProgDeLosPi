@@ -32,7 +32,6 @@ void Listar(Carrera c){
     int i;
     for(i = 0; i<c.tope; i++){
         MostrarAsignatura(c.arr[i]);
-        printf("\r\n");
     }
 }
 

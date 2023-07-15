@@ -20,6 +20,9 @@ void InsertarArista(Previaturas g, int v, int u);
 
 /// Operaciones adicionales.
 
+/// Devuelve la cantidad que tiene una asignatura.
+int CantidadPrevias(Previaturas g, Carrera c, int v);
+
 ///Lista las previas de un alumno.
 void ListarPrevias(Previaturas g, Carrera c, int v);
 

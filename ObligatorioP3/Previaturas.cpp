@@ -23,10 +23,34 @@ void InsertarArista(Previaturas g, int v, int u) {
     if (ContieneCiclos(g, v)) {
         printf("[E]: %d no puede ser previa de %d porque generaría un ciclo.\r\n", u, v);
         g[v][u] = 0;
+    } else {
+        printf("[I]: %d ahora es previa de %d.\r\n", u, v);
     }
 }
 
 /// Operaciones adicionales.
+
+int DFS_CantPrevias(Previaturas g, Carrera c, int v, bool visitados[CANT_ASIGNATURAS]) {
+    visitados[v] = true;
+
+    int count = 0;
+    for (int i = 0; i < CANT_ASIGNATURAS; i++) {
+        if (!visitados[i] && PerteneceArista(g, v, i)) {
+            count = DFS_CantPrevias(g, c, i, visitados) + 1;
+        }
+    }
+
+    return count;
+}
+
+int CantidadPrevias(Previaturas g, Carrera c, int v) {
+    bool visitados[CANT_ASIGNATURAS];
+    for (int i = 0; i < CANT_ASIGNATURAS; i++) {
+        visitados[i] = false;
+    }
+
+    return DFS_CantPrevias(g, c, v, visitados);
+}
 
 void DFS_Previas(Previaturas g, Carrera c, int v, bool visitados[CANT_ASIGNATURAS]) {
     visitados[v] = true;
@@ -35,7 +59,6 @@ void DFS_Previas(Previaturas g, Carrera c, int v, bool visitados[CANT_ASIGNATURA
         if (!visitados[i] && PerteneceArista(g, v, i)) {
             Asignatura a = KEsimo(c, i);
             MostrarAsignatura(a);
-            printf("\r\n");
 
             DFS_Previas(g, c, i, visitados);
         }
@@ -49,7 +72,6 @@ void ListarPrevias(Previaturas g, Carrera c, int v) {
     }
 
     DFS_Previas(g, c, v, visitados);
-    printf("\r\n");
 }
 
 void DFS_Ciclos(Previaturas g, int v, bool visitados[CANT_ASIGNATURAS], bool& ciclo) {

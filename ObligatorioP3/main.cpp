@@ -38,8 +38,11 @@ void ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
                 {
                     printf(">> Ingrese la asignatura para listar:\r\n");
                     int v = CargarOpcion(0, CANT_ASIGNATURAS);
+
                     if (v > Largo(carrera) - 1) {
                         printf("[E]: La asignatura %d no existe.\r\n", v);
+                    } else if (CantidadPrevias(previas, carrera, v) == 0) {
+                        printf("[I]: La asignatura %d no tiene ninguna previa.\r\n", v);
                     } else {
                         ListarPrevias(previas, carrera, v);
                     }
@@ -49,21 +52,23 @@ void ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
                 {
                     printf(">> Ingrese la asignatura a agregar previas:\r\n");
                     int v = CargarOpcion(0, CANT_ASIGNATURAS);
-                    if (v > Largo(carrera) - 1) {
+
+                    int asignaturasCount = Largo(carrera);
+                    if (v > asignaturasCount - 1) {
                         printf("[E]: La asignatura %d no existe.\r\n", v);
                     } else {
                         printf(">> Ingrese la asignatura previa:\r\n");
                         int u = CargarOpcion(0, CANT_ASIGNATURAS);
-                        if (u > Largo(carrera) - 1) {
+                        if (u > asignaturasCount - 1) {
                             printf("[E]: La asignatura %d no existe.\r\n", u);
                         } else {
-                              InsertarArista(previas, v, u);
-                            }
+                            InsertarArista(previas, v, u);
                         }
+                    }
                 }
                 break;
         }
-                        printf("\r\n");
+        printf("\r\n");
         opt = MenuPrevias();
     }
 }
@@ -78,10 +83,11 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     printf(">> Ingrese la cédula del estudiante:\r\n");
                     printf(">> ");
                     scanf("%ld", &dni);
+                    printf("\r\n");
+
                     if (!Member(estudiantes, dni)) {
                         printf("[E]: El alumno con cédula %ld no está registrado.\r\n", dni);
                     } else {
-                        printf("\r\n");
                         Alumno a = Find(estudiantes, dni);
                         MostrarAlumno(a);
                     }
@@ -91,6 +97,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                 {
                     Alumno a;
                     CargarAlumno(a);
+                    printf("\r\n");
 
                     long dni = ObtenerCedulaAlumno(a);
                     if (Member(estudiantes, dni)) {
@@ -107,11 +114,12 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                 {
                     Curso c;
                     CargarCurso(c);
+                    printf("\r\n");
 
                     Fecha finalizadoEn = ObtenerFinalizacionCurso(c);
 
                     int idAsignatura = ObtenerAsignaturaIDCurso(c);
-                    if (idAsignatura > Largo(carrera)) {
+                    if (idAsignatura >= Largo(carrera)) {
                         printf("[E]: La asignatura %d no existe.\r\n", idAsignatura);
                         break;
                     }
@@ -164,17 +172,19 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     printf(">> Ingrese la cédula del estudiante:\r\n");
                     printf(">> ");
                     scanf("%ld", &dni);
+                    printf("\r\n");
 
                     if (!Member(estudiantes, dni)) {
-                        printf("\r\n");
                         printf("[E]: El alumno con cédula %ld no está registrado.\r\n", dni);
+                        break;
+                    }
+
+                    Alumno a = Find(estudiantes, dni);
+                    Escolaridad escolaridad = ObtenerEscolaridadAlumno(a);
+                    if (Largo(escolaridad) == 0) {
+                        printf("[I]: La escolaridad del alumno seleccionado está vacía.\r\n");
                     } else {
-                        Alumno a = Find(estudiantes, dni);
-                        Escolaridad escolaridad = ObtenerEscolaridadAlumno(a);
-                        if(Largo(escolaridad) > 0) {
-                            printf("\r\n");
-                            ListarOrdenada(escolaridad, carrera);
-                        }
+                        ListarOrdenada(escolaridad, carrera);
                     }
                 }
                 break;

@@ -32,15 +32,15 @@ Asignatura ObtenerAsignaturaPorID(Curso c, Carrera carrera) {
 void MostrarCurso(Curso c, Carrera carrera){
     Asignatura asignatura = ObtenerAsignaturaPorID(c, carrera);
 
-    printf("%d>> ", c.asignaturaId);
+    printf("[%d] ", c.asignaturaId);
     print(asignatura.nombre);
-    printf("\r\n");
+    printf(":\r\n");
 
-    printf(">> Finalizado en: ");
+    printf("\tFinalizado en: ");
     MostrarFecha(c.finalizacion);
     printf("\r\n");
 
-    printf(">> La calificacion es: %d", c.calificacion);
+    printf("\tCalificacion: %d", c.calificacion);
     if (c.calificacion >= NOTA_MINIMA) {
         printf(" (aprobada)");
     }

@@ -21,9 +21,7 @@ int ObtenerHoras(Asignatura a){
 }
 
 void MostrarAsignatura(Asignatura a){
-    printf("%d> ", a.idAsignatura);
+    printf("[%d]: ", a.idAsignatura);
     print(a.nombre);
-    printf("\r\n");
-
-    printf(">> %d horas\r\n", a.horas);
+    printf(" (%d horas)\r\n", a.horas);
 }

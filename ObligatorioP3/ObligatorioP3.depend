@@ -176,7 +176,7 @@
 	"Carrera.h"
 	"Escolaridad.h"
 
-1689369339 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\alumno.cpp
+1689380488 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\alumno.cpp
 	"Alumno.h"
 	"Escolaridad.h"
 	<stdio.h>
@@ -204,13 +204,13 @@
 1689369339 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\asignatura.h
 	"String.h"
 
-1689369339 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\asignatura.cpp
+1689380625 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\asignatura.cpp
 	"Asignatura.h"
 
-1689372687 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\carrera.cpp
+1689380711 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\carrera.cpp
 	"Carrera.h"
 
-1689371154 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\curso.cpp
+1689380587 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\curso.cpp
 	"Curso.h"
 	<stdio.h>
 
@@ -223,11 +223,11 @@
 1689369339 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\estudiantes.h
 	"Alumno.h"
 
-1689369339 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\fecha.cpp
+1689379576 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\fecha.cpp
 	"Fecha.h"
 	<stdio.h>
 
-1689378984 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\main.cpp
+1689381733 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\main.cpp
 	<stdio.h>
 	"menu.h"
 	"Estudiantes.h"
@@ -235,7 +235,7 @@
 
 1689373035 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\menu.h
 
-1689378251 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.h
+1689381525 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.h
 	"Carrera.h"
 	"Escolaridad.h"
 
@@ -243,7 +243,7 @@
 	"menu.h"
 	<stdio.h>
 
-1689378535 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.cpp
+1689381795 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.cpp
 	"Previaturas.h"
 
 1689369339 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\string.cpp
