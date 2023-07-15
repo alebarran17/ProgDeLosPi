@@ -3,8 +3,6 @@
 
 int MenuPrincipal() {
     printf("======================================\r\n");
-    printf("====   Universidad de los capos   ====\r\n");
-    printf("====                              ====\r\n");
     printf("====        MENÚ PRINCIPAL        ====\r\n");
     printf("======================================\r\n");
     printf("1> Asignaturas...\r\n");
