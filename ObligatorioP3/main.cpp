@@ -238,6 +238,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     if (Largo(escolaridad) > 0) {
                         Curso ultimo = Ultimo(escolaridad);
                         if (FechaPosterior(ObtenerFinalizacionCurso(ultimo), finalizacion)) {
+                            printf("\r\n");
                             printf("[E]: La fecha ingresada debe ser posterior a ");
                             MostrarFecha(ObtenerFinalizacionCurso(ultimo));
                             printf("\r\n");
@@ -246,6 +247,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     }
 
                     if (!AproboPreviasInmediatas(previas, escolaridad, asignaturaId)) {
+                        printf("\r\n");
                         printf("[E]: El estudiante no aprobó todas las previas del curso.\r\n");
                         break;
                     }
@@ -259,6 +261,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     SetEscolaridadAlumno(a, escolaridad);
                     Modify(estudiantes, a);
 
+                    printf("\r\n");
                     printf("[I]: Asignatura %d agregada a la escolaridad de %ld.\r\n", asignaturaId, dni);
                 }
                 break;
