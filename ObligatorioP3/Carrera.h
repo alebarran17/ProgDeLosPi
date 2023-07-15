@@ -11,14 +11,14 @@ typedef struct {
 
 /// Operaciones primitivas.
 
-/// Crea una secuencia vac�a.
+/// Crea una secuencia vacía.
 void Crear(Carrera &c);
 
 /// Devuelve la cantidad de elementos de la secuencia.
 int Largo(Carrera c);
 
-/// Devuelve el elemento que ocupa la posici�n K de la secuencia.
-/// Precondici�n: El largo de la secuencia es mayor o igual a K.
+/// Devuelve el elemento que ocupa la posición K de la secuencia.
+/// Precondición: El largo de la secuencia es mayor o igual a K.
 Asignatura KEsimo(Carrera c, int k);
 
 /// Operaciones adicionales.

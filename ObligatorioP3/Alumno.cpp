@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void CargarAlumno(Alumno& a) {
-    printf("Ingrese el n�mero de c�dula: ");
+    printf("Ingrese el número de cédula: ");
     scanf("%ld", &a.cedula);
 
     printf("Ingrese el nombre: ");
@@ -12,7 +12,7 @@ void CargarAlumno(Alumno& a) {
     printf("Ingrese el apellido: ");
     scan(a.apellido);
 
-    printf("Ingrese el n�mero de tel�fono: ");
+    printf("Ingrese el número de teléfono: ");
     scan(a.telefono);
 
     a.escolaridad = Crear();
@@ -51,7 +51,7 @@ void MostrarAlumno(Alumno a) {
     print(a.apellido);
     printf("\r\n");
 
-    printf("Tel�fono: ");
+    printf("Teléfono: ");
     print(a.telefono);
     printf("\r\n");
 

@@ -198,7 +198,7 @@
 
 1689369339 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\fecha.h
 
-1689369339 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\carrera.h
+1689379576 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\carrera.h
 	"Asignatura.h"
 
 1689369339 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\asignatura.h
@@ -227,7 +227,7 @@
 	"Fecha.h"
 	<stdio.h>
 
-1689374753 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\main.cpp
+1689378984 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\main.cpp
 	<stdio.h>
 	"menu.h"
 	"Estudiantes.h"
@@ -235,7 +235,7 @@
 
 1689373035 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\menu.h
 
-1689369339 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.h
+1689378251 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.h
 	"Carrera.h"
 	"Escolaridad.h"
 
@@ -243,7 +243,7 @@
 	"menu.h"
 	<stdio.h>
 
-1689374089 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.cpp
+1689378535 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.cpp
 	"Previaturas.h"
 
 1689369339 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\string.cpp

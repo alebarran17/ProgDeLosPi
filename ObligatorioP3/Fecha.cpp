@@ -8,7 +8,7 @@ void CargarFecha(Fecha& f){
     printf("Ingrese un mes: ");
     scanf("%d", &f.mes);
 
-    printf("Ingrese un a�o: ");
+    printf("Ingrese un año: ");
     scanf("%d", &f.anio);
 }
 
