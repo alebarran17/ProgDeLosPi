@@ -57,4 +57,13 @@ bool StringVacio(String input);
 ///Valida que el formato de la fecha sea valido
 bool ValidarFormato(String fecha);
 
+/// Recorta el espacio vacío a los extremos de la cadena.
+void Trim(String &input);
+
+/// Recorta el espacio vacío al inicio de la cadena.
+void TrimLeft(String &input);
+
+/// Recorta el espacio vacío al final de la cadena.
+void TrimRight(String &input);
+
 #endif // STRING_H_INCLUDED

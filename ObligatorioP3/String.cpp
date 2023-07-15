@@ -226,3 +226,54 @@ bool ValidarFormato(String fecha) {
 
     return r;
 }
+
+void Trim(String &input) {
+    TrimLeft(input);
+    TrimRight(input);
+}
+
+void TrimLeft(String &input) {
+    int largo = strlar(input);
+    if (largo == 0 || input[0] != ' ') {
+        return;
+    }
+
+    int offset = 0;
+    while (offset < largo && input[offset] == ' ') {
+        offset++;
+    }
+
+    if (offset > 0) {
+        Substr(input, offset);
+    }
+}
+
+void TrimRight(String &input) {
+    int offset = 0, inputLength = strlar(input), wsFrom = -1;
+    while (offset < inputLength) {
+        if (input[offset] == ' ') {
+            if (wsFrom == -1) {
+                wsFrom = offset;
+            }
+        } else if (wsFrom >= 0) {
+            wsFrom = -1;
+        }
+        offset++;
+    }
+
+    if (wsFrom == 0 && input[offset] == ' ') {
+        LiberarString(input);
+        strcrear(input);
+    } else if (wsFrom > 0) {
+        offset = 0;
+        String aux = new char[wsFrom + 1];
+        while (offset < wsFrom) {
+            aux[offset] = input[offset];
+            offset++;
+        }
+        aux[offset] = '\0';
+
+        strcop(aux, input);
+        LiberarString(aux);
+    }
+}
