@@ -176,38 +176,37 @@
 	"Carrera.h"
 	"Escolaridad.h"
 
-1689394798 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\alumno.cpp
+1689436064 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\alumno.cpp
 	"Alumno.h"
 	"Escolaridad.h"
 	<stdio.h>
 
-1689393788 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\alumno.h
+1689436098 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\alumno.h
 	"Escolaridad.h"
 
-1689370114 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\escolaridad.h
+1689436884 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\escolaridad.h
 	"Curso.h"
-	"Carrera.h"
 
-1689394825 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\curso.h
+1689436860 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\curso.h
 	"String.h"
 	"Fecha.h"
 	"Carrera.h"
 
-1689435662 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\string.h
+1689436174 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\string.h
 	<stdio.h>
 
-1689369339 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\fecha.h
+1689436174 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\fecha.h
 
-1689386415 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\carrera.h
+1689436174 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\carrera.h
 	"Asignatura.h"
 
 1689392957 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\asignatura.h
 	"String.h"
 
-1689393254 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\asignatura.cpp
+1689436003 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\asignatura.cpp
 	"Asignatura.h"
 
-1689380711 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\carrera.cpp
+1689435982 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\carrera.cpp
 	"Carrera.h"
 
 1689394786 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\curso.cpp
@@ -217,34 +216,34 @@
 1689394565 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\escolaridad.cpp
 	"Escolaridad.h"
 
-1689369339 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\estudiantes.cpp
+1689435886 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\estudiantes.cpp
 	"Estudiantes.h"
 
-1689369339 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\estudiantes.h
+1689436174 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\estudiantes.h
 	"Alumno.h"
 
-1689379576 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\fecha.cpp
+1689435851 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\fecha.cpp
 	"Fecha.h"
 	<stdio.h>
 
-1689435482 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\main.cpp
+1689436727 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\main.cpp
 	<stdio.h>
 	"menu.h"
 	"Estudiantes.h"
 	"Previaturas.h"
 
-1689373035 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\menu.h
+1689436225 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\menu.h
 
-1689386415 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.h
+1689436174 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.h
 	"Escolaridad.h"
 
 1689396626 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\menu.cpp
 	"menu.h"
 	<stdio.h>
 
-1689381795 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.cpp
+1689435828 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.cpp
 	"Previaturas.h"
 
-1689392392 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\string.cpp
+1689435716 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\string.cpp
 	"String.h"
 

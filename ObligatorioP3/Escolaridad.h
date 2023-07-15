@@ -26,6 +26,7 @@ int Largo(Escolaridad e);
 Curso KEsimo(Escolaridad e, int n);
 
 /// Operaciones adicionales.
+
 /// Inserta un elemento al final de la lista.
 void InsBack(Escolaridad &e, Curso c);
 
