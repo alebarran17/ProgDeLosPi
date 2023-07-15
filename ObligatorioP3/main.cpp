@@ -11,18 +11,46 @@ void ProcesarMenuAsignaturas(Carrera &carrera) {
                 if (Largo(carrera) == CANT_ASIGNATURAS) {
                     printf("[E]: Se llegó al máximo de asignaturas.\r\n");
                 } else {
+                    String nombre;
+                    printf("Ingrese un nombre de asignatura: ");
+                    scan(nombre);
+                    Trim(nombre);
+                    if (strlar(nombre) == 0) {
+                        printf("\r\n");
+                        printf("[E]: El nombre de la asignatura no puede ser vacío.\r\n");
+                        break;
+                    }
+
+                    int horas;
+                    printf("Ingrese la cantidad de horas: ");
+                    scanf("%d", &horas);
+                    if (horas < 1) {
+                        printf("[E]: Las horas de la asignatura debe ser mayor a uno.\r\n");
+                        break;
+                    }
+
                     Asignatura a;
-                    CargarAsignatura(a);
+                    CargarAsignaturaNombre(a, nombre);
+                    CargarAsignaturaHoras(a, horas);
+                    LiberarString(nombre);
+
                     if (ExisteAsignatura(carrera, a)) {
+                        printf("\r\n");
                         printf("[E]: El nombre de la asignatura ya existe.\r\n");
                     } else {
                         InsBack(carrera, a);
+
+                        printf("\r\n");
                         printf("[I]: Asignatura agregada correctamente con ID: %d.\r\n", ObtenerIdAsignatura(a));
                     }
                 }
                 break;
             case 2:
-                Listar(carrera);
+                if (Largo(carrera) == 0) {
+                    printf("[E]: Aún no se ha agregado ninguna asignatura.\r\n");
+                } else {
+                    Listar(carrera);
+                }
                 break;
         }
         printf("\r\n");
@@ -60,7 +88,7 @@ void ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
                         printf(">> Ingrese la asignatura previa:\r\n");
                         int u = CargarOpcion(0, CANT_ASIGNATURAS);
                         if (u == v) {
-                            printf("[E]: Una asignatura no puede ser previa de sï¿½ misma.\r\n", u);
+                            printf("[E]: Una asignatura no puede ser previa de sí misma.\r\n");
                         } else if (u > asignaturasCount - 1) {
                             printf("[E]: La asignatura %d no existe.\r\n", u);
                         } else {

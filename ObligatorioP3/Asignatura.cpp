@@ -1,10 +1,11 @@
 #include "Asignatura.h"
 
-void CargarAsignatura(Asignatura& a){
-    printf("Ingrese un nombre de asignatura: ");
-    scan(a.nombre);
-    printf("Ingrese la cantidad de horas: ");
-    scanf("%d", &a.horas);
+void CargarAsignaturaNombre(Asignatura& a, String nombre) {
+    strcrear(a.nombre);
+    strcop(nombre, a.nombre);
+}
+void CargarAsignaturaHoras(Asignatura& a, int horas) {
+    a.horas = horas;
 }
 
 int ObtenerIdAsignatura(Asignatura a) {
