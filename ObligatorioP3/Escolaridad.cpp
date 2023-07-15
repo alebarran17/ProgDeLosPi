@@ -60,7 +60,7 @@ bool AproboAsignatura(Escolaridad e, int asignaturaId) {
         int auxId = ObtenerAsignaturaIDCurso(e.pri->curso);
         if (ObtenerAsignaturaIDCurso(e.pri->curso) == asignaturaId) {
             int calif = ObtenerCalifiacionCurso(e.pri->curso);
-            if (calif >= NOTA_MINIMA) {
+            if (calif >= NOTA_APROBACION) {
                 aprobo = true;
             }
         }

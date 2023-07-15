@@ -184,38 +184,57 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                 break;
             case 3:
                 {
-                    Curso c;
-                    CargarCurso(c);
-                    printf("\r\n");
+                    int asignaturaId;
+                    printf("Ingrese un ID de asignatura: ");
+                    scanf("%d", &asignaturaId);
 
-                    Fecha finalizadoEn = ObtenerFinalizacionCurso(c);
-
-                    int idAsignatura = ObtenerAsignaturaIDCurso(c);
-                    if (idAsignatura >= Largo(carrera)) {
-                        printf("[E]: La asignatura %d no existe.\r\n", idAsignatura);
+                    if (asignaturaId >= Largo(carrera)) {
+                        printf("\r\n");
+                        printf("[E]: La asignatura %d no existe.\r\n", asignaturaId);
                         break;
                     }
 
-                    if (!ValidarFormato(finalizadoEn)) {
+                    Fecha finalizacion;
+                    printf("Ingrese la fecha de finalizacion:\r\n");
+                    CargarFecha(finalizacion);
+
+                    if (!ValidarFormato(finalizacion)) {
+                        printf("\r\n");
                         printf("[E]: La fecha ingresada no es válida.\r\n");
                         break;
                     }
 
+                    int calif;
+                    printf("Ingrese la calificacion: ");
+                    scanf("%d", &calif);
+
+                    if (calif < NOTA_MINIMA || calif > NOTA_MAXIMA) {
+                        printf("\r\n");
+                        printf("[E]: La calificación del curso debe encontrarse entre %d y %d.\r\n", NOTA_MINIMA, NOTA_MAXIMA);
+                        break;
+                    }
+
                     long dni;
-                    printf(">> Ingrese la cédula del estudiante:\r\n");
-                    printf(">> ");
+                    printf("Ingrese la cédula del estudiante:\r\n");
                     scanf("%ld", &dni);
 
                     if (!Member(estudiantes, dni)) {
+                        printf("\r\n");
                         printf("[E]: El alumno con cédula %ld no está registrado.\r\n", dni);
                         break;
                     }
 
                     Alumno a = Find(estudiantes, dni);
                     Escolaridad escolaridad = ObtenerEscolaridadAlumno(a);
+
+                    if (AproboAsignatura(escolaridad, asignaturaId)) {
+                        printf("[E]: La asignatura ingresada ya fue aprobada por el alumno.\r\n");
+                        break;
+                    }
+
                     if (Largo(escolaridad) > 0) {
                         Curso ultimo = Ultimo(escolaridad);
-                        if (FechaPosterior(ObtenerFinalizacionCurso(ultimo), finalizadoEn)) {
+                        if (FechaPosterior(ObtenerFinalizacionCurso(ultimo), finalizacion)) {
                             printf("[E]: La fecha ingresada debe ser posterior a ");
                             MostrarFecha(ObtenerFinalizacionCurso(ultimo));
                             printf("\r\n");
@@ -223,15 +242,15 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                         }
                     }
 
-                    if (AproboAsignatura(escolaridad, idAsignatura)) {
-                        printf("[E]: La asignatura ingresada ya fue aprobada por el alumno.\r\n");
-                        break;
-                    }
-
-                    if (!AproboPreviasInmediatas(previas, escolaridad, idAsignatura)) {
+                    if (!AproboPreviasInmediatas(previas, escolaridad, asignaturaId)) {
                         printf("[E]: El estudiante no aprobó todas las previas del curso.\r\n");
                         break;
                     }
+
+                    Curso c;
+                    CargarCursoAsignaturaId(c, asignaturaId);
+                    CargarCursoFinalizacion(c, finalizacion);
+                    CargarCursoCalificacion(c, calif);
 
                     InsBack(escolaridad, c);
                     SetEscolaridadAlumno(a, escolaridad);

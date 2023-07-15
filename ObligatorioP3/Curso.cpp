@@ -1,15 +1,16 @@
 #include "Curso.h"
 #include <stdio.h>
 
-void CargarCurso(Curso& c){
-    printf("Ingrese un ID de asignatura: ");
-    scanf("%d", &c.asignaturaId);
+void CargarCursoAsignaturaId(Curso& c, int asignaturaId) {
+    c.asignaturaId = asignaturaId;
+}
 
-    printf("Ingrese la fecha de finalizacion:\r\n");
-    CargarFecha(c.finalizacion);
+void CargarCursoFinalizacion(Curso& c, Fecha finalizacion) {
+    c.finalizacion = finalizacion;
+}
 
-    printf("Ingrese la calificacion: ");
-    scanf("%d", &c.calificacion);
+void CargarCursoCalificacion(Curso& c, int calificacion) {
+    c.calificacion = calificacion;
 }
 
 int ObtenerAsignaturaIDCurso(Curso c){
@@ -41,7 +42,7 @@ void MostrarCurso(Curso c, Carrera carrera){
     printf("\r\n");
 
     printf("\tCalificacion: %d", c.calificacion);
-    if (c.calificacion >= NOTA_MINIMA) {
+    if (c.calificacion >= NOTA_APROBACION) {
         printf(" (aprobada)");
     }
 
