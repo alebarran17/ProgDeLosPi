@@ -114,25 +114,22 @@ void TrimLeft(String &input) {
 }
 
 void TrimRight(String &input) {
-    int offset = 0, inputLength = strlar(input), wsFrom = -1;
-    while (offset < inputLength) {
-        if (input[offset] == ' ') {
-            if (wsFrom == -1) {
-                wsFrom = offset;
-            }
-        } else if (wsFrom >= 0) {
-            wsFrom = -1;
-        }
-        offset++;
+    int largo = strlar(input);
+    if (largo == 0 || input[--largo] != ' ') {
+        return;
     }
 
-    if (wsFrom == 0 && input[offset] == ' ') {
-        LiberarString(input);
-        strcrear(input);
-    } else if (wsFrom > 0) {
+    int offset = largo;
+    while (offset >= 0 && input[offset] == ' ') {
+        offset--;
+    }
+
+    if (offset >= 0) {
+        int newLength = offset + 1;
         offset = 0;
-        String aux = new char[wsFrom + 1];
-        while (offset < wsFrom) {
+
+        String aux = new char[newLength + 1];
+        while (offset < newLength) {
             aux[offset] = input[offset];
             offset++;
         }
