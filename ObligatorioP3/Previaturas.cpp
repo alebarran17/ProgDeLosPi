@@ -1,8 +1,5 @@
 #include "Previaturas.h"
 
-/// Operaciones primitivas.
-
-/// Crea un grafo vacío.
 void Crear(Previaturas& g) {
     for (int i = 0; i < CANT_ASIGNATURAS; i++) {
         for (int j = 0; j < CANT_ASIGNATURAS; j++) {
@@ -11,13 +8,10 @@ void Crear(Previaturas& g) {
     }
 }
 
-/// Determina si en el grafo existe la arista especificada.
 bool PerteneceArista(Previaturas g, int v, int u) {
     return g[v][u] == 1;
 }
 
-/// Inserta una nueva arista al grafo partiendo de v a u.
-/// Precondición: la arista no pertenece al grafo.
 void InsertarArista(Previaturas g, int v, int u) {
     g[v][u] = 1;
     if (ContieneCiclos(g, v)) {
@@ -27,8 +21,6 @@ void InsertarArista(Previaturas g, int v, int u) {
         printf("[I]: %d ahora es previa de %d.\r\n", u, v);
     }
 }
-
-/// Operaciones adicionales.
 
 int DFS_CantPrevias(Previaturas g, Carrera c, int v, bool visitados[CANT_ASIGNATURAS]) {
     visitados[v] = true;

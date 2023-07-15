@@ -23,13 +23,13 @@ Asignatura KEsimo(Carrera c, int k);
 
 /// Operaciones adicionales.
 
-///Agrega un elemento al final del secuencia.
+/// Agrega un elemento al final del secuencia.
 void InsBack(Carrera &c, Asignatura &a);
 
-///Lista por pantalla la secuencia.
+/// Lista por pantalla la secuencia.
 void Listar(Carrera c);
 
-///Devuelve si la asignatura ya existe.
+/// Devuelve si la asignatura ya existe.
 bool ExisteAsignatura(Carrera c, Asignatura a);
 
 #endif // ACTASIGNATURAS_H_INCLUDED

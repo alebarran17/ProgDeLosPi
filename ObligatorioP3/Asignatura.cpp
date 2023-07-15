@@ -4,6 +4,7 @@ void CargarAsignaturaNombre(Asignatura& a, String nombre) {
     strcrear(a.nombre);
     strcop(nombre, a.nombre);
 }
+
 void CargarAsignaturaHoras(Asignatura& a, int horas) {
     a.horas = horas;
 }

@@ -21,6 +21,10 @@ void CargarAlumnoTelefono(Alumno& a, String telefono) {
     strcop(telefono, a.telefono);
 }
 
+void CargarEscolaridadAlumno(Alumno &a, Escolaridad e) {
+    a.escolaridad = e;
+}
+
 long ObtenerCedulaAlumno(Alumno a) {
     return a.cedula;
 }
@@ -39,10 +43,6 @@ void ObtenerTelefonoAlumno(Alumno a, String& s) {
 
 Escolaridad ObtenerEscolaridadAlumno(Alumno a) {
     return a.escolaridad;
-}
-
-void SetEscolaridadAlumno(Alumno &a, Escolaridad e) {
-    a.escolaridad = e;
 }
 
 void MostrarAlumno(Alumno a) {

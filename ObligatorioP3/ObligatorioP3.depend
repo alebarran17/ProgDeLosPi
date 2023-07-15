@@ -193,7 +193,7 @@
 	"Fecha.h"
 	"Carrera.h"
 
-1689389065 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\string.h
+1689435662 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\string.h
 	<stdio.h>
 
 1689369339 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\fecha.h
@@ -227,7 +227,7 @@
 	"Fecha.h"
 	<stdio.h>
 
-1689395564 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\main.cpp
+1689435482 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\main.cpp
 	<stdio.h>
 	"menu.h"
 	"Estudiantes.h"
@@ -238,7 +238,7 @@
 1689386415 c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\previaturas.h
 	"Escolaridad.h"
 
-1689387894 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\menu.cpp
+1689396626 source:c:\users\nico\documents\repos\ude\progdelospi\obligatoriop3\menu.cpp
 	"menu.h"
 	<stdio.h>
 

@@ -48,62 +48,12 @@ void scan(String &s) {
     LiberarString(aux);
 }
 
-void strcon(String &s1, String s2) {
-    String aux = new char[strlar(s1) + strlar(s2) + 1];
-
-    int i = 0;
-    while (s1[i] != '\0') {
-        aux[i] = s1[i];
-        i++;
-    }
-    int j = 0;
-    while (s2[j] != '\0') {
-        aux[i + j] = s2[j];
-        j++;
-    }
-    aux[i + j] = '\0';
-
-    strcop(aux, s1);
-    LiberarString(aux);
-}
-
-void strswp(String &s1, String &s2) {
-    String aux;
-    strcrear(aux);
-    strcop(s1, aux);
-
-    strcop(s2, s1);
-    strcop(aux, s2);
-
-    LiberarString(aux);
-}
-
 void print(String s1) {
     int i = 0;
     while (s1[i] != '\0') {
         printf("%c", s1[i]);
         i++;
     }
-}
-
-bool strmen(String s1, String s2) {
-    bool existe=false;
-    int i=0;
-    while(i<MAX-1 && !existe){
-        if(s1[i]==s2[i])
-            i++;
-        else
-            existe=true;
-    }
-    if(existe){
-        if(s1[i]<s2[i]){
-            existe=true;
-        }else
-            existe=false;
-    }else
-            existe=false;
-
-    return existe;
 }
 
 bool streq(String s1, String s2, bool ignoreCase){
@@ -128,64 +78,7 @@ bool streq(String s1, String s2, bool ignoreCase){
     return iguales;
 }
 
-void PasarMayus(String &nombre) {
-    int i = 0;
-    while(nombre[i] != '\0'){
-        int c = nombre[i];
-        int num = c >= 97 && c <= 122 ? c - 32 : c;
-        nombre[i] = (char) num;
-
-        i++;
-    }
-}
-
-bool NombreAlfabetico(String nom) {
-    bool alph = false;
-
-    int i = 0;
-    while(nom[i] != '\0' && alph == false){
-        int c = nom[i];
-        alph = (c >= 97 && c <= 122) || (c >= 65 && c <= 90) ? true : false;
-        i++;
-    }
-
-    return alph;
-}
-//revisar solo espacios
-void PrimerPalabra(String &input, String &palabra) {
-    Recortar(input);
-
-    String aux = new char[strlar(input) + 1];
-    int i = 0;
-    while (input[i] != '\0' && input[i] != ' ') {
-        aux[i] = input[i];
-        i++;
-    }
-    aux[i] = '\0';
-
-    strcrear(palabra);
-    strcop(aux, palabra);
-
-    Substr(input, i);
-    LiberarString(aux);
-}
-
-void Recortar(String &input) { //Elimina los espacios que esten delante de la primer palabra.
-    String aux = new char[strlar(input) + 1];
-    int i = 0, j = 0;
-    while (input[i] != '\0') {
-        if (input[i] != ' ' || j > 0) {
-            aux[j] = input[i];
-            j++;
-        }
-        i++;
-    }
-    aux[j] = '\0';
-    strcop(aux, input);
-    LiberarString(aux);
-}
-
-void Substr(String &input, int from) { //Devuelve el string desde donde termina la primer palabra.
+void Substr(String &input, int from) {
     String aux = new char[strlar(input) + 1];
     int j = 0;
     while (input[from] != '\0') {
@@ -197,34 +90,6 @@ void Substr(String &input, int from) { //Devuelve el string desde donde termina 
 
     strcop(aux, input);
     LiberarString(aux);
-}
-
-bool StringVacio(String input) {
-    return strlar(input) == 0 && input[0] == '\0' ? true : false;
-}
-
-
-bool ValidarFormato(String fecha) {
-    bool r = false;
-    int aux = 0;
-    while (fecha[aux] != '\0' && r == false) {
-        if (fecha[aux] != '/') {
-            int c = fecha[aux];
-            r = c >= 48 && c <= 57 ? true : false;
-        } else {
-            if (aux != 2 && aux != 5) {
-                r = false;
-            }
-        }
-
-        aux++;
-    }
-
-    if (aux != 10) {
-        r = false;
-    }
-
-    return r;
 }
 
 void Trim(String &input) {

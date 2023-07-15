@@ -1,7 +1,5 @@
 #include "Estudiantes.h"
 
-/// Operaciones primitivas.
-
 int Hash(int dni) {
     int sum = 0;
     while (dni > 0) {
@@ -12,14 +10,12 @@ int Hash(int dni) {
     return sum % B;
 }
 
-/// Crea un diccionario vacío.
 void Make(Estudiantes& e) {
     for (int i = 0; i < B; i++) {
         e[i] = NULL;
     }
 }
 
-/// Determina si en el diccionario existe un elemento con la clave especificada.
 bool Member(Estudiantes e, int k) {
     bool found = false;
     int key = Hash(k);
@@ -35,8 +31,6 @@ bool Member(Estudiantes e, int k) {
     return found;
 }
 
-/// Inserta un elemento de tipo T en el diccionario.
-/// Precondición: el elemento a insertar no es miembro del diccionario.
 void Insert(Estudiantes e, Alumno a) {
     int key = Hash(ObtenerCedulaAlumno(a));
     HNode* newNode = new HNode;
@@ -61,8 +55,6 @@ void Modify(Estudiantes &e, Alumno a) {
     }
 }
 
-/// Dada la clave de un elemento devuelve el elemento con dicha clave
-/// Precondición: el elemento es miembro del diccionario.
 Alumno Find(Estudiantes e, int dni) {
     HNode* node = NULL;
 

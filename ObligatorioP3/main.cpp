@@ -177,7 +177,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     LiberarString(apellido);
                     CargarAlumnoTelefono(a, telefono);
                     LiberarString(telefono);
-                    SetEscolaridadAlumno(a, Crear());
+                    CargarEscolaridadAlumno(a, Crear());
                     printf("\r\n");
 
                     Insert(estudiantes, a);
@@ -258,7 +258,7 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                     CargarCursoCalificacion(c, calif);
 
                     InsBack(escolaridad, c);
-                    SetEscolaridadAlumno(a, escolaridad);
+                    CargarEscolaridadAlumno(a, escolaridad);
                     Modify(estudiantes, a);
 
                     printf("\r\n");

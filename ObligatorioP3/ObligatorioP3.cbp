@@ -46,7 +46,6 @@
 		<Unit filename="Estudiantes.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
-		<Unit filename="ListaString.h" />
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Previaturas.cpp" />
 		<Unit filename="Previaturas.h" />
