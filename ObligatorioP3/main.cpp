@@ -59,7 +59,9 @@ void ProcesarMenuPrevias(Carrera& carrera, Previaturas& previas) {
                     } else {
                         printf(">> Ingrese la asignatura previa:\r\n");
                         int u = CargarOpcion(0, CANT_ASIGNATURAS);
-                        if (u > asignaturasCount - 1) {
+                        if (u == v) {
+                            printf("[E]: Una asignatura no puede ser previa de s� misma.\r\n", u);
+                        } else if (u > asignaturasCount - 1) {
                             printf("[E]: La asignatura %d no existe.\r\n", u);
                         } else {
                             InsertarArista(previas, v, u);
