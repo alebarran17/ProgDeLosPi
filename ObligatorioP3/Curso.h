@@ -24,6 +24,7 @@ Fecha ObtenerFinalizacionCurso(Curso c);
 ///Devuelve la calificacion del curso
 int ObtenerCalifiacionCurso(Curso c);
 
+///Obtiene la asignatura a traves del ID de curso
 Asignatura ObtenerAsignaturaPorID(Curso c, Carrera carrera);
 
 ///Muestra el curso

@@ -29,6 +29,7 @@ void InsBack(Carrera &c, Asignatura &a);
 ///Lista por pantalla la secuencia.
 void Listar(Carrera c);
 
+///Devuelve si la asignatura ya existe.
 bool ExisteAsignatura(Carrera c, Asignatura a);
 
 #endif // ACTASIGNATURAS_H_INCLUDED
