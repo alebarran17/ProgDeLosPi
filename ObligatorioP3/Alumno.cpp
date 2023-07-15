@@ -2,24 +2,20 @@
 #include "Escolaridad.h"
 #include <stdio.h>
 
-/// Cargar la cédula del alumno.
 void CargarAlumnoCedula(Alumno& a, long dni) {
     a.cedula = dni;
 }
 
-/// Cargar el nombre del alumno.
 void CargarAlumnoNombre(Alumno& a, String nombre) {
     strcrear(a.nombre);
     strcop(nombre, a.nombre);
 }
 
-/// Cargar el apellido del alumno.
 void CargarAlumnoApellido(Alumno& a, String apellido){
     strcrear(a.apellido);
     strcop(apellido, a.apellido);
 }
 
-/// Cargar el teléfono del alumno.
 void CargarAlumnoTelefono(Alumno& a, String telefono) {
     strcrear(a.telefono);
     strcop(telefono, a.telefono);
