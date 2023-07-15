@@ -2,7 +2,6 @@
 #define LPPFCURSOS_H_INCLUDED
 
 #include "Curso.h"
-#include "Carrera.h"
 
 typedef struct _e_node {
     Curso curso;
