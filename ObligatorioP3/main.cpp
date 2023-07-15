@@ -32,6 +32,7 @@ void ProcesarMenuAsignaturas(Carrera &carrera) {
 
                     Asignatura a;
                     CargarAsignaturaNombre(a, nombre);
+
                     CargarAsignaturaHoras(a, horas);
                     LiberarString(nombre);
 
@@ -171,12 +172,16 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
 
                     Alumno a;
                     CargarAlumnoCedula(a, dni);
+
                     CargarAlumnoNombre(a, nombre);
                     LiberarString(nombre);
+
                     CargarAlumnoApellido(a, apellido);
                     LiberarString(apellido);
+
                     CargarAlumnoTelefono(a, telefono);
                     LiberarString(telefono);
+
                     CargarEscolaridadAlumno(a, Crear());
                     printf("\r\n");
 
