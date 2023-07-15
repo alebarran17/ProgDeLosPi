@@ -125,19 +125,61 @@ void ProcesarMenuAlumno(Estudiantes& estudiantes, Carrera carrera, Previaturas p
                 break;
             case 2:
                 {
+                    long dni;
+                    printf("Ingrese el número de cédula: ");
+                    scanf("%ld", &dni);
+                    if (dni < 0) {
+                        printf("\r\n");
+                        printf("[E]: El número de la cédula debe ser mayor a 0.\r\n");
+                        break;
+                    } else if (Member(estudiantes, dni)) {
+                        printf("\r\n");
+                        printf("[E]: El alumno con cédula %ld ya está registrado.\r\n", dni);
+                    }
+
+                    String nombre;
+                    printf("Ingrese el nombre: ");
+                    scan(nombre);
+                    Trim(nombre);
+                    if (strlar(nombre) == 0) {
+                        printf("\r\n");
+                        printf("[E]: El nombre del alumno no puede ser vacío.\r\n");
+                        break;
+                    }
+
+                    String apellido;
+                    printf("Ingrese el apellido: ");
+                    scan(apellido);
+                    Trim(apellido);
+                    if (strlar(apellido) == 0) {
+                        printf("\r\n");
+                        printf("[E]: El apellido del alumno no puede ser vacío.\r\n");
+                        break;
+                    }
+
+                    String telefono;
+                    printf("Ingrese un número de contacto: ");
+                    scan(telefono);
+                    Trim(telefono);
+                    if (strlar(telefono) == 0) {
+                        printf("\r\n");
+                        printf("[E]: El número de contacto no puede ser vacío.\r\n");
+                        break;
+                    }
+
                     Alumno a;
-                    CargarAlumno(a);
+                    CargarAlumnoCedula(a, dni);
+                    CargarAlumnoNombre(a, nombre);
+                    LiberarString(nombre);
+                    CargarAlumnoApellido(a, apellido);
+                    LiberarString(apellido);
+                    CargarAlumnoTelefono(a, telefono);
+                    LiberarString(telefono);
+                    SetEscolaridadAlumno(a, Crear());
                     printf("\r\n");
 
-                    long dni = ObtenerCedulaAlumno(a);
-                    if (Member(estudiantes, dni)) {
-                        printf("[E]: El alumno con cédula %ld ya está registrado.\r\n", dni);
-                    } else {
-                        Insert(estudiantes, a);
-
-                        long dni = ObtenerCedulaAlumno(a);
-                        printf("[I]: Alumno registrado correctamente con la cédula %ld.\r\n", dni);
-                    }
+                    Insert(estudiantes, a);
+                    printf("[I]: Alumno registrado correctamente con la cédula %ld.\r\n", dni);
                 }
                 break;
             case 3:

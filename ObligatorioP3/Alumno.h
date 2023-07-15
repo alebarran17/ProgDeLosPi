@@ -11,28 +11,37 @@ typedef struct {
     Escolaridad escolaridad;
 } Alumno;
 
-///Cargar el alumno por teclado
-void CargarAlumno(Alumno& a);
+/// Cargar la cédula del alumno.
+void CargarAlumnoCedula(Alumno& a, long dni);
 
-///Devuelve la cedula del alumno
+/// Cargar el nombre del alumno.
+void CargarAlumnoNombre(Alumno& a, String nombre);
+
+/// Cargar el apellido del alumno.
+void CargarAlumnoApellido(Alumno& a, String apellido);
+
+/// Cargar el teléfono del alumno.
+void CargarAlumnoTelefono(Alumno& a, String telefono);
+
+/// Devuelve la cedula del alumno
 long ObtenerCedulaAlumno(Alumno a);
 
-///Devuelve el nombre del alumno
+/// Devuelve el nombre del alumno
 void ObtenerNombreAlumno(Alumno a, String& s);
 
-///Devuelve el apellido del alumno
+/// Devuelve el apellido del alumno
 void ObtenerApellidoAlumno(Alumno a, String& s);
 
-///Devuelve el telefono del alumno
+/// Devuelve el telefono del alumno
 void ObtenerTelefonoAlumno(Alumno a, String& s);
 
-///Devuelve la escolaridad del alumno
+/// Devuelve la escolaridad del alumno
 Escolaridad ObtenerEscolaridadAlumno(Alumno a);
 
-///Modifica la escolaridad del alumno
+/// Modifica la escolaridad del alumno
 void SetEscolaridadAlumno(Alumno &a, Escolaridad e);
 
-///Muestra el alumno
+/// Muestra el alumno
 void MostrarAlumno(Alumno a);
 
 #endif // ALUMNO_H_INCLUDED

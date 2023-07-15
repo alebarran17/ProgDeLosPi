@@ -2,20 +2,27 @@
 #include "Escolaridad.h"
 #include <stdio.h>
 
-void CargarAlumno(Alumno& a) {
-    printf("Ingrese el número de cédula: ");
-    scanf("%ld", &a.cedula);
+/// Cargar la cédula del alumno.
+void CargarAlumnoCedula(Alumno& a, long dni) {
+    a.cedula = dni;
+}
 
-    printf("Ingrese el nombre: ");
-    scan(a.nombre);
+/// Cargar el nombre del alumno.
+void CargarAlumnoNombre(Alumno& a, String nombre) {
+    strcrear(a.nombre);
+    strcop(nombre, a.nombre);
+}
 
-    printf("Ingrese el apellido: ");
-    scan(a.apellido);
+/// Cargar el apellido del alumno.
+void CargarAlumnoApellido(Alumno& a, String apellido){
+    strcrear(a.apellido);
+    strcop(apellido, a.apellido);
+}
 
-    printf("Ingrese el número de teléfono: ");
-    scan(a.telefono);
-
-    a.escolaridad = Crear();
+/// Cargar el teléfono del alumno.
+void CargarAlumnoTelefono(Alumno& a, String telefono) {
+    strcrear(a.telefono);
+    strcop(telefono, a.telefono);
 }
 
 long ObtenerCedulaAlumno(Alumno a) {
